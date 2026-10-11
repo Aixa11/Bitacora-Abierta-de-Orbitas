@@ -1,6 +1,6 @@
 /** Issues del repo público de la Bitácora. */
 export const GITHUB_NEW_ISSUE_URL =
-  'https://github.com/Aixa11/Bit-cora-Abierta-de-Orbitas/issues/new';
+  'https://github.com/Aixa11/Bitacora-Abierta-de-Orbitas/issues/new';
 
 export function buildSuggestToolIssueUrl(input: {
   nombre: string;

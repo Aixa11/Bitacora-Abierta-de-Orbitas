@@ -1,8 +1,12 @@
+<p align="center">
+  <img src="brand/orbitas-wordmark.png" alt="Órbitas" width="280" />
+</p>
+
 # Bitácora Abierta de Órbitas · Space Apps 2026
 
 Guía comunitaria e independiente para el NASA Space Apps Challenge 2026 (14–15 de noviembre, tema *The Next Frontier*). Parte del proyecto educativo **Órbitas** (Aixa Benitez). Sin afiliación oficial con la NASA ni con el NASA Space Apps Challenge.
 
-Repositorio: [Aixa11/Bit-cora-Abierta-de-Orbitas](https://github.com/Aixa11/Bit-cora-Abierta-de-Orbitas)
+Repositorio: [Aixa11/Bitacora-Abierta-de-Orbitas](https://github.com/Aixa11/Bitacora-Abierta-de-Orbitas)
 
 Stack: Vite + React 18 + TypeScript strict + Tailwind + React Router + Zustand + Leaflet + Three/R3F + satellite.js + PWA.
 

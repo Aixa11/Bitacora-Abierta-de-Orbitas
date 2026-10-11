@@ -4,7 +4,7 @@ import { WGS84_A_KM } from '../../lib/physics/constants';
 export function Atmosphere({ intensity = 1 }: { intensity?: number }) {
   return (
     <mesh scale={1.045}>
-      <sphereGeometry args={[WGS84_A_KM, 48, 48]} />
+      <sphereGeometry args={[WGS84_A_KM, 32, 32]} />
       <meshBasicMaterial
         color="#3B82F6"
         transparent

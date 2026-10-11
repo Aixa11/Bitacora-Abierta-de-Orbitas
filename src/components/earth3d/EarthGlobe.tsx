@@ -1,15 +1,20 @@
-import { useMemo, useRef } from 'react';
+import { useLayoutEffect, useMemo, useRef, type MutableRefObject } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import { WGS84_A_KM, WGS84_B_KM } from '../../lib/physics/constants';
 import { sunDirectionEcef } from '../../lib/physics/subsolar';
+import { applyTextureQuality } from './limitTextureSize';
+import type { TextureQuality } from './texturePaths';
 
 type TexturedProps = {
-  simTime: Date;
+  /** Reloj de simulación (ms); se lee cada frame para el terminador. */
+  simTimeMsRef: MutableRefObject<number>;
   dayUrl: string;
   nightUrl: string;
   cloudsUrl: string | null;
+  quality: TextureQuality;
+  segments?: number;
 };
 
 const vertexShader = /* glsl */ `
@@ -46,27 +51,55 @@ const fragmentShader = /* glsl */ `
   }
 `;
 
-export function EarthGlobeTextured({ simTime, dayUrl, nightUrl, cloudsUrl }: TexturedProps) {
+export function EarthGlobeTextured({
+  simTimeMsRef,
+  dayUrl,
+  nightUrl,
+  cloudsUrl,
+  quality,
+  segments = 48,
+}: TexturedProps) {
   const matRef = useRef<THREE.ShaderMaterial>(null);
-  const textures = useTexture({
+  const cloudsMatRef = useRef<THREE.MeshBasicMaterial>(null);
+  const raw = useTexture({
     day: dayUrl,
     night: nightUrl,
     clouds: cloudsUrl ?? dayUrl,
   });
 
+  const day = useMemo(() => applyTextureQuality(raw.day, quality), [raw.day, quality]);
+  const night = useMemo(() => applyTextureQuality(raw.night, quality), [raw.night, quality]);
+  const clouds = useMemo(
+    () => (cloudsUrl ? applyTextureQuality(raw.clouds, quality) : null),
+    [raw.clouds, cloudsUrl, quality],
+  );
+
   const uniforms = useMemo(
     () => ({
-      uDay: { value: textures.day },
-      uNight: { value: textures.night },
+      uDay: { value: day },
+      uNight: { value: night },
       uSunDir: { value: new THREE.Vector3(1, 0, 0) },
       uHasTextures: { value: 1 },
     }),
-    [textures],
+    [day, night],
   );
+
+  useLayoutEffect(() => {
+    if (!matRef.current) return;
+    matRef.current.uniforms.uDay.value = day;
+    matRef.current.uniforms.uNight.value = night;
+  }, [day, night]);
+
+  useLayoutEffect(() => {
+    if (cloudsMatRef.current && clouds) {
+      cloudsMatRef.current.map = clouds;
+      cloudsMatRef.current.needsUpdate = true;
+    }
+  }, [clouds]);
 
   useFrame(() => {
     if (!matRef.current) return;
-    const [x, y, z] = sunDirectionEcef(simTime);
+    const [x, y, z] = sunDirectionEcef(new Date(simTimeMsRef.current));
     matRef.current.uniforms.uSunDir.value.set(x, y, z);
   });
 
@@ -75,7 +108,7 @@ export function EarthGlobeTextured({ simTime, dayUrl, nightUrl, cloudsUrl }: Tex
   return (
     <group scale={[1, scaleY, 1]}>
       <mesh>
-        <sphereGeometry args={[WGS84_A_KM, 64, 64]} />
+        <sphereGeometry args={[WGS84_A_KM, segments, segments]} />
         <shaderMaterial
           ref={matRef}
           uniforms={uniforms}
@@ -83,13 +116,16 @@ export function EarthGlobeTextured({ simTime, dayUrl, nightUrl, cloudsUrl }: Tex
           fragmentShader={fragmentShader}
         />
       </mesh>
-      {cloudsUrl ? (
+      {cloudsUrl && clouds ? (
         <mesh>
-          <sphereGeometry args={[WGS84_A_KM * 1.005, 48, 48]} />
-          <meshStandardMaterial
-            map={textures.clouds}
+          <sphereGeometry
+            args={[WGS84_A_KM * 1.005, Math.min(segments, 40), Math.min(segments, 40)]}
+          />
+          <meshBasicMaterial
+            ref={cloudsMatRef}
+            map={clouds}
             transparent
-            opacity={0.35}
+            opacity={0.32}
             depthWrite={false}
           />
         </mesh>
@@ -98,7 +134,13 @@ export function EarthGlobeTextured({ simTime, dayUrl, nightUrl, cloudsUrl }: Tex
   );
 }
 
-export function EarthGlobeProcedural({ simTime }: { simTime: Date }) {
+export function EarthGlobeProcedural({
+  simTimeMsRef,
+  segments = 48,
+}: {
+  simTimeMsRef: MutableRefObject<number>;
+  segments?: number;
+}) {
   const matRef = useRef<THREE.ShaderMaterial>(null);
   const uniforms = useMemo(
     () => ({
@@ -112,7 +154,7 @@ export function EarthGlobeProcedural({ simTime }: { simTime: Date }) {
 
   useFrame(() => {
     if (!matRef.current) return;
-    const [x, y, z] = sunDirectionEcef(simTime);
+    const [x, y, z] = sunDirectionEcef(new Date(simTimeMsRef.current));
     matRef.current.uniforms.uSunDir.value.set(x, y, z);
   });
 
@@ -121,7 +163,7 @@ export function EarthGlobeProcedural({ simTime }: { simTime: Date }) {
   return (
     <group scale={[1, scaleY, 1]}>
       <mesh>
-        <sphereGeometry args={[WGS84_A_KM, 64, 64]} />
+        <sphereGeometry args={[WGS84_A_KM, segments, segments]} />
         <shaderMaterial
           ref={matRef}
           uniforms={uniforms}

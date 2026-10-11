@@ -2,19 +2,29 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { celestrakProxyPlugin } from './scripts/vite-celestrak-proxy.mjs';
 
-/** Proxy a eoimages: el host NASA no envía CORS para texturas WebGL. */
-const eoimagesProxy = {
+/** Proxies de desarrollo: hosts externos sin CORS usable desde el navegador.
+ *  CelesTrak va por plugin propio (cortocircuito sin spam ETIMEDOUT). */
+const apiProxies = {
   '/proxy/eoimages': {
     target: 'https://eoimages.gsfc.nasa.gov',
     changeOrigin: true,
     rewrite: (p: string) => p.replace(/^\/proxy\/eoimages/, ''),
+  },
+  '/proxy/ariss': {
+    target: 'https://live.ariss.org',
+    changeOrigin: true,
+    rewrite: (p: string) => p.replace(/^\/proxy\/ariss/, ''),
+    timeout: 6_000,
+    proxyTimeout: 6_000,
   },
 } as const;
 
 export default defineConfig({
   plugins: [
     react(),
+    celestrakProxyPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icons/icon-192.png', 'icons/icon-512.png'],
@@ -82,10 +92,10 @@ export default defineConfig({
     host: '127.0.0.1',
     port: 5173,
     strictPort: true,
-    proxy: { ...eoimagesProxy },
+    proxy: { ...apiProxies },
   },
   preview: {
-    proxy: { ...eoimagesProxy },
+    proxy: { ...apiProxies },
   },
   test: {
     environment: 'jsdom',

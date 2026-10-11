@@ -1,3 +1,16 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/proxy/celestrak/:path*",
+      "destination": "https://celestrak.org/:path*"
+    },
+    {
+      "source": "/proxy/ariss/:path*",
+      "destination": "https://live.ariss.org/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

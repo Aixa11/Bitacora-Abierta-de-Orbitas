@@ -70,20 +70,7 @@ export function HomePage() {
         </aside>
       </section>
 
-      <section aria-labelledby="hero-tierra-titulo">
-        <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <p className="label-mono">{t('home.earthEyebrow')}</p>
-            <h2 id="hero-tierra-titulo" className="mt-1 font-display text-2xl font-bold">
-              {t('home.earthTitle')}
-            </h2>
-          </div>
-          <Link to="/laboratorio" className="text-sm font-semibold underline underline-offset-2">
-            {t('home.earthLabLink')}
-          </Link>
-        </div>
-        <EarthHero />
-      </section>
+      <EarthHero />
     </div>
   );
 }

@@ -1,15 +1,75 @@
 import * as satellite from 'satellite.js';
+import { TLE_FALLBACKS } from '../../content/tleFallbacks';
 import { fetchText, type ApiResult } from './client';
 
-export function celestrakTleUrl(noradId: string): string {
-  return `https://celestrak.org/NORAD/elements/gp.php?CATNR=${noradId}&FORMAT=tle`;
+/** Timeout corto: si CelesTrak no responde, pasamos a espejo o copia local. */
+const CELESTRAK_TIMEOUT_MS = 2_500;
+const ARISS_TIMEOUT_MS = 4_000;
+/** Tras un fallo, no volver a llamar al proxy unos minutos (evita ETIMEDOUT en consola). */
+const CELESTRAK_COOLDOWN_MS = 15 * 60 * 1000;
+
+/** null = desconocido; true/false = resultado del sondeo de sesión. */
+let celestrakReachable: boolean | null = null;
+let celestrakProbe: Promise<boolean> | null = null;
+let celestrakCooldownUntil = 0;
+
+/** Solo tests. */
+export function resetCelestrakCircuit(): void {
+  celestrakReachable = null;
+  celestrakProbe = null;
+  celestrakCooldownUntil = 0;
 }
+
+async function probeCelestrak(): Promise<boolean> {
+  if (celestrakReachable !== null && Date.now() < celestrakCooldownUntil) {
+    return celestrakReachable;
+  }
+  if (celestrakReachable === true) return true;
+  if (celestrakProbe) return celestrakProbe;
+
+  celestrakProbe = (async () => {
+    const result = await fetchText(celestrakTleUrl('25544'), {
+      cacheKey: 'celestrak:probe',
+      timeoutMs: CELESTRAK_TIMEOUT_MS,
+    });
+    const ok = result.status === 'ok' && Boolean(parseTleText(result.data, 'celestrak'));
+    celestrakReachable = ok;
+    celestrakCooldownUntil = Date.now() + CELESTRAK_COOLDOWN_MS;
+    celestrakProbe = null;
+    return ok;
+  })();
+
+  return celestrakProbe;
+}
+
+/**
+ * URL del TLE. En el navegador usa proxy same-origin (Vite/Vercel) porque
+ * celestrak.org no expone CORS para fetch desde la Bitácora.
+ */
+export function celestrakTleUrl(noradId: string): string {
+  const path = `/NORAD/elements/gp.php?CATNR=${encodeURIComponent(noradId)}&FORMAT=tle`;
+  if (typeof window !== 'undefined') {
+    return `/proxy/celestrak${path}`;
+  }
+  return `https://celestrak.org${path}`;
+}
+
+/** Espejo vivo de la ISS (ARISS); útil cuando CelesTrak está bloqueado. */
+export function arissIssTleUrl(): string {
+  if (typeof window !== 'undefined') {
+    return '/proxy/ariss/iss.txt';
+  }
+  return 'https://live.ariss.org/iss.txt';
+}
+
+export type TleSource = 'celestrak' | 'ariss' | 'fallback';
 
 export type ParsedTle = {
   name: string;
   line1: string;
   line2: string;
   satrec: satellite.SatRec;
+  source: TleSource;
 };
 
 export type SatPosition = {
@@ -33,30 +93,95 @@ function asEciVec(value: EciVec | boolean | undefined | null): EciVec | null {
   return value;
 }
 
-export async function fetchTle(noradId: string): Promise<ApiResult<ParsedTle>> {
-  const url = celestrakTleUrl(noradId);
-  const result = await fetchText(url, { cacheKey: `celestrak:${noradId}` });
-  if (result.status === 'error') return result;
-
-  const lines = result.data
+function parseTleText(
+  text: string,
+  source: TleSource,
+): ParsedTle | null {
+  const lines = text
     .trim()
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
 
-  if (lines.length < 3) {
-    return {
-      status: 'error',
-      message: 'CelesTrak devolvió un TLE incompleto.',
-      fromCache: result.fromCache,
-    };
-  }
+  if (lines.length < 3) return null;
+  if (!lines[1].startsWith('1 ') || !lines[2].startsWith('2 ')) return null;
 
   const satrec = satellite.twoline2satrec(lines[1], lines[2]);
+  if (satrec.error !== 0) return null;
+
+  return { name: lines[0], line1: lines[1], line2: lines[2], satrec, source };
+}
+
+function fromFallback(noradId: string): ApiResult<ParsedTle> | null {
+  const fb = TLE_FALLBACKS[noradId];
+  if (!fb) return null;
+  const satrec = satellite.twoline2satrec(fb.line1, fb.line2);
+  if (satrec.error !== 0) return null;
   return {
     status: 'ok',
-    fromCache: result.fromCache,
-    data: { name: lines[0], line1: lines[1], line2: lines[2], satrec },
+    fromCache: true,
+    data: {
+      name: fb.name,
+      line1: fb.line1,
+      line2: fb.line2,
+      satrec,
+      source: 'fallback',
+    },
+  };
+}
+
+export async function fetchTle(noradId: string): Promise<ApiResult<ParsedTle>> {
+  const live = await probeCelestrak();
+
+  if (live) {
+    // El sondeo ya cacheó el TLE de la ISS.
+    if (noradId === '25544') {
+      const cached = await fetchText(celestrakTleUrl('25544'), {
+        cacheKey: 'celestrak:probe',
+        timeoutMs: CELESTRAK_TIMEOUT_MS,
+      });
+      if (cached.status === 'ok') {
+        const parsed = parseTleText(cached.data, 'celestrak');
+        if (parsed) {
+          return { status: 'ok', fromCache: cached.fromCache, data: parsed };
+        }
+      }
+    } else {
+      const result = await fetchText(celestrakTleUrl(noradId), {
+        cacheKey: `celestrak:${noradId}`,
+        timeoutMs: CELESTRAK_TIMEOUT_MS,
+      });
+      if (result.status === 'ok') {
+        const parsed = parseTleText(result.data, 'celestrak');
+        if (parsed) {
+          return { status: 'ok', fromCache: result.fromCache, data: parsed };
+        }
+      }
+      // Un fallo puntual no tumba el circuito; caemos a respaldo de ese NORAD.
+    }
+  }
+
+  // ISS: espejo ARISS cuando CelesTrak no responde (común en redes restringidas).
+  if (noradId === '25544') {
+    const ariss = await fetchText(arissIssTleUrl(), {
+      cacheKey: 'ariss:iss',
+      timeoutMs: ARISS_TIMEOUT_MS,
+    });
+    if (ariss.status === 'ok') {
+      const parsed = parseTleText(ariss.data, 'ariss');
+      if (parsed) {
+        return { status: 'ok', fromCache: ariss.fromCache, data: parsed };
+      }
+    }
+  }
+
+  const fallback = fromFallback(noradId);
+  if (fallback) return fallback;
+
+  return {
+    status: 'error',
+    message: 'CelesTrak no alcanzable y no hay copia local de TLE.',
+    fromCache: false,
   };
 }
 

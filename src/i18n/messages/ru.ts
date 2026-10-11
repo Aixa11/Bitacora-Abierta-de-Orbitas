@@ -16,6 +16,7 @@ export const ru: MessageTree = {
     sensores: 'Датчики',
     laboratorio: 'Лаборатория',
     bitacora: 'Журнал',
+    ia: 'NASA AI',
     equipo: 'Команда',
     entrega: 'Сдача',
     reglas: 'Правила',
@@ -106,6 +107,12 @@ export const ru: MessageTree = {
       dateNote:
         'Все материалы доклада публикуются 16 октября 2026 года. Вернитесь в этот день за полным контентом.',
     },
+    ia: {
+      title: 'NASA AI and agents',
+      lead:
+        'Verified foundation models and MCP agents (Prithvi, Surya, Lunar Foundation Model, INDUS, earthdata-mcp). What each one does and how to start, without inventing challenge solutions.',
+    },
+
     glosario: {
       title: 'Глоссарий',
       lead: 'Термины GEOINT и космоса простым языком, рядом — техническая форма.',

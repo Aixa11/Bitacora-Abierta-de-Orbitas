@@ -14,6 +14,7 @@ export const es = {
     sensores: 'Sensores',
     laboratorio: 'Laboratorio',
     bitacora: 'Bitácora',
+    ia: 'IA NASA',
     equipo: 'Equipo',
     entrega: 'Entrega',
     reglas: 'Reglas',
@@ -103,6 +104,11 @@ export const es = {
       comingSoon: 'Próximamente',
       dateNote:
         'Todo el material de la charla se sube el 16 de octubre de 2026. Vuelve ese día para verlo completo.',
+    },
+    ia: {
+      title: 'IA y agentes NASA',
+      lead:
+        'Modelos fundacionales y agentes MCP verificados (Prithvi, Surya, Lunar Foundation Model, INDUS, earthdata-mcp). Qué hace cada uno y cómo empezar, sin inventar soluciones de desafío.',
     },
     glosario: {
       title: 'Glosario',

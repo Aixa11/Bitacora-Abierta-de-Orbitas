@@ -16,6 +16,7 @@ export const zh: MessageTree = {
     sensores: '传感器',
     laboratorio: '实验室',
     bitacora: '日志',
+    ia: 'NASA AI',
     equipo: '团队',
     entrega: '提交',
     reglas: '规则',
@@ -105,6 +106,12 @@ export const zh: MessageTree = {
       comingSoon: '即将推出',
       dateNote: '全部讲座材料将于 2026 年 10 月 16 日上线。请届时回来查看完整内容。',
     },
+    ia: {
+      title: 'NASA AI and agents',
+      lead:
+        'Verified foundation models and MCP agents (Prithvi, Surya, Lunar Foundation Model, INDUS, earthdata-mcp). What each one does and how to start, without inventing challenge solutions.',
+    },
+
     glosario: {
       title: '术语表',
       lead: 'GEOINT 与航天术语的通俗说明，旁附技术表述。',

@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { to: '/sensores', key: 'nav.sensores' },
   { to: '/laboratorio', key: 'nav.laboratorio' },
   { to: '/bitacora', key: 'nav.bitacora' },
+  { to: '/ia', key: 'nav.ia' },
   { to: '/equipo', key: 'nav.equipo' },
   { to: '/entrega', key: 'nav.entrega' },
   { to: '/reglas', key: 'nav.reglas' },

@@ -11,9 +11,9 @@ function clone<T>(value: T): T {
 describe('validación del catálogo', () => {
   it('acepta seed/tools.json y seed/challenges.json copiados a src/content', () => {
     const parsed = parseCatalog(toolsRaw, challengesRaw);
-    expect(parsed.tools.herramientas).toHaveLength(123);
+    expect(parsed.tools.herramientas).toHaveLength(134);
     expect(parsed.challenges.desafios).toHaveLength(14);
-    expect(catalogo.tools.total).toBe(123);
+    expect(catalogo.tools.total).toBe(134);
   });
 
   it('falla si hay ids de herramientas repetidos', () => {

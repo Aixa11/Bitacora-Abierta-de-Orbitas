@@ -15,6 +15,7 @@ export const de: MessageTree = {
     sensores: 'Sensoren',
     laboratorio: 'Labor',
     bitacora: 'Logbuch',
+    ia: 'NASA-KI',
     equipo: 'Team',
     entrega: 'Abgabe',
     reglas: 'Regeln',
@@ -98,6 +99,12 @@ export const de: MessageTree = {
       comingSoon: 'Demn\u00e4chst',
       dateNote: 'Das gesamte Vortragsmaterial wird am 16. Oktober 2026 ver\u00f6ffentlicht. Komm an diesem Tag zur\u00fcck f\u00fcr den vollst\u00e4ndigen Inhalt.',
     },
+    ia: {
+      title: 'NASA AI and agents',
+      lead:
+        'Verified foundation models and MCP agents (Prithvi, Surya, Lunar Foundation Model, INDUS, earthdata-mcp). What each one does and how to start, without inventing challenge solutions.',
+    },
+
     glosario: {
       title: 'Glossar',
       lead: 'GEOINT- und Raumfahrtbegriffe in einfacher Sprache, mit der technischen Form daneben.',

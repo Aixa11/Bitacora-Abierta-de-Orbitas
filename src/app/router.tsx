@@ -9,6 +9,7 @@ import { GlosarioPage } from '../pages/GlosarioPage';
 import { HomePage } from '../pages/HomePage';
 import { AyudaPage } from '../pages/AyudaPage';
 import { CharlaPage } from '../pages/CharlaPage';
+import { IaPage } from '../pages/IaPage';
 import { LaboratorioPage } from '../pages/LaboratorioPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { ReglasPage } from '../pages/ReglasPage';
@@ -32,6 +33,7 @@ export function AppRouter() {
           <Route path="/sensores" element={<SensoresPage />} />
           <Route path="/laboratorio" element={<LaboratorioPage />} />
           <Route path="/bitacora" element={<BitacoraPage />} />
+          <Route path="/ia" element={<IaPage />} />
           <Route path="/equipo" element={<EquipoPage />} />
           <Route path="/entrega" element={<EntregaPage />} />
           <Route path="/reglas" element={<ReglasPage />} />

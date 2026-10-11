@@ -9,7 +9,7 @@ test('filtra la bitácora, agrega al kit y exporta Markdown', async ({ page }) =
   );
 
   await page.getByLabel('Buscar').fill('worldview');
-  await expect(page.getByText(/de 123 herramientas/)).toBeVisible();
+  await expect(page.getByText(/de 134 herramientas/)).toBeVisible();
   await expect(page.getByRole('heading', { name: 'NASA Worldview' })).toBeVisible();
 
   await page.getByRole('button', { name: 'Agregar al kit' }).first().click();

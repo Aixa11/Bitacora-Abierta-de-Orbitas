@@ -47,6 +47,7 @@ npm run dev        # http://127.0.0.1:5173
 | `/sensores` | Temas + simulador 3D de sensores |
 | `/laboratorio` | GIBS + EONET + CelesTrak + Kepler |
 | `/bitacora` | Catálogo de herramientas + Mi kit |
+| `/ia` | IA y agentes NASA (qué hacen y cómo empezar) |
 | `/equipo` | Roles, cronograma 48 h, tablero |
 | `/entrega` | Checklist, referencias, pitch |
 | `/reglas` | Uso legal orientativo |

@@ -15,6 +15,7 @@ export const en: MessageTree = {
     sensores: 'Sensors',
     laboratorio: 'Lab',
     bitacora: 'Logbook',
+    ia: 'NASA AI',
     equipo: 'Team',
     entrega: 'Delivery',
     reglas: 'Rules',
@@ -104,6 +105,11 @@ export const en: MessageTree = {
       comingSoon: 'Coming soon',
       dateNote:
         'All talk materials go live on October 16, 2026. Come back that day for the full content.',
+    },
+    ia: {
+      title: 'NASA AI and agents',
+      lead:
+        'Verified foundation models and MCP agents (Prithvi, Surya, Lunar Foundation Model, INDUS, earthdata-mcp). What each one does and how to start, without inventing challenge solutions.',
     },
     glosario: {
       title: 'Glossary',

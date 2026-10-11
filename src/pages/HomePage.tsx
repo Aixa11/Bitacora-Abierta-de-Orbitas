@@ -47,6 +47,12 @@ export function HomePage() {
             >
               {t('home.ctaSensores')}
             </Link>
+            <Link
+              to="/ia"
+              className="rounded-full border border-[color:var(--orbit-line)] px-5 py-3 text-sm font-semibold"
+            >
+              {t('nav.ia')}
+            </Link>
           </div>
         </div>
         <aside className="card-orbit grid grid-cols-2 gap-4 p-8">

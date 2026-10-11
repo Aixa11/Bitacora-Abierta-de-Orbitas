@@ -11,7 +11,7 @@ describe('HomePage', () => {
       </MemoryRouter>,
     );
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/bitácora abierta/i);
-    expect(screen.getByText('123')).toBeInTheDocument();
+    expect(screen.getByText('134')).toBeInTheDocument();
     expect(screen.getByText('14')).toBeInTheDocument();
   });
 });

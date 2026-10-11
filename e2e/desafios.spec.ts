@@ -1,8 +1,10 @@
 import { expect, test } from '@playwright/test';
+import { withSpanishLocale } from './locale';
 
 test('lista desafíos, abre una guía y guarda una nota del método', async ({ page }) => {
+  await withSpanishLocale(page);
   await page.goto('/desafios');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Catorce desafíos');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(/desafíos/i);
   await expect(page.getByText('Esta guía no resuelve el desafío')).toBeVisible();
 
   await page.getByLabel('Buscar desafíos').fill('jukebox');

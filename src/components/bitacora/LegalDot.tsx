@@ -1,17 +1,19 @@
 import type { Legal } from '../../content/schema';
-import { LEGAL_LABELS } from '../../lib/bitacora/labels';
+import { useBitacoraLabels } from '../../lib/bitacora/useLabels';
 
 type LegalDotProps = {
   legal: Legal;
 };
 
 export function LegalDot({ legal }: LegalDotProps) {
+  const labels = useBitacoraLabels();
   const color = legal === 'verde' ? 'bg-orbit-lime' : 'bg-orbit-coral';
+  const name = labels.legal[legal];
   return (
     <span
       className={`inline-block h-2.5 w-2.5 shrink-0 rounded-full ${color}`}
-      title={`Semáforo legal: ${LEGAL_LABELS[legal]}`}
-      aria-label={`Semáforo legal ${LEGAL_LABELS[legal]}`}
+      title={name}
+      aria-label={name}
     />
   );
 }

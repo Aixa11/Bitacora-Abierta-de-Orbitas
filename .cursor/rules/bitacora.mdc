@@ -7,7 +7,8 @@ alwaysApply: true
 # Bitácora Space Apps · Órbitas — reglas del proyecto
 
 ## Contenido
-- Todo el texto visible está en español neutro, tuteando ("elige", "puedes"). Sin emojis.
+- Fuente editorial en español neutro, tuteando ("elige", "puedes"). Sin emojis.
+- La UI se internacionaliza con `src/i18n` (detección del navegador + selector). Idiomas: es, en, zh, pt, fr, de, ja, hi, ar, ru. El seed largo (tools/challenges y guías) puede seguir en español; muestra el aviso `ContentLocaleNotice` si el locale no es `es`. No inventes traducciones de cifras, NORAD ni URLs.
 - Nunca inventes URLs, NORAD ID, cifras de misiones ni capas GIBS. Usa seed/tools.json, seed/challenges.json y reference/. Si falta un dato, deja un TODO visible para revisión humana en vez de inventarlo.
 - Las guías de desafíos enseñan a PENSAR. Prohibido proponer soluciones, ideas de producto cerradas o código que resuelva un desafío del Space Apps 2026.
 - Las simulaciones 3D explican conceptos generales y nunca implementan el entregable de un desafío.

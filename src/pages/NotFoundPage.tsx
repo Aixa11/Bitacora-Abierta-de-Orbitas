@@ -1,33 +1,34 @@
 import { Link } from 'react-router-dom';
+import { useI18n } from '../i18n/useI18n';
 
 const SHORTCUTS = [
-  { to: '/', label: 'Inicio' },
-  { to: '/ruta', label: 'Ruta' },
-  { to: '/desafios', label: 'Desafíos' },
-  { to: '/laboratorio', label: 'Laboratorio' },
-  { to: '/bitacora', label: 'Bitácora' },
-  { to: '/charla', label: 'Charla' },
-  { to: '/ayuda', label: 'Ayuda' },
+  { to: '/', key: 'nav.home' },
+  { to: '/ruta', key: 'nav.ruta' },
+  { to: '/desafios', key: 'nav.desafios' },
+  { to: '/laboratorio', key: 'nav.laboratorio' },
+  { to: '/bitacora', key: 'nav.bitacora' },
+  { to: '/charla', key: 'nav.charla' },
+  { to: '/ayuda', key: 'nav.ayuda' },
 ] as const;
 
 export function NotFoundPage() {
+  const { t } = useI18n();
+
   return (
     <section className="card-orbit mx-auto max-w-xl p-8" aria-labelledby="titulo-404">
-      <p className="label-mono">/ 404 · órbita perdida /</p>
+      <p className="label-mono">/ 404 /</p>
       <h1 id="titulo-404" className="mt-4 font-display text-4xl font-bold">
-        Esta órbita no existe
+        {t('pages.notFound.title')}
       </h1>
-      <p className="mt-4 text-[color:var(--orbit-muted)]">
-        La página que buscas no está en el mapa. Revisa la dirección o elige otra ruta abajo.
-      </p>
+      <p className="mt-4 text-[color:var(--orbit-muted)]">{t('pages.notFound.lead')}</p>
       <Link
         to="/"
         className="mt-6 inline-flex rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-5 py-3 text-sm font-semibold text-white"
       >
-        Volver al inicio
+        {t('pages.notFound.cta')}
       </Link>
-      <nav className="mt-8" aria-label="Atajos útiles">
-        <p className="label-mono">/ Atajos /</p>
+      <nav className="mt-8" aria-label={t('a11y.sections')}>
+        <p className="label-mono">/ {t('a11y.sections')} /</p>
         <ul className="mt-3 flex flex-wrap gap-2">
           {SHORTCUTS.map((item) => (
             <li key={item.to}>
@@ -35,7 +36,7 @@ export function NotFoundPage() {
                 to={item.to}
                 className="inline-flex rounded-full border border-[color:var(--orbit-line)] px-3 py-1.5 text-sm font-semibold"
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             </li>
           ))}

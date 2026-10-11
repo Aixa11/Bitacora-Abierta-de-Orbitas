@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
+import { withSpanishLocale } from './locale';
 
 test('recorrido principal de la guía', async ({ page }) => {
+  await withSpanishLocale(page);
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/bitácora abierta/i);
 
@@ -8,10 +10,10 @@ test('recorrido principal de la guía', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 
   await page.goto('/desafios');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText(/desafíos/i);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(/Desafíos/i);
 
   await page.goto('/sensores');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText(/observar/i);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(/Sensores|observar/i);
 
   await page.goto('/laboratorio');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
@@ -29,7 +31,8 @@ test('recorrido principal de la guía', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 
   await page.goto('/charla');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText(/satélite/i);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(/Charla/i);
+  await expect(page.getByText(/Próximamente/i)).toBeVisible();
 
   await page.goto('/glosario');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();

@@ -1,6 +1,8 @@
 import { useMemo, useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { HackathonCountdown } from '../components/ayuda/HackathonCountdown';
+import { ContentLocaleNotice } from '../components/layout/ContentLocaleNotice';
+import { useI18n } from '../i18n/useI18n';
 import { ROLES_EQUIPO, type TaskStatus } from '../content/equipo';
 import { useEquipo } from '../store/equipo';
 
@@ -11,6 +13,7 @@ const COLUMNAS: Array<{ id: TaskStatus; label: string }> = [
 ];
 
 export function EquipoPage() {
+  const { t } = useI18n();
   const hitos = useEquipo((state) => state.hitos);
   const tareas = useEquipo((state) => state.tareas);
   const updateHito = useEquipo((state) => state.updateHito);
@@ -59,14 +62,15 @@ export function EquipoPage() {
 
   return (
     <div className="space-y-10">
-      <header className="max-w-3xl">
-        <p className="label-mono">/ Equipo /</p>
-        <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
-          Roles, 48 horas y tablero
-        </h1>
-        <p className="mt-3 text-[color:var(--orbit-muted)]">
-          Planificador local para el 14 y 15 de noviembre de 2026. Todo queda en tu navegador.
-        </p>
+      <header className="max-w-3xl space-y-4">
+        <div>
+          <p className="label-mono">/ Equipo /</p>
+          <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
+            {t('pages.equipo.title')}
+          </h1>
+          <p className="mt-3 text-[color:var(--orbit-muted)]">{t('pages.equipo.lead')}</p>
+        </div>
+        <ContentLocaleNotice />
       </header>
 
       <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">

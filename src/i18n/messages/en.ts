@@ -1,0 +1,191 @@
+import type { MessageTree } from './es';
+
+export const en: MessageTree = {
+  a11y: {
+    skipToContent: 'Skip to content',
+    sections: 'Sections',
+    actions: 'Actions',
+    language: 'Language',
+    homeLogo: 'orbitas, go to home',
+  },
+  nav: {
+    home: 'Home',
+    ruta: 'Path',
+    desafios: 'Challenges',
+    sensores: 'Sensors',
+    laboratorio: 'Lab',
+    bitacora: 'Logbook',
+    equipo: 'Team',
+    entrega: 'Delivery',
+    reglas: 'Rules',
+    charla: 'Talk',
+    glosario: 'Glossary',
+    ayuda: 'Help',
+  },
+  header: {
+    myKit: 'My kit',
+    openKit: 'Open my kit',
+    themeToLight: 'Switch to light mode',
+    themeToDark: 'Switch to dark mode',
+    light: 'Light',
+    dark: 'Dark',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+  },
+  footer: {
+    brand: 'Órbitas · Space Apps Logbook',
+    disclaimer:
+      'Independent community guide, with no official affiliation with NASA or the NASA Space Apps Challenge.',
+    credits:
+      'Credits: NASA GIBS · NASA EONET · CelesTrak · Esri World Gray Canvas · OpenStreetMap · NASA Visible Earth / Earth Observatory (3D textures)',
+    clearData: 'Clear my data',
+    clearConfirm:
+      'Do you want to clear your local data (theme, language, kit, progress, and notes)? This cannot be undone.',
+  },
+  home: {
+    eyebrow: '/ Space Apps 2026 · The Next Frontier /',
+    titleBefore: 'From satellite to your project, with an',
+    titleHighlight: 'open logbook',
+    lead:
+      'Community guide to navigate the NASA Space Apps Challenge 2026 (November 14–15) from choosing a challenge to delivery. Pick a path, explore data, and build your kit. The ideas belong to your team.',
+    ctaRuta: 'Start the path',
+    ctaAyuda: 'Hackathon help',
+    ctaDesafios: 'View challenges',
+    ctaSensores: 'Explore sensors',
+    toolsLabel: 'Tools',
+    challengesLabel: 'Challenges',
+    seedNote:
+      'Verified seed content (version {version}). Below: Earth at real scale with satellites propagated by SGP4 when CelesTrak responds.',
+    earthEyebrow: '/ Earth in real time /',
+    earthTitle: 'WGS84 scale, terminator, and orbits',
+    earthLabLink: 'Go to the 2D lab',
+  },
+  contentNotice: {
+    title: 'Long-form content still in Spanish',
+    body:
+      'The interface is in your language. The tools catalog, challenge guides, and several long texts remain in Spanish (verified seed source). You can change the language above at any time.',
+  },
+  pages: {
+    ruta: {
+      title: 'Data path',
+      lead: 'Eight steps from question to delivery. Track your progress; it stays on this device.',
+    },
+    desafios: {
+      title: '2026 Challenges',
+      lead: 'Guides to think through each challenge. No solutions or finished product ideas: the deliverable is yours.',
+    },
+    sensores: {
+      title: 'Sensors',
+      lead: 'Choose what you want to observe and explore geometry, clouds, day/night, and resolution at scale.',
+    },
+    laboratorio: {
+      title: 'Lab',
+      lead: 'GIBS map + EONET events + CelesTrak orbits, plus a Kepler simulator for general concepts.',
+    },
+    bitacora: {
+      title: 'Data and tools logbook',
+      lead: 'Search, filter, and build your kit. Each card cites origin, access, and an indicative legal traffic light.',
+    },
+    equipo: {
+      title: 'Team',
+      lead: 'Roles, 48-hour schedule, and a local board. It does not sync with external calendars.',
+    },
+    entrega: {
+      title: 'Delivery',
+      lead: 'Checklist, references, and pitch guide. Everything stays in your browser until you clear it.',
+    },
+    reglas: {
+      title: 'Rules and legal use',
+      lead: 'Guidance based on public terms. It does not replace legal advice or the official event terms.',
+    },
+    charla: {
+      title: 'Talk',
+      lead: 'Webinar, agenda, and presentation mode. Not published yet.',
+      comingSoon: 'Coming soon',
+      dateNote:
+        'All talk materials go live on October 16, 2026. Come back that day for the full content.',
+    },
+    glosario: {
+      title: 'Glossary',
+      lead: 'GEOINT and space terms in plain language, with the technical form beside them.',
+    },
+    ayuda: {
+      title: 'Hackathon help',
+      lead: 'Quick start, 48-hour clock, NASA study in Spanish, world↔challenge explorer, and templates.',
+    },
+    notFound: {
+      title: 'Page not found',
+      lead: 'That route does not exist in the Logbook. Go home or open the menu.',
+      cta: 'Go home',
+    },
+  },
+  labels: {
+    categoria: {
+      explorar: 'Explore without code',
+      datos: 'Consume data',
+      tematicos: 'Thematic data',
+      procesar: 'Process and analyze',
+      mapas: 'Maps and visualization',
+      ia: 'AI, models, and agents',
+      orbitas: 'Orbits and space',
+      aprender: 'Learn',
+    },
+    origen: {
+      nasa: 'NASA',
+      socia: 'Partner agencies',
+      abierto: 'Open and community',
+    },
+    tipo: {
+      web: 'Web',
+      api: 'API',
+      python: 'Python',
+      js: 'JavaScript',
+      escritorio: 'Desktop',
+      modelo: 'AI model',
+      agente: 'Agent / MCP',
+      servidor: 'Server',
+    },
+    acceso: {
+      libre: 'No signup',
+      registro: 'Free account',
+      key: 'Free API key',
+    },
+    nivel: {
+      ini: 'Beginner',
+      int: 'Intermediate',
+      ava: 'Advanced',
+    },
+    legal: {
+      verde: 'Green',
+      amarillo: 'Yellow',
+    },
+    sort: {
+      relevancia: 'Relevance',
+      nombre: 'Name',
+      nivel: 'Level',
+    },
+    view: {
+      tarjetas: 'Cards',
+      tabla: 'Table',
+    },
+  },
+  common: {
+    loading: 'Loading…',
+    error: 'Something went wrong. Try again in a moment.',
+    empty: 'No results with those filters.',
+    retry: 'Retry',
+    close: 'Close',
+    search: 'Search',
+    filters: 'Filters',
+    export: 'Export',
+    copy: 'Copy',
+    clearFilters: 'Clear filters',
+    resultCount: '{count} of {total} tools',
+    sortLabel: 'Sort',
+    viewLabel: 'View',
+    copied: 'Copied',
+    addToKit: 'Add to kit',
+    removeFromKit: 'Remove from kit',
+    openOfficial: 'Open official link',
+  },
+};

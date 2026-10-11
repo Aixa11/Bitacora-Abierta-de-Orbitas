@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
+import { withSpanishLocale } from './locale';
 
 test('el laboratorio muestra mapa, Kepler y panel cómo se hizo', async ({ page }) => {
+  await withSpanishLocale(page);
   await page.goto('/laboratorio');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('APIs abiertas');
   await expect(page.getByRole('region', { name: 'Mapa interactivo del laboratorio' })).toBeVisible();

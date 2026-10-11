@@ -1,12 +1,15 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ContentLocaleNotice } from '../components/layout/ContentLocaleNotice';
 import { herramientas } from '../content/catalog';
+import { useI18n } from '../i18n/useI18n';
 import { GLOSSARY } from '../content/glossary';
 import { stripAccents } from '../lib/text';
 
 const toolsById = new Map(herramientas.map((tool) => [tool.id, tool]));
 
 export function GlosarioPage() {
+  const { t } = useI18n();
   const [q, setQ] = useState('');
 
   const terms = useMemo(() => {
@@ -22,16 +25,16 @@ export function GlosarioPage() {
 
   return (
     <div>
-      <header className="mb-8 max-w-3xl">
-        <p className="label-mono">/ Glosario /</p>
-        <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
-          GEOINT en lenguaje claro
-        </h1>
-        <p className="mt-3 text-[color:var(--orbit-muted)]">
-          {GLOSSARY.length} términos con definición simple, técnica, ejemplo y enlace a una
-          herramienta relacionada cuando aplica.
-        </p>
-        <label className="mt-5 flex items-center gap-3 rounded-2xl border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 py-3">
+      <header className="mb-8 max-w-3xl space-y-4">
+        <div>
+          <p className="label-mono">/ Glosario /</p>
+          <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
+            {t('pages.glosario.title')}
+          </h1>
+          <p className="mt-3 text-[color:var(--orbit-muted)]">{t('pages.glosario.lead')}</p>
+        </div>
+        <ContentLocaleNotice />
+        <label className="flex items-center gap-3 rounded-2xl border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 py-3">
           <span className="sr-only">Buscar en el glosario</span>
           <input
             type="search"

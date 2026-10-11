@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
+import { withSpanishLocale } from './locale';
 
 test('ayuda muestra estudio NASA y explorador', async ({ page }) => {
+  await withSpanishLocale(page);
   await page.goto('/ayuda');
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/48 horas|hackatón/i);
   await page.getByRole('navigation', { name: 'Secciones de ayuda' }).getByRole('link', { name: 'Estudio NASA' }).click();

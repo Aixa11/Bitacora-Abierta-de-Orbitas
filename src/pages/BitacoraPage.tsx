@@ -4,7 +4,9 @@ import { FilterBar } from '../components/bitacora/FilterBar';
 import { SuggestToolForm } from '../components/bitacora/SuggestToolForm';
 import { ToolCard } from '../components/bitacora/ToolCard';
 import { ToolTable } from '../components/bitacora/ToolTable';
+import { ContentLocaleNotice } from '../components/layout/ContentLocaleNotice';
 import { herramientas } from '../content/catalog';
+import { useI18n } from '../i18n/useI18n';
 import {
   EMPTY_FILTERS,
   filterTools,
@@ -18,6 +20,7 @@ import {
 } from '../lib/bitacora/urlParams';
 
 export function BitacoraPage() {
+  const { t } = useI18n();
   const [searchParams, setSearchParams] = useSearchParams();
   const [filters, setFilters] = useState<BitacoraFilters>(() =>
     filtersFromSearchParams(searchParams),
@@ -45,15 +48,15 @@ export function BitacoraPage() {
 
   return (
     <div>
-      <header className="mb-8 max-w-3xl">
-        <p className="label-mono">/ 04 · Bitácora /</p>
-        <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
-          Bitácora de datos y herramientas
-        </h1>
-        <p className="mt-3 text-[color:var(--orbit-muted)]">
-          Filtra por lo que necesitas: consumir datos, procesarlos, mapearlos o sumar IA y agentes.
-          Agrega lo que uses a Mi kit y descarga la lista de recursos para citar en tu entrega.
-        </p>
+      <header className="mb-8 max-w-3xl space-y-4">
+        <div>
+          <p className="label-mono">/ 04 · Bitácora /</p>
+          <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
+            {t('pages.bitacora.title')}
+          </h1>
+          <p className="mt-3 text-[color:var(--orbit-muted)]">{t('pages.bitacora.lead')}</p>
+        </div>
+        <ContentLocaleNotice />
       </header>
 
       <FilterBar
@@ -71,7 +74,7 @@ export function BitacoraPage() {
 
       {filtered.length === 0 ? (
         <div className="card-orbit p-8 text-center text-[color:var(--orbit-muted)]">
-          No hay herramientas con esa combinación. Prueba quitando algún filtro.
+          {t('common.empty')}
         </div>
       ) : vista === 'tabla' ? (
         <ToolTable tools={visible} />

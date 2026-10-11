@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HackathonCountdown } from '../components/ayuda/HackathonCountdown';
 import { RecursosOficialesBanner } from '../components/ayuda/RecursosOficialesBanner';
+import { ContentLocaleNotice } from '../components/layout/ContentLocaleNotice';
+import { useI18n } from '../i18n/useI18n';
 import { ACCESO_GUIA, ARRANQUE_30, TRABADO_NODOS } from '../content/ayuda';
 import { desafios, herramientas } from '../content/catalog';
 import { ESTUDIO_NASA } from '../content/estudioNasa';
@@ -28,6 +30,7 @@ function toolById(id: string) {
 }
 
 export function AyudaPage() {
+  const { t } = useI18n();
   const location = useLocation();
   const [section, setSection] = useState<SectionId>('arranque');
   const [estudioId, setEstudioId] = useState(ESTUDIO_NASA[0]?.id ?? '');
@@ -63,15 +66,15 @@ export function AyudaPage() {
 
   return (
     <div className="space-y-8">
-      <header className="max-w-3xl space-y-3">
-        <p className="label-mono">/ Ayuda del hackatón /</p>
-        <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
-          Complementos para las 48 horas
-        </h1>
-        <p className="text-[color:var(--orbit-muted)]">
-          Arranque, estudio NASA en español, explorador de fenómenos reales y plantillas. Nada aquí
-          resuelve un desafío: te ayuda a pensar, citar y no perder tiempo.
-        </p>
+      <header className="max-w-3xl space-y-4">
+        <div className="space-y-3">
+          <p className="label-mono">/ Ayuda del hackatón /</p>
+          <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
+            {t('pages.ayuda.title')}
+          </h1>
+          <p className="text-[color:var(--orbit-muted)]">{t('pages.ayuda.lead')}</p>
+        </div>
+        <ContentLocaleNotice />
         <RecursosOficialesBanner />
       </header>
 

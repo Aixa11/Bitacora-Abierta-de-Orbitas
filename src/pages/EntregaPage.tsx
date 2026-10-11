@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { ContentLocaleNotice } from '../components/layout/ContentLocaleNotice';
 import { ENTREGA_CHECKS, PITCH_SECTIONS, PITCH_TOTAL_SECONDS } from '../content/entrega';
+import { useI18n } from '../i18n/useI18n';
 import { downloadTextFile, exportKitMarkdown } from '../lib/kit/export';
 import { useEntrega } from '../store/entrega';
 import { useKit } from '../store/kit';
@@ -11,6 +13,7 @@ function formatTime(totalSeconds: number): string {
 }
 
 export function EntregaPage() {
+  const { t } = useI18n();
   const checks = useEntrega((state) => state.checks);
   const toggleCheck = useEntrega((state) => state.toggleCheck);
   const notasEquipo = useEntrega((state) => state.notasEquipo);
@@ -61,12 +64,10 @@ export function EntregaPage() {
       <section>
         <p className="label-mono">/ Entrega /</p>
         <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
-          Checklist, citas y pitch
+          {t('pages.entrega.title')}
         </h1>
-        <p className="mt-3 max-w-prose text-[color:var(--orbit-muted)]">
-          Cierra el domingo 15 de noviembre a las 23:59 hora local. Marca lo esencial, genera la
-          sección de recursos y ensaya el pitch.
-        </p>
+        <p className="mt-3 max-w-prose text-[color:var(--orbit-muted)]">{t('pages.entrega.lead')}</p>
+        <ContentLocaleNotice />
 
         <ul className="mt-6 space-y-2">
           {ENTREGA_CHECKS.map((item) => {

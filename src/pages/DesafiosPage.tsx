@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ContentLocaleNotice } from '../components/layout/ContentLocaleNotice';
 import { catalogo, desafios } from '../content/catalog';
+import { useI18n } from '../i18n/useI18n';
 import {
   countDesafioFacet,
   EMPTY_DESAFIO_FILTERS,
@@ -22,31 +24,35 @@ function toggleValue(list: string[], value: string): string[] {
 }
 
 export function DesafiosPage() {
+  const { t } = useI18n();
   const [filters, setFilters] = useState<DesafioFilters>(EMPTY_DESAFIO_FILTERS);
   const filtered = useMemo(() => filterDesafios(desafios, filters), [filters]);
 
   return (
     <div>
-      <header className="mb-8 max-w-3xl">
-        <p className="label-mono">/ Desafíos 2026 /</p>
-        <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
-          Catorce desafíos para pensar
-        </h1>
-        <p className="mt-3 text-[color:var(--orbit-muted)]">
-          Guías para abordar el problema, no para resolverlo. Fuente:{' '}
-          <a
-            href={catalogo.challenges.fuente}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold underline-offset-2 hover:underline"
-          >
-            spaceappschallenge.org/2026/challenges
-          </a>
-          .
-        </p>
-        <p className="mt-3 rounded-2xl border border-orbit-coral/40 bg-orbit-coral/10 px-4 py-3 text-sm">
-          Esta guía no resuelve el desafío. El trabajo y las ideas son de tu equipo.
-        </p>
+      <header className="mb-8 max-w-3xl space-y-4">
+        <div>
+          <p className="label-mono">/ Desafíos 2026 /</p>
+          <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
+            {t('pages.desafios.title')}
+          </h1>
+          <p className="mt-3 text-[color:var(--orbit-muted)]">
+            {t('pages.desafios.lead')} Fuente:{' '}
+            <a
+              href={catalogo.challenges.fuente}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline-offset-2 hover:underline"
+            >
+              spaceappschallenge.org/2026/challenges
+            </a>
+            .
+          </p>
+          <p className="mt-3 rounded-2xl border border-orbit-coral/40 bg-orbit-coral/10 px-4 py-3 text-sm">
+            Esta guía no resuelve el desafío. El trabajo y las ideas son de tu equipo.
+          </p>
+        </div>
+        <ContentLocaleNotice />
       </header>
 
       <div className="card-orbit mb-6 grid gap-4 p-5">

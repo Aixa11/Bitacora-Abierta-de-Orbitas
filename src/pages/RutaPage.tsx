@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ContentLocaleNotice } from '../components/layout/ContentLocaleNotice';
 import { herramientas } from '../content/catalog';
+import { useI18n } from '../i18n/useI18n';
 import { RUTA_PASOS } from '../content/ruta';
 import { useKit } from '../store/kit';
 import { useRuta } from '../store/ruta';
@@ -8,6 +10,7 @@ import { useRuta } from '../store/ruta';
 const byId = new Map(herramientas.map((tool) => [tool.id, tool]));
 
 export function RutaPage() {
+  const { t } = useI18n();
   const pasoActivo = useRuta((state) => state.pasoActivo);
   const setPasoActivo = useRuta((state) => state.setPasoActivo);
   const toggleCheck = useRuta((state) => state.toggleCheck);
@@ -45,10 +48,11 @@ export function RutaPage() {
     <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
       <aside>
         <p className="label-mono">/ Ruta del dato /</p>
-        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight">Ocho pasos</h1>
-        <p className="mt-2 text-sm text-[color:var(--orbit-muted)]">
-          Del desafío a la demo. Tu progreso se guarda en el navegador.
-        </p>
+        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight">
+          {t('pages.ruta.title')}
+        </h1>
+        <p className="mt-2 text-sm text-[color:var(--orbit-muted)]">{t('pages.ruta.lead')}</p>
+        <ContentLocaleNotice />
         <div className="mt-4 rounded-2xl border border-[color:var(--orbit-line)] p-3">
           <p className="text-sm text-[color:var(--orbit-muted)]" aria-live="polite">
             Checklist: {progreso.hechos}/{progreso.total} ({progreso.pct}%)

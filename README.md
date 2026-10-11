@@ -10,6 +10,8 @@ Repositorio: [Aixa11/Bitacora-Abierta-de-Orbitas](https://github.com/Aixa11/Bita
 
 Stack: Vite + React 18 + TypeScript strict + Tailwind + React Router + Zustand + Leaflet + Three/R3F + satellite.js + PWA.
 
+Idiomas de la interfaz (detección del navegador + selector en la barra): español, English, 中文, português, français, Deutsch, 日本語, हिन्दी, العربية, русский. El catálogo seed y las guías largas pueden seguir en español; la UI avisa cuando el idioma no es español.
+
 ## Requisitos
 
 - Node.js 20+ y npm
@@ -48,7 +50,7 @@ npm run dev        # http://127.0.0.1:5173
 | `/equipo` | Roles, cronograma 48 h, tablero |
 | `/entrega` | Checklist, referencias, pitch |
 | `/reglas` | Uso legal orientativo |
-| `/charla` | Webinar + modo presentación |
+| `/charla` | Próximamente (contenido el 16 oct 2026) |
 | `/glosario` | Términos GEOINT |
 | `/ayuda` | Arranque 30 min, reloj 48 h, estudio NASA en español, explorador mundo↔desafíos, plantillas |
 

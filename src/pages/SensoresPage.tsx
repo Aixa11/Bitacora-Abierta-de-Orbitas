@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ContentLocaleNotice } from '../components/layout/ContentLocaleNotice';
 import { SensorSimulator } from '../components/sensors3d/SensorSimulator';
+import { useI18n } from '../i18n/useI18n';
 import { SENSOR_TOPICS } from '../content/sensorTopics';
 import { SENSORS, type SensorKind } from '../content/sensors';
 
@@ -10,6 +12,7 @@ function kindToSensorId(kind: SensorKind): string {
 }
 
 export function SensoresPage() {
+  const { t } = useI18n();
   const [topicId, setTopicId] = useState(SENSOR_TOPICS[0]?.id ?? 'incendios');
   const topic = useMemo(
     () => SENSOR_TOPICS.find((t) => t.id === topicId) ?? SENSOR_TOPICS[0],
@@ -18,16 +21,15 @@ export function SensoresPage() {
 
   return (
     <div className="space-y-8">
-      <header className="space-y-3">
-        <p className="label-mono">/ Sensores /</p>
-        <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
-          ¿Qué quieres observar?
-        </h1>
-        <p className="max-w-2xl text-[color:var(--orbit-muted)]">
-          Elige un tema: te sugerimos un tipo de sensor y puedes explorar la geometría, el barrido,
-          las nubes y el día/noche en una escena 3D educativa. No resuelve un desafío: te ayuda a
-          pensar qué dato conviene.
-        </p>
+      <header className="space-y-4">
+        <div className="space-y-3">
+          <p className="label-mono">/ Sensores /</p>
+          <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
+            {t('pages.sensores.title')}
+          </h1>
+          <p className="max-w-2xl text-[color:var(--orbit-muted)]">{t('pages.sensores.lead')}</p>
+        </div>
+        <ContentLocaleNotice />
       </header>
 
       <section aria-label="Temas de observación">

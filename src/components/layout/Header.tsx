@@ -1,22 +1,24 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { OrbitasLogo } from '../brand/OrbitasLogo';
+import { useI18n } from '../../i18n/useI18n';
 import { useKit } from '../../store/kit';
 import { usePreferences } from '../../store/preferences';
+import { OrbitasLogo } from '../brand/OrbitasLogo';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 const NAV_ITEMS = [
-  { to: '/', label: 'Inicio' },
-  { to: '/ruta', label: 'Ruta' },
-  { to: '/desafios', label: 'Desafíos' },
-  { to: '/sensores', label: 'Sensores' },
-  { to: '/laboratorio', label: 'Laboratorio' },
-  { to: '/bitacora', label: 'Bitácora' },
-  { to: '/equipo', label: 'Equipo' },
-  { to: '/entrega', label: 'Entrega' },
-  { to: '/reglas', label: 'Reglas' },
-  { to: '/charla', label: 'Charla' },
-  { to: '/glosario', label: 'Glosario' },
-  { to: '/ayuda', label: 'Ayuda' },
+  { to: '/', key: 'nav.home' },
+  { to: '/ruta', key: 'nav.ruta' },
+  { to: '/desafios', key: 'nav.desafios' },
+  { to: '/sensores', key: 'nav.sensores' },
+  { to: '/laboratorio', key: 'nav.laboratorio' },
+  { to: '/bitacora', key: 'nav.bitacora' },
+  { to: '/equipo', key: 'nav.equipo' },
+  { to: '/entrega', key: 'nav.entrega' },
+  { to: '/reglas', key: 'nav.reglas' },
+  { to: '/charla', key: 'nav.charla' },
+  { to: '/glosario', key: 'nav.glosario' },
+  { to: '/ayuda', key: 'nav.ayuda' },
 ] as const;
 
 function navClassName({ isActive }: { isActive: boolean }) {
@@ -44,7 +46,8 @@ export function Header() {
   const toggleTheme = usePreferences((state) => state.toggleTheme);
   const kitCount = useKit((state) => state.ids.length);
   const openDrawer = useKit((state) => state.openDrawer);
-  const nextThemeLabel = theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+  const { t } = useI18n();
+  const nextThemeLabel = theme === 'dark' ? t('header.themeToLight') : t('header.themeToDark');
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -75,21 +78,22 @@ export function Header() {
         <NavLink
           to="/"
           className={`inline-flex min-w-0 shrink items-center text-[color:var(--orbit-text)] ${BAR_CONTROL}`}
-          aria-label="orbitas, ir al inicio"
+          aria-label={t('a11y.homeLogo')}
           onClick={() => setMenuOpen(false)}
         >
           <OrbitasLogo className={`${BAR_CONTROL} w-auto max-w-[min(46vw,220px)]`} />
         </NavLink>
 
-        <div className="flex shrink-0 items-center gap-2" role="toolbar" aria-label="Acciones">
-          <button type="button" onClick={openDrawer} className={toolBtn} aria-label="Abrir mi kit">
-            Mi kit
+        <div className="flex shrink-0 items-center gap-2" role="toolbar" aria-label={t('a11y.actions')}>
+          <LanguageSwitcher />
+          <button type="button" onClick={openDrawer} className={toolBtn} aria-label={t('header.openKit')}>
+            {t('header.myKit')}
             <span className="inline-grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-1 text-xs font-bold text-white">
               {kitCount}
             </span>
           </button>
           <button type="button" onClick={toggleTheme} className={toolBtn} aria-label={nextThemeLabel}>
-            {theme === 'dark' ? 'Claro' : 'Oscuro'}
+            {theme === 'dark' ? t('header.light') : t('header.dark')}
           </button>
           <button
             type="button"
@@ -99,7 +103,7 @@ export function Header() {
             aria-controls={menuId}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            {menuOpen ? t('header.closeMenu') : t('header.openMenu')}
           </button>
         </div>
       </div>
@@ -112,7 +116,7 @@ export function Header() {
         >
           <nav
             className="mx-auto grid w-full max-w-[1220px] gap-1 px-4 py-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-3"
-            aria-label="Secciones"
+            aria-label={t('a11y.sections')}
           >
             {NAV_ITEMS.map((item) => (
               <NavLink
@@ -122,7 +126,7 @@ export function Header() {
                 className={navClassName}
                 onClick={() => setMenuOpen(false)}
               >
-                {item.label}
+                {t(item.key)}
               </NavLink>
             ))}
           </nav>

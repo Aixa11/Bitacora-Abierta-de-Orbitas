@@ -1,11 +1,6 @@
 import type { Herramienta } from '../../content/schema';
-import {
-  ACCESO_LABELS,
-  CATEGORIA_LABELS,
-  NIVEL_LABELS,
-  ORIGEN_LABELS,
-  TIPO_LABELS,
-} from '../../lib/bitacora/labels';
+import { useI18n } from '../../i18n/useI18n';
+import { useBitacoraLabels } from '../../lib/bitacora/useLabels';
 import { useKit } from '../../store/kit';
 import { LegalDot } from './LegalDot';
 
@@ -16,21 +11,23 @@ type ToolTableProps = {
 export function ToolTable({ tools }: ToolTableProps) {
   const ids = useKit((state) => state.ids);
   const toggle = useKit((state) => state.toggle);
+  const { t } = useI18n();
+  const labels = useBitacoraLabels();
 
   return (
     <div className="card-orbit overflow-x-auto">
       <table className="min-w-full border-collapse text-left text-sm">
-        <caption className="sr-only">Tabla de herramientas filtradas</caption>
+        <caption className="sr-only">{t('labels.view.tabla')}</caption>
         <thead>
           <tr className="border-b border-[color:var(--orbit-line)] font-mono text-[0.65rem] uppercase tracking-[0.16em] text-[color:var(--orbit-muted)]">
-            <th className="px-4 py-3 font-medium">Nombre</th>
+            <th className="px-4 py-3 font-medium">{labels.sort.nombre}</th>
             <th className="px-4 py-3 font-medium">Origen</th>
             <th className="px-4 py-3 font-medium">Para qué</th>
             <th className="px-4 py-3 font-medium">Tipo</th>
             <th className="px-4 py-3 font-medium">Acceso</th>
-            <th className="px-4 py-3 font-medium">Nivel</th>
+            <th className="px-4 py-3 font-medium">{labels.sort.nivel}</th>
             <th className="px-4 py-3 font-medium">Legal</th>
-            <th className="px-4 py-3 font-medium">Acciones</th>
+            <th className="px-4 py-3 font-medium">{t('a11y.actions')}</th>
           </tr>
         </thead>
         <tbody>
@@ -42,11 +39,11 @@ export function ToolTable({ tools }: ToolTableProps) {
                   <div className="font-semibold">{tool.nombre}</div>
                   <div className="text-xs text-[color:var(--orbit-muted)]">{tool.organizacion}</div>
                 </td>
-                <td className="px-4 py-3">{ORIGEN_LABELS[tool.origen]}</td>
-                <td className="px-4 py-3">{CATEGORIA_LABELS[tool.categoria]}</td>
-                <td className="px-4 py-3">{TIPO_LABELS[tool.tipo]}</td>
-                <td className="px-4 py-3">{ACCESO_LABELS[tool.acceso]}</td>
-                <td className="px-4 py-3">{NIVEL_LABELS[tool.nivel]}</td>
+                <td className="px-4 py-3">{labels.origen[tool.origen]}</td>
+                <td className="px-4 py-3">{labels.categoria[tool.categoria]}</td>
+                <td className="px-4 py-3">{labels.tipo[tool.tipo]}</td>
+                <td className="px-4 py-3">{labels.acceso[tool.acceso]}</td>
+                <td className="px-4 py-3">{labels.nivel[tool.nivel]}</td>
                 <td className="px-4 py-3">
                   <LegalDot legal={tool.legal} />
                 </td>
@@ -58,7 +55,7 @@ export function ToolTable({ tools }: ToolTableProps) {
                       rel="noopener noreferrer"
                       className="underline-offset-2 hover:underline"
                     >
-                      Abrir
+                      {t('common.openOfficial')}
                     </a>
                     <button
                       type="button"
@@ -66,7 +63,7 @@ export function ToolTable({ tools }: ToolTableProps) {
                       onClick={() => toggle(tool.id)}
                       className="font-semibold"
                     >
-                      {inKit ? 'En kit' : '+ Kit'}
+                      {inKit ? t('common.removeFromKit') : t('common.addToKit')}
                     </button>
                   </div>
                 </td>

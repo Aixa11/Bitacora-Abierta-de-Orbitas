@@ -1,7 +1,9 @@
 import type { Acceso, Categoria, Herramienta, Legal, Nivel, Origen, TipoHerramienta } from '../../content/schema';
+import { useI18n } from '../../i18n/useI18n';
 import type { BitacoraFilters } from '../../lib/bitacora/filters';
 import { countByFacet, facetOptions } from '../../lib/bitacora/filters';
 import type { SortMode, ViewMode } from '../../lib/bitacora/labels';
+import { useBitacoraLabels } from '../../lib/bitacora/useLabels';
 
 type FilterBarProps = {
   tools: Herramienta[];
@@ -15,6 +17,7 @@ type FilterBarProps = {
 
 type FacetKey = 'categoria' | 'origen' | 'tipo' | 'acceso' | 'nivel' | 'legal';
 
+/** Encabezados de fila (cortos; se mantienen alineados al seed en español). */
 const FACET_ROWS: Array<{ key: FacetKey; label: string }> = [
   { key: 'categoria', label: 'Para qué' },
   { key: 'origen', label: 'Origen' },
@@ -65,17 +68,20 @@ export function FilterBar({
   onVistaChange,
   onClear,
 }: FilterBarProps) {
+  const { t } = useI18n();
+  const labels = useBitacoraLabels();
+
   return (
     <div className="card-orbit mb-6 grid gap-4 p-5">
       <label className="flex items-center gap-3 rounded-2xl border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 py-3">
-        <span className="sr-only">Buscar herramientas</span>
+        <span className="sr-only">{t('common.search')}</span>
         <input
           type="search"
           value={filters.q}
           onChange={(event) => onChange({ ...filters, q: event.target.value })}
-          placeholder="Buscar: radar, incendios, STAC, Python, órbitas…"
+          placeholder={`${t('common.search')}…`}
           className="w-full bg-transparent text-sm outline-none placeholder:text-[color:var(--orbit-muted)]"
-          aria-label="Buscar herramientas"
+          aria-label={t('common.search')}
         />
       </label>
 
@@ -87,7 +93,7 @@ export function FilterBar({
         >
           <span className="label-mono">{row.label}</span>
           <div className="flex flex-wrap gap-2" role="group" aria-label={row.label}>
-            {facetOptions(row.key).map((option) => {
+            {facetOptions(row.key, labels).map((option) => {
               const selected = isSelected(filters, row.key, option.value);
               const count = countByFacet(tools, row.key, option.value);
               return (
@@ -114,11 +120,11 @@ export function FilterBar({
 
       <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[color:var(--orbit-line)] pt-4">
         <p className="text-sm text-[color:var(--orbit-muted)]" aria-live="polite">
-          {resultCount} de {tools.length} herramientas
+          {t('common.resultCount', { count: resultCount, total: tools.length })}
         </p>
         <div className="flex flex-wrap items-center gap-2">
           <label className="flex items-center gap-2 text-sm">
-            <span className="text-[color:var(--orbit-muted)]">Orden</span>
+            <span className="text-[color:var(--orbit-muted)]">{t('common.sortLabel')}</span>
             <select
               value={filters.orden}
               onChange={(event) =>
@@ -126,15 +132,15 @@ export function FilterBar({
               }
               className="rounded-full border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-3 py-1.5"
             >
-              <option value="relevancia">Relevancia</option>
-              <option value="nombre">Nombre</option>
-              <option value="nivel">Nivel</option>
+              <option value="relevancia">{labels.sort.relevancia}</option>
+              <option value="nombre">{labels.sort.nombre}</option>
+              <option value="nivel">{labels.sort.nivel}</option>
             </select>
           </label>
           <div
             className="inline-flex rounded-full border border-[color:var(--orbit-line)] p-1"
             role="group"
-            aria-label="Vista"
+            aria-label={t('common.viewLabel')}
           >
             <button
               type="button"
@@ -145,7 +151,7 @@ export function FilterBar({
                 vista === 'tarjetas' ? 'bg-[color:var(--orbit-chip)] font-semibold' : '',
               ].join(' ')}
             >
-              Tarjetas
+              {labels.view.tarjetas}
             </button>
             <button
               type="button"
@@ -156,7 +162,7 @@ export function FilterBar({
                 vista === 'tabla' ? 'bg-[color:var(--orbit-chip)] font-semibold' : '',
               ].join(' ')}
             >
-              Tabla
+              {labels.view.tabla}
             </button>
           </div>
           <button
@@ -164,7 +170,7 @@ export function FilterBar({
             onClick={onClear}
             className="text-sm font-semibold text-[color:var(--orbit-muted)] underline-offset-2 hover:underline"
           >
-            Limpiar filtros
+            {t('common.clearFilters')}
           </button>
         </div>
       </div>

@@ -1,12 +1,23 @@
 import { LegalDot } from '../components/bitacora/LegalDot';
+import { ContentLocaleNotice } from '../components/layout/ContentLocaleNotice';
 import { REGLAS, REGLAS_INTRO, SEMAFORO } from '../content/reglas';
+import { useI18n } from '../i18n/useI18n';
 
 export function ReglasPage() {
+  const { t } = useI18n();
+
   return (
     <div className="mx-auto max-w-4xl">
-      <p className="label-mono">/ {REGLAS_INTRO.kicker} /</p>
-      <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">{REGLAS_INTRO.titulo}</h1>
-      <p className="mt-3 max-w-prose text-[color:var(--orbit-muted)]">{REGLAS_INTRO.resumen}</p>
+      <header className="space-y-4">
+        <div>
+          <p className="label-mono">/ {REGLAS_INTRO.kicker} /</p>
+          <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
+            {t('pages.reglas.title')}
+          </h1>
+          <p className="mt-3 max-w-prose text-[color:var(--orbit-muted)]">{t('pages.reglas.lead')}</p>
+        </div>
+        <ContentLocaleNotice />
+      </header>
       <p className="mt-3 rounded-2xl border border-orbit-coral/40 bg-orbit-coral/10 px-4 py-3 text-sm">
         {REGLAS_INTRO.aviso}
       </p>

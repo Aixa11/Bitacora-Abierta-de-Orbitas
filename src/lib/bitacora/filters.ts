@@ -85,15 +85,25 @@ export function countByFacet(
   return tools.filter((tool) => tool[key] === value).length;
 }
 
-export function facetOptions(key: FilterKey): Array<{ value: string; label: string }> {
-  const map = {
+export function facetOptions(
+  key: FilterKey,
+  labelMaps?: {
+    categoria: Record<string, string>;
+    origen: Record<string, string>;
+    tipo: Record<string, string>;
+    acceso: Record<string, string>;
+    nivel: Record<string, string>;
+    legal: Record<string, string>;
+  },
+): Array<{ value: string; label: string }> {
+  const map = (labelMaps ?? {
     categoria: CATEGORIA_LABELS,
     origen: ORIGEN_LABELS,
     tipo: TIPO_LABELS,
     acceso: ACCESO_LABELS,
     nivel: NIVEL_LABELS,
     legal: LEGAL_LABELS,
-  }[key];
+  })[key];
 
   return Object.entries(map).map(([value, label]) => ({ value, label }));
 }

@@ -1,16 +1,18 @@
 import { expect, test } from '@playwright/test';
+import { withSpanishLocale } from './locale';
 
 test('filtra la bitácora, agrega al kit y exporta Markdown', async ({ page }) => {
+  await withSpanishLocale(page);
   await page.goto('/bitacora');
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Bitácora de datos y herramientas',
   );
 
-  await page.getByLabel('Buscar herramientas').fill('worldview');
+  await page.getByLabel('Buscar').fill('worldview');
   await expect(page.getByText(/de 123 herramientas/)).toBeVisible();
   await expect(page.getByRole('heading', { name: 'NASA Worldview' })).toBeVisible();
 
-  await page.getByRole('button', { name: '+ Mi kit' }).first().click();
+  await page.getByRole('button', { name: 'Agregar al kit' }).first().click();
   await expect(page.getByRole('button', { name: 'Abrir mi kit' })).toContainText('1');
 
   await page.getByRole('button', { name: 'Abrir mi kit' }).click();
@@ -25,6 +27,7 @@ test('filtra la bitácora, agrega al kit y exporta Markdown', async ({ page }) =
 });
 
 test('los filtros se reflejan en la URL', async ({ page }) => {
+  await withSpanishLocale(page);
   await page.goto('/bitacora');
   await page.getByRole('button', { name: /NASA/ }).first().click();
   await expect(page).toHaveURL(/origen=nasa/);

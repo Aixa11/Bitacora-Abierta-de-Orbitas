@@ -1,19 +1,23 @@
 import { Outlet } from 'react-router-dom';
+import { useI18n } from '../../i18n/useI18n';
 import { usePreferences } from '../../store/preferences';
 import { KitDrawer } from '../kit/KitDrawer';
 import { Footer } from './Footer';
 import { Header } from './Header';
+import { LocaleSync } from './LocaleSync';
 import { ThemeSync } from './ThemeSync';
 
 export function AppLayout() {
   const presentationMode = usePreferences((state) => state.presentationMode);
+  const { t } = useI18n();
 
   return (
     <div className="flex min-h-screen flex-col">
       <ThemeSync />
+      <LocaleSync />
       {!presentationMode ? (
         <a className="skip-link" href="#contenido">
-          Saltar al contenido
+          {t('a11y.skipToContent')}
         </a>
       ) : null}
       {!presentationMode ? <Header /> : null}

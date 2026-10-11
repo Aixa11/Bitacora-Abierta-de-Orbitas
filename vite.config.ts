@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
-import { celestrakProxyPlugin } from './scripts/vite-celestrak-proxy.mjs';
+import { celestrakProxyPlugin } from './scripts/vite-celestrak-proxy';
 
 /** Proxies de desarrollo: hosts externos sin CORS usable desde el navegador.
  *  CelesTrak va por plugin propio (cortocircuito sin spam ETIMEDOUT). */

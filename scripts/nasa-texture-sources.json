@@ -1,0 +1,34 @@
+{
+  "nota": "URLs directas verificadas en eoimages.gsfc.nasa.gov (HEAD 200, 2026-10). Dominio público NASA; citar Visible Earth / Earth Observatory.",
+  "textures": [
+    {
+      "id": "earth-day",
+      "url": "https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg",
+      "filename": "earth-day-source.jpg",
+      "fuente": "NASA Visible Earth · Blue Marble Next Generation (diciembre 2004) · https://visibleearth.nasa.gov/images/73909",
+      "coleccion": "https://visibleearth.nasa.gov/collection/1484/blue-marble"
+    },
+    {
+      "id": "earth-night",
+      "url": "https://eoimages.gsfc.nasa.gov/images/imagerecords/79000/79765/dnb_land_ocean_ice.2012.3600x1800.jpg",
+      "filename": "earth-night-source.jpg",
+      "fuente": "NASA Earth Observatory / Black Marble · Earth at Night 2012 · https://visibleearth.nasa.gov/images/79765",
+      "coleccion": "https://visibleearth.nasa.gov/collection/1484/blue-marble"
+    },
+    {
+      "id": "earth-clouds",
+      "url": "https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57747/cloud_combined_2048.jpg",
+      "filename": "earth-clouds-source.jpg",
+      "fuente": "NASA Visible Earth · Blue Marble clouds (cloud_combined_2048) · https://visibleearth.nasa.gov/images/57747",
+      "coleccion": "https://visibleearth.nasa.gov/collection/1484/blue-marble"
+    }
+  ],
+  "stars": {
+    "coleccion": "https://svs.gsfc.nasa.gov/4851",
+    "nota": "Deep Star Maps 2020 (EXR grandes). La escena usa estrellas procedurales de drei; descarga opcional manual."
+  },
+  "moon": {
+    "coleccion": "https://svs.gsfc.nasa.gov/4720",
+    "nota": "CGI Moon Kit. No se usa en el hero actual."
+  }
+}

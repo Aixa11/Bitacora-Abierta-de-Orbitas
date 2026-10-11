@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Tests
+playwright-report
+test-results
+coverage
+blob-report
+.vite
+lighthouse-report.json
+
+# Texturas NASA (se regeneran con npm run textures / prebuild)
+assets-raw/*
+!assets-raw/.gitkeep
+public/textures/*.webp
+public/textures/*.jpg
+public/textures/*.png
+
+# Copias locales de assets de marca (mantener solo wordmarks limpios)
+public/brand/c__*
+public/brand/*-source.*
+public/brand/*-source.jpg
+public/brand/*-source.png

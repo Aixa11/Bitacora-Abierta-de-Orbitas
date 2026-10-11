@@ -1,0 +1,170 @@
+import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { catalogo, desafios } from '../content/catalog';
+import {
+  countDesafioFacet,
+  EMPTY_DESAFIO_FILTERS,
+  filterDesafios,
+  uniqueFacetValues,
+  type DesafioFilters,
+} from '../lib/desafios/filters';
+
+type FacetKey = 'dificultad' | 'temas' | 'tipo';
+
+const FACETS: Array<{ key: FacetKey; label: string }> = [
+  { key: 'dificultad', label: 'Dificultad' },
+  { key: 'temas', label: 'Temas' },
+  { key: 'tipo', label: 'Tipo' },
+];
+
+function toggleValue(list: string[], value: string): string[] {
+  return list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
+}
+
+export function DesafiosPage() {
+  const [filters, setFilters] = useState<DesafioFilters>(EMPTY_DESAFIO_FILTERS);
+  const filtered = useMemo(() => filterDesafios(desafios, filters), [filters]);
+
+  return (
+    <div>
+      <header className="mb-8 max-w-3xl">
+        <p className="label-mono">/ Desafíos 2026 /</p>
+        <h1 className="mt-3 font-display text-4xl font-bold tracking-tight">
+          Catorce desafíos para pensar
+        </h1>
+        <p className="mt-3 text-[color:var(--orbit-muted)]">
+          Guías para abordar el problema, no para resolverlo. Fuente:{' '}
+          <a
+            href={catalogo.challenges.fuente}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline-offset-2 hover:underline"
+          >
+            spaceappschallenge.org/2026/challenges
+          </a>
+          .
+        </p>
+        <p className="mt-3 rounded-2xl border border-orbit-coral/40 bg-orbit-coral/10 px-4 py-3 text-sm">
+          Esta guía no resuelve el desafío. El trabajo y las ideas son de tu equipo.
+        </p>
+      </header>
+
+      <div className="card-orbit mb-6 grid gap-4 p-5">
+        <label className="flex items-center gap-3 rounded-2xl border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 py-3">
+          <span className="sr-only">Buscar desafíos</span>
+          <input
+            type="search"
+            value={filters.q}
+            onChange={(event) => setFilters({ ...filters, q: event.target.value })}
+            placeholder="Buscar por título, tema o tipo…"
+            className="w-full bg-transparent text-sm outline-none"
+            aria-label="Buscar desafíos"
+          />
+        </label>
+
+        {FACETS.map((facet) => (
+          <div key={facet.key} className="grid gap-2 md:grid-cols-[90px_1fr] md:items-start">
+            <span className="label-mono pt-2">{facet.label}</span>
+            <div className="flex flex-wrap gap-2" role="group" aria-label={facet.label}>
+              {uniqueFacetValues(desafios, facet.key).map((value) => {
+                const selected = filters[facet.key].includes(value);
+                const count = countDesafioFacet(desafios, facet.key, value);
+                return (
+                  <button
+                    key={value}
+                    type="button"
+                    aria-pressed={selected}
+                    onClick={() =>
+                      setFilters({
+                        ...filters,
+                        [facet.key]: toggleValue(filters[facet.key], value),
+                      })
+                    }
+                    className={[
+                      'inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm',
+                      selected
+                        ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
+                        : 'border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)]',
+                    ].join(' ')}
+                  >
+                    {value}
+                    <span className="font-mono text-[0.65rem] opacity-80">{count}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[color:var(--orbit-line)] pt-4">
+          <p className="text-sm text-[color:var(--orbit-muted)]" aria-live="polite">
+            {filtered.length} de {desafios.length} desafíos
+          </p>
+          <button
+            type="button"
+            onClick={() => setFilters(EMPTY_DESAFIO_FILTERS)}
+            className="text-sm font-semibold underline-offset-2 hover:underline"
+          >
+            Limpiar filtros
+          </button>
+        </div>
+      </div>
+
+      {filtered.length === 0 ? (
+        <div className="card-orbit p-8 text-center text-[color:var(--orbit-muted)]">
+          No hay desafíos con esa combinación. Prueba quitando algún filtro.
+        </div>
+      ) : (
+        <div className="grid gap-4 md:grid-cols-2">
+          {filtered.map((desafio) => (
+            <article key={desafio.id} className="card-orbit flex flex-col gap-3 p-5">
+              <p className="label-mono">{desafio.tipo}</p>
+              <h2 className="font-display text-2xl font-bold tracking-tight">
+                <Link to={`/desafios/${desafio.id}`} className="hover:underline">
+                  {desafio.titulo_es}
+                </Link>
+              </h2>
+              <p className="text-sm text-[color:var(--orbit-muted)] line-clamp-4">
+                {desafio.resumen_es}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {desafio.dificultad.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-[color:var(--orbit-line)] px-2 py-0.5 font-mono text-[0.62rem] uppercase tracking-[0.12em]"
+                  >
+                    {item}
+                  </span>
+                ))}
+                {desafio.temas.slice(0, 3).map((tema) => (
+                  <span
+                    key={tema}
+                    className="rounded-full border border-[color:var(--orbit-line)] px-2 py-0.5 text-xs text-[color:var(--orbit-muted)]"
+                  >
+                    {tema}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-auto flex flex-wrap gap-2 pt-2">
+                <Link
+                  to={`/desafios/${desafio.id}`}
+                  className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white"
+                >
+                  Abrir guía
+                </Link>
+                <a
+                  href={desafio.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+                >
+                  Enunciado oficial
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

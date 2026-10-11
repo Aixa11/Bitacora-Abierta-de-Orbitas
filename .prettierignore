@@ -1,0 +1,9 @@
+dist
+node_modules
+reference
+seed
+src/content/tools.json
+src/content/challenges.json
+package-lock.json
+playwright-report
+test-results

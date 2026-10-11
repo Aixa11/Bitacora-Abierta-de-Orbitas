@@ -1,0 +1,33 @@
+---
+description: Reglas permanentes del proyecto Bitácora Space Apps · Órbitas
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Bitácora Space Apps · Órbitas — reglas del proyecto
+
+## Contenido
+- Todo el texto visible está en español neutro, tuteando ("elige", "puedes"). Sin emojis.
+- Nunca inventes URLs, NORAD ID, cifras de misiones ni capas GIBS. Usa seed/tools.json, seed/challenges.json y reference/. Si falta un dato, deja un TODO visible para revisión humana en vez de inventarlo.
+- Las guías de desafíos enseñan a PENSAR. Prohibido proponer soluciones, ideas de producto cerradas o código que resuelva un desafío del Space Apps 2026.
+- Las simulaciones 3D explican conceptos generales y nunca implementan el entregable de un desafío.
+- Cita la fuente de toda cifra técnica: en un campo `fuente` del contenido o en un pie visible.
+
+## Legal
+- No uses logos de la NASA ni del Space Apps. Muestra créditos de las APIs y texturas.
+- Pie fijo: "Guía comunitaria e independiente, sin afiliación oficial con la NASA ni con el NASA Space Apps Challenge."
+- Sin cookies de terceros ni analítica invasiva. Los datos del usuario quedan en localStorage, con un botón para borrarlos.
+
+## Código
+- TypeScript strict, componentes pequeños y accesibles (WCAG 2.2 AA), sin `any`.
+- Las llamadas a APIs externas pasan por src/lib/api/*, con timeout, caché y estados de carga, error y vacío.
+- Escenas 3D con carga diferida, alternativa sin WebGL y soporte de prefers-reduced-motion.
+- Unidades físicas explícitas en los nombres (altitudeKm, periodMin) y constantes en src/lib/physics/constants.ts con su fuente.
+- Cada fase termina con build y tests en verde, y un resumen de cambios.
+
+## Diseño
+- Identidad Órbitas:
+  - oscuro por defecto (#05050A), degradado violeta → azul (#7C3AED → #3B82F6);
+  - aqua (#5FE0FF), coral (#FF8F6B) y lima (#BAF57D);
+  - Space Grotesk, Inter y JetBrains Mono;
+  - tarjetas con borde violeta translúcido y etiquetas mono en mayúsculas.

@@ -1,0 +1,311 @@
+{
+  "version": "2026-10-08",
+  "fuente": "https://www.spaceappschallenge.org/2026/challenges/",
+  "estado": "Resúmenes oficiales publicados el 17 de septiembre de 2026. Los enunciados completos con la pestaña Resources se publican el 28 de octubre de 2026: actualizar 'recursos_oficiales' ese día.",
+  "regla_editorial": "Estas guías enseñan a PENSAR el desafío. No proponen soluciones, arquitecturas finales, ideas de producto cerradas ni código que resuelva el desafío.",
+  "metodo_general": [
+    { "paso": "Entender", "pregunta": "¿Qué pide exactamente el enunciado y qué entrega se espera (app, juego, visualización, historia)?" },
+    { "paso": "Usuario", "pregunta": "¿Para quién es? ¿Qué decisión o aprendizaje le cambia la vida a esa persona?" },
+    { "paso": "Pregunta", "pregunta": "Reformula el desafío como una pregunta concreta: qué, dónde, cuándo y para quién." },
+    { "paso": "Datos", "pregunta": "¿Qué datos de la NASA o de agencias socias lo pueden responder? ¿Qué limitaciones tienen?" },
+    { "paso": "Alcance", "pregunta": "¿Qué es lo mínimo que demuestra la idea en 48 horas? ¿Qué dejas fuera a propósito?" },
+    { "paso": "Historia", "pregunta": "¿Cómo lo cuentas en 30 segundos? ¿Cuál es el 'antes y después' para el usuario?" },
+    { "paso": "Entrega", "pregunta": "¿Citaste todas las fuentes, elegiste licencia y probaste el demo?" }
+  ],
+  "desafios": [
+    {
+      "id": "abandoned-but-not-forgotten",
+      "titulo": "Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars",
+      "titulo_es": "Abandonados pero no olvidados: historias del equipamiento de la NASA en la Luna y Marte",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/abandoned-but-not-forgotten-storytelling-about-nasas-discarded-equipment-on-the-moon-and-mars/",
+      "dificultad": ["Intermedio", "Inicial/Juvenil"],
+      "temas": ["Astrofísica", "Planetas y lunas", "Exploración espacial"],
+      "tipo": "Narrativa y divulgación",
+      "resumen_es": "Desde los años 60, la NASA dejó hardware en la Luna, en Marte y en el espacio profundo: rovers, instrumentos y sondas con distintos niveles de funcionamiento. El desafío es contar la historia de ese equipamiento para acercar a estudiantes en edad escolar al hardware y a la ciencia que hizo posible.",
+      "preguntas_guia": [
+        "¿Qué edad tiene tu público y qué ya sabe? ¿Cómo cambia el lenguaje para 10 o para 16 años?",
+        "¿Qué hace que un objeto 'abandonado' sea interesante: su ciencia, su viaje, su estado actual?",
+        "¿Cómo distingues lo que está confirmado de lo que es interpretación?",
+        "¿Qué formato retiene la atención de ese público: línea de tiempo, mapa, cómic, audio?"
+      ],
+      "conceptos_para_aprender": ["Fases de una misión (lanzamiento, operación, fin de misión)", "Diferencia entre nave operativa, inactiva y fuera de comunicación", "Coordenadas en la Luna y Marte", "Narrativa basada en evidencia"],
+      "donde_explorar": ["nssdca-master-catalog", "nasa-eyes-on-the-solar-system", "moon-trek", "mars-trek", "nasa-image-and-video-library", "planetary-data-system-pds"],
+      "perfiles_utiles": ["Narración y guion", "Diseño e ilustración", "Investigación documental", "Desarrollo web"],
+      "trampas": ["Usar imágenes sin verificar su origen y licencia", "Inventar datos para 'completar' la historia", "Querer cubrir todos los objetos en vez de contar bien unos pocos"],
+      "autoevaluacion": ["¿Un estudiante entiende qué ciencia hizo posible cada equipo?", "¿Cada dato tiene su fuente citada?", "¿La historia funciona sin que tú la expliques?"]
+    },
+    {
+      "id": "be-an-earth-system-trend-detective",
+      "titulo": "Be An Earth System Trend Detective!",
+      "titulo_es": "¡Sé detective de tendencias del sistema Tierra!",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/be-an-earth-system-trend-detective/",
+      "dificultad": ["Avanzado"],
+      "temas": ["Ciencias de la Tierra", "Software"],
+      "tipo": "Análisis de datos y visualización científica",
+      "resumen_es": "Las variables del sistema Tierra cambian en el tiempo, y una misma variable puede subir en una región y bajar en otra. El desafío es encontrar variables medidas por misiones o modelos de la NASA, visualizar su evolución y determinar qué cambia, dónde, cuánto y si ese cambio es estadísticamente significativo.",
+      "preguntas_guia": [
+        "¿Qué variable eliges y por qué es relevante? ¿Con qué resolución espacial y temporal existe?",
+        "¿Qué significa 'significativo' para un científico y cómo lo comunicarías a alguien sin formación estadística?",
+        "¿Cómo separas la tendencia de la estacionalidad y de la variabilidad natural?",
+        "¿Qué pasa en los bordes de tu serie temporal o cuando faltan datos?"
+      ],
+      "conceptos_para_aprender": ["Series temporales", "Estacionalidad y anomalías", "Significancia estadística y tamaño del efecto", "Cubos de datos (tiempo × lat × lon)", "Formatos NetCDF/HDF y Zarr"],
+      "donde_explorar": ["nasa-earthdata-search", "giovanni", "earthaccess", "xarray-rioxarray", "nasa-power", "copernicus-climate-data-store-era5", "pangeo"],
+      "perfiles_utiles": ["Ciencia de datos y estadística", "Ciencias de la Tierra", "Visualización", "Desarrollo de software"],
+      "trampas": ["Confundir correlación con causa", "Ignorar el cambio de sensor o de versión del producto a lo largo de los años", "Mostrar mapas sin indicar la incertidumbre"],
+      "autoevaluacion": ["¿Puedes explicar en una frase qué cambia, dónde y cuánto?", "¿Tu definición de 'significativo' es explícita y reproducible?", "¿Otra persona puede repetir tu análisis con tu documentación?"]
+    },
+    {
+      "id": "build-a-junior-astronaut-mission-trainer",
+      "titulo": "Build a Junior Astronaut Mission Trainer",
+      "titulo_es": "Crea un entrenador de misiones para astronautas junior",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/build-a-junior-astronaut-mission-trainer/",
+      "dificultad": ["Intermedio", "Inicial/Juvenil"],
+      "temas": ["Juegos", "Planetas y lunas", "Software", "Exploración espacial", "Sol"],
+      "tipo": "Juego educativo",
+      "resumen_es": "El contenido STEM espacial suele simplificar demasiado los compromisos de ingeniería de una misión o presentarlos de forma muy compleja. El desafío es diseñar un juego o app donde estudiantes gestionen un puesto lunar o marciano equilibrando soporte vital, blindaje contra radiación, energía y producción de alimentos.",
+      "preguntas_guia": [
+        "¿Qué decisión debe sentirse difícil para el jugador? ¿Qué gana y qué pierde en cada elección?",
+        "¿Qué simplificas a propósito sin volver falso el concepto?",
+        "¿Cómo se entera el jugador de que algo va mal antes de perder?",
+        "¿Cómo validas que un estudiante aprendió algo, no solo que se divirtió?"
+      ],
+      "conceptos_para_aprender": ["Trade-offs de ingeniería", "Presupuestos de energía y masa", "Radiación espacial y blindaje", "Ciclo día/noche en la Luna y Marte", "Diseño de juegos: bucle de juego y retroalimentación"],
+      "donde_explorar": ["nasa-human-research-program", "moon-trek", "mars-trek", "api-nasa-gov-apod-epic-donki-neows", "godot-engine", "three-js"],
+      "perfiles_utiles": ["Diseño de juegos", "Programación", "Docencia o pedagogía", "Arte y sonido"],
+      "trampas": ["Muchas variables y ninguna decisión clara", "Números inventados sin una fuente de referencia", "Tutorial demasiado largo antes de jugar"],
+      "autoevaluacion": ["¿Un estudiante entiende por qué perdió?", "¿Cada recurso del juego se basa en un concepto real citado?", "¿Se puede jugar una partida en menos de 5 minutos?"]
+    },
+    {
+      "id": "clps-lunar-mission-browser",
+      "titulo": "CLPS Lunar Mission Browser",
+      "titulo_es": "Explorador de misiones lunares CLPS",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/clps-lunar-mission-browser/",
+      "dificultad": ["Avanzado", "Intermedio"],
+      "temas": ["Exploración humana", "Luna", "Software", "Exploración espacial"],
+      "tipo": "Herramienta de planificación y visualización",
+      "resumen_es": "Las misiones al polo sur lunar enfrentan restricciones extremas de iluminación y comunicación. Existen herramientas para calcular la posición del Sol y la Tierra en sitios candidatos, pero son complejas. El desafío es crear una herramienta intuitiva para comparar sitios y fechas, visualizando Sol y Tierra respecto del horizonte para evaluar energía y ventanas de comunicación directa con la Tierra.",
+      "preguntas_guia": [
+        "¿Quién usa la herramienta: un planificador, un docente o el público? ¿Qué necesita cada uno?",
+        "¿Por qué el horizonte local importa tanto cerca del polo sur lunar?",
+        "¿Qué significa 'ventana de comunicación' y de qué depende?",
+        "¿Cómo comparas dos sitios de forma justa en la misma escala de tiempo?"
+      ],
+      "conceptos_para_aprender": ["Efemérides y sistemas de referencia", "Elevación y azimut", "Libración lunar", "Modelos de elevación del terreno y horizonte local", "Iluminación y energía solar"],
+      "donde_explorar": ["nasa-clps", "jpl-horizons-api", "naif-spice-toolkit", "moon-trek", "lro-lunar-reconnaissance-orbiter", "skyfield", "cgi-moon-kit"],
+      "perfiles_utiles": ["Ingeniería o física", "Desarrollo de software", "Diseño de interfaces", "Visualización 3D"],
+      "trampas": ["Ignorar el relieve local y asumir horizonte plano", "Mezclar zonas horarias o sistemas de tiempo (UTC vs TDB)", "Interfaz tan compleja como la que se busca simplificar"],
+      "autoevaluacion": ["¿Un docente sin formación técnica puede comparar dos sitios?", "¿Validaste tus cálculos contra una fuente oficial?", "¿Explicas las limitaciones de tus resultados?"]
+    },
+    {
+      "id": "astronaut-health-monitoring",
+      "titulo": "Create Health Monitoring Software for Astronauts on Space Missions",
+      "titulo_es": "Software de monitoreo de salud para astronautas",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/create-health-monitoring-software-for-astronauts-on-space-missions/",
+      "dificultad": ["Intermedio"],
+      "temas": ["Exploración humana", "Software", "Exploración espacial"],
+      "tipo": "Software de apoyo a decisiones",
+      "resumen_es": "Las misiones largas exponen a los astronautas a radiación, aislamiento, gravedad alterada y un entorno cerrado, con riesgos inmunológicos, óseos, cardiovasculares y de salud mental. El desafío es crear software que reúna indicadores de salud y permita a los astronautas evaluar y actuar sobre su estado.",
+      "preguntas_guia": [
+        "¿Qué indicadores son medibles a bordo y cuáles requieren equipos especiales?",
+        "¿Cómo presentas información de salud sin generar ansiedad ni falsas alarmas?",
+        "¿Qué pasa cuando hay demora de comunicación con la Tierra?",
+        "¿Cómo proteges la privacidad de datos tan sensibles?"
+      ],
+      "conceptos_para_aprender": ["Riesgos de salud en vuelos largos", "Indicadores fisiológicos y umbrales", "Diseño centrado en el usuario bajo estrés", "Privacidad y seguridad de datos de salud"],
+      "donde_explorar": ["nasa-human-research-program", "nasa-open-data-portal", "entry-points-to-nasa-science-data"],
+      "perfiles_utiles": ["Salud o biomedicina", "Diseño UX", "Desarrollo de software", "Ciberseguridad"],
+      "trampas": ["Dar diagnósticos médicos en vez de apoyo a la decisión", "Usar datos personales reales", "Interfaces cargadas de números sin jerarquía"],
+      "autoevaluacion": ["¿El astronauta sabe qué hacer después de ver la pantalla?", "¿Usaste solo datos sintéticos o públicos?", "¿Explicas qué NO hace tu software?"]
+    },
+    {
+      "id": "dancing-with-the-sars",
+      "titulo": "Dancing with the SARs",
+      "titulo_es": "Bailando con los SAR",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/dancing-with-the-sars/",
+      "dificultad": ["Avanzado", "Intermedio"],
+      "temas": ["Ciencias de la Tierra"],
+      "tipo": "Aplicación interactiva con datos de radar",
+      "resumen_es": "La superficie terrestre cambia sin parar por procesos naturales y humanos: humedales, incendios, sismos, agricultura, glaciares. El desafío es crear una aplicación interactiva que use datos de radar de la misión NASA-ISRO NISAR para seguir y visualizar uno o más tipos de cambio en lugares del mundo.",
+      "preguntas_guia": [
+        "¿Qué tipo de cambio eliges y por qué el radar lo ve mejor que un sensor óptico?",
+        "¿Qué producto de NISAR corresponde a ese cambio y qué nivel de procesamiento tiene?",
+        "¿Cómo explicas una imagen de radar a alguien que nunca vio una?",
+        "¿Qué fechas comparas y cómo evitas confundir cambio real con ruido (speckle)?"
+      ],
+      "conceptos_para_aprender": ["Radar de apertura sintética (SAR)", "Bandas L y S", "Retrodispersión y speckle", "Polarización", "Interferometría (InSAR)", "Geometría de observación lateral"],
+      "donde_explorar": ["nisar-radar-banda-l-y-s", "asf-data-search-vertex", "asf-search", "hyp3", "opera-agua-cambios-y-deformacion", "esa-snap", "mintpy", "saocom-catalog"],
+      "perfiles_utiles": ["Teledetección o GEOINT", "Programación en Python", "Desarrollo web y mapas", "Comunicación científica"],
+      "trampas": ["Mostrar imágenes SAR crudas sin explicar qué significan los tonos", "Descargar escenas gigantes sin recortar", "Olvidar que NISAR tiene datos públicos desde julio de 2026: revisa su disponibilidad real para tu zona y fechas"],
+      "autoevaluacion": ["¿Un usuario no experto entiende qué cambió?", "¿Justificas por qué usaste radar?", "¿Citas el producto NISAR exacto y su versión?"]
+    },
+    {
+      "id": "field-shift",
+      "titulo": "Field Shift: Adapting Farms with NASA Data",
+      "titulo_es": "Field Shift: adaptar los campos con datos de la NASA",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/field-shift-adapting-farms-with-nasa-data/",
+      "dificultad": ["Avanzado", "Intermedio"],
+      "temas": ["Artes y multimedia", "Ciencias de la Tierra", "Software"],
+      "tipo": "Herramienta de apoyo a decisiones",
+      "resumen_es": "Los agricultores enfrentan cambios de temperatura, lluvia irregular, escasez de agua, clima extremo y suelos degradados. El desafío es crear una herramienta que combine observaciones de la NASA con información local de suelos, cultivos y prioridades del productor para explorar estrategias de rotación que fortalezcan el suelo y adapten el campo.",
+      "preguntas_guia": [
+        "¿Quién es tu agricultor: pequeño productor, cooperativa, técnico extensionista?",
+        "¿Qué variables satelitales se relacionan con la salud del suelo y el agua?",
+        "¿Cómo incorporas lo que el productor sabe y prioriza, no solo lo que mide el satélite?",
+        "¿Cómo comunicas incertidumbre sin que la herramienta pierda utilidad?"
+      ],
+      "conceptos_para_aprender": ["Índices de vegetación (NDVI, EVI)", "Humedad del suelo", "Evapotranspiración", "Rotación de cultivos", "Escalas: píxel vs. lote"],
+      "donde_explorar": ["harmonized-landsat-sentinel-2-hls", "appeears", "nasa-power", "soilgrids", "faostat", "saocom-catalog", "esa-worldcover"],
+      "perfiles_utiles": ["Agronomía", "Ciencia de datos", "Diseño UX", "Desarrollo web"],
+      "trampas": ["Recomendar decisiones agronómicas como si fueran certezas", "Píxeles más grandes que el lote del productor", "Ignorar el conocimiento local"],
+      "autoevaluacion": ["¿El productor entiende qué datos se usaron?", "¿La herramienta permite explorar, no solo dictar?", "¿Las limitaciones están escritas en lenguaje simple?"]
+    },
+    {
+      "id": "flame-in-freefall",
+      "titulo": "Flame in Freefall: AI-Powered Fire Safety Insights from Microgravity Combustion Data",
+      "titulo_es": "Llama en caída libre: seguridad contra incendios con IA y datos de combustión en microgravedad",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/flame-in-freefall-ai-powered-fire-safety-insights-from-microgravity-combustion-data/",
+      "dificultad": ["Avanzado", "Intermedio"],
+      "temas": ["Exploración espacial"],
+      "tipo": "Tablero con IA sobre resultados científicos",
+      "resumen_es": "La NASA estudia hace décadas cómo se comporta el fuego en microgravedad y acumuló muchísimos datos experimentales, difíciles de encontrar y comparar. El desafío es crear un tablero interactivo con IA que resuma, ordene e interprete esos resultados para aportar conocimiento de seguridad contra incendios en la exploración humana.",
+      "preguntas_guia": [
+        "¿Quién consulta el tablero y qué pregunta trae?",
+        "¿Cómo evitas que la IA invente resultados? ¿Cómo muestras de qué experimento sale cada afirmación?",
+        "¿Qué criterio usas para 'ordenar' hallazgos y cómo lo haces transparente?",
+        "¿Qué diferencia hay entre una llama en la Tierra y en microgravedad?"
+      ],
+      "conceptos_para_aprender": ["Combustión en microgravedad", "Búsqueda semántica y RAG", "Trazabilidad de fuentes", "Evaluación de modelos de lenguaje"],
+      "donde_explorar": ["physical-sciences-informatics-psi", "nasa-open-data-portal", "hugging-face", "model-context-protocol-mcp", "langgraph-langchain"],
+      "perfiles_utiles": ["IA y procesamiento de lenguaje", "Física o ingeniería", "Visualización de datos", "Diseño UX"],
+      "trampas": ["Respuestas de IA sin citas verificables", "Licencias de modelos no revisadas", "Tablero lindo sin una pregunta clara"],
+      "autoevaluacion": ["¿Cada afirmación enlaza a su experimento de origen?", "¿Declaraste qué modelos de IA usaste?", "¿Probaste preguntas donde la respuesta correcta es 'no hay datos'?"]
+    },
+    {
+      "id": "harmonization-modis-viirs",
+      "titulo": "Harmonization of MODIS and VIIRS Hot Spots",
+      "titulo_es": "Armonización de focos de calor MODIS y VIIRS",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/harmonization-of-modis-and-viirs-hot-spots/",
+      "dificultad": ["Avanzado", "Intermedio"],
+      "temas": ["Ciencias de la Tierra", "Software"],
+      "tipo": "Aplicación web con datos armonizados",
+      "resumen_es": "Los satélites registran focos de calor activos hace más de 20 años, pero el registro está dividido entre sensores cuyos datos no se comparan directamente. El desafío es crear una aplicación web que armonice esos registros en un calendario de actividad de quema para que equipos de alerta temprana, científicos y gestores del territorio exploren patrones históricos, condiciones inusuales y períodos críticos en un área de interés.",
+      "preguntas_guia": [
+        "¿Por qué MODIS y VIIRS no detectan lo mismo? Piensa en resolución, horario de pasada y algoritmo.",
+        "¿Qué significa 'armonizar' y qué supuestos introduce?",
+        "¿Cómo defines 'inusual' para un área y una época del año?",
+        "¿Qué necesita ver un brigadista o un gestor en los primeros 10 segundos?"
+      ],
+      "conceptos_para_aprender": ["Detección de focos activos", "Resolución espacial (1 km vs 375 m)", "Hora de paso y cobertura diaria", "Climatologías y anomalías", "Sesgo entre sensores"],
+      "donde_explorar": ["nasa-firms-incendios-activos", "nasa-worldview", "nasa-earthdata-search", "geopandas", "deck-gl", "eonet-eventos-naturales"],
+      "perfiles_utiles": ["Teledetección", "Ciencia de datos", "Desarrollo web", "Gestión de emergencias"],
+      "trampas": ["Sumar detecciones de sensores distintos como si fueran equivalentes", "Ignorar quemas agrícolas vs. incendios forestales", "Calendarios sin explicar la metodología"],
+      "autoevaluacion": ["¿Tu método de armonización está documentado y es reproducible?", "¿El usuario puede elegir su área de interés?", "¿Mostraste limitaciones del registro?"]
+    },
+    {
+      "id": "earth-analogs-moon-mars",
+      "titulo": "Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars",
+      "titulo_es": "Identifica lugares de la Tierra análogos a bases lunares y a Marte",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/identify-earth-locations-that-analog-the-permanent-moon-base-locations-and-mars/",
+      "dificultad": ["Avanzado", "Intermedio", "Inicial/Juvenil"],
+      "temas": ["Ciencias de la Tierra", "Planetas y lunas", "Software", "Exploración espacial"],
+      "tipo": "Análisis comparativo multiplanetario",
+      "resumen_es": "Elegir sitios de aterrizaje y bases depende de topografía, geología, ambiente y recursos. Lugares como el desierto de Atacama, el cráter Haughton o el Valle de la Muerte sirven para probar equipos, pero los análogos terrestres no están bien caracterizados. El desafío es usar datos abiertos de la Tierra, la Luna y Marte para identificar y caracterizar nuevos análogos.",
+      "preguntas_guia": [
+        "¿Qué condición quieres imitar: relieve, temperatura, aridez, radiación, tipo de roca?",
+        "¿Cómo comparas variables que se miden distinto en cada cuerpo?",
+        "¿Qué hace que un análogo sea útil para probar equipos o métodos?",
+        "¿Hay análogos en tu propia región (por ejemplo, la Puna o la Patagonia)?"
+      ],
+      "conceptos_para_aprender": ["Sitios análogos", "Modelos de elevación", "Geología planetaria", "Criterios multivariables y ponderación"],
+      "donde_explorar": ["moon-trek", "mars-trek", "pds-geosciences-ode", "usgs-earthexplorer", "esa-worldcover", "nasa-power", "jaxa-earth-api"],
+      "perfiles_utiles": ["Geología o geografía", "SIG y teledetección", "Ciencia de datos", "Comunicación"],
+      "trampas": ["Comparar escalas incompatibles", "Pesos arbitrarios sin justificar", "Olvidar el acceso logístico real al sitio"],
+      "autoevaluacion": ["¿Tus criterios son explícitos y comparables?", "¿Otro equipo llegaría a los mismos sitios con tu método?", "¿Citaste cada dataset planetario?"]
+    },
+    {
+      "id": "martian-map",
+      "titulo": "Interplanetary Survival Guide: Martian Map",
+      "titulo_es": "Guía interplanetaria de supervivencia: mapa marciano",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/interplanetary-survival-guide-martian-map/",
+      "dificultad": ["Intermedio"],
+      "temas": ["Exploración humana", "Marte", "Planetas y lunas", "Software", "Exploración espacial"],
+      "tipo": "Mapa multicapa",
+      "resumen_es": "La NASA explora Marte hace décadas. Los primeros astronautas querrán el mejor mapa posible, con rutas, destinos, condiciones actuales y datos para completar su misión con seguridad. El desafío es crear una vista integrada por capas de un lugar o ruta en Marte, con datos de varias misiones, para planificar una caminata marciana con ciencia nueva.",
+      "preguntas_guia": [
+        "¿Qué necesita saber un astronauta antes de salir y durante la caminata?",
+        "¿Qué capas son esenciales y cuáles son ruido?",
+        "¿Cómo representas pendiente, peligros y puntos de interés científico?",
+        "¿Cómo manejas datos de distintas resoluciones sobre el mismo mapa?"
+      ],
+      "conceptos_para_aprender": ["Cartografía planetaria", "Pendiente y rugosidad", "Proyecciones en Marte", "Diseño de mapas multicapa"],
+      "donde_explorar": ["mars-trek", "pds-geosciences-ode", "planetary-data-system-pds", "openlayers", "cesiumjs", "qgis"],
+      "perfiles_utiles": ["Cartografía o SIG", "Desarrollo web", "Diseño de información", "Geología planetaria"],
+      "trampas": ["Saturar el mapa de capas", "Mezclar sistemas de coordenadas", "Olvidar la escala y la leyenda"],
+      "autoevaluacion": ["¿Un astronauta encuentra su ruta en segundos?", "¿Cada capa dice de qué misión viene?", "¿El mapa funciona en pantallas chicas?"]
+    },
+    {
+      "id": "planet-x-and-spherex",
+      "titulo": "Planet X and SPHEREx",
+      "titulo_es": "Planeta X y SPHEREx",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/",
+      "dificultad": ["Avanzado"],
+      "temas": ["Astrofísica", "Planetas y lunas", "Software"],
+      "tipo": "Herramienta web pública de imágenes astronómicas",
+      "resumen_es": "Desde 2025, SPHEREx mapea todo el cielo cada seis meses en 102 bandas del infrarrojo cercano, con más de mil millones de objetos. Cometas, asteroides, estrellas, enanas marrones e incluso nuevos planetas se revelan al cambiar de posición entre imágenes. El desafío es crear una herramienta web pública para mostrar imágenes de SPHEREx y ver fácilmente cómo cambian con el tiempo.",
+      "preguntas_guia": [
+        "¿Qué significa que un objeto 'se mueva' entre dos imágenes del cielo?",
+        "¿Cómo comparas imágenes tomadas con meses de diferencia?",
+        "¿Qué necesita una persona curiosa para entender lo que ve?",
+        "¿Cómo manejas el volumen de datos sin descargar todo?"
+      ],
+      "conceptos_para_aprender": ["Coordenadas celestes (RA/Dec)", "Formato FITS y WCS", "Espectroscopía por bandas", "Movimiento propio y paralaje", "Servicios de recorte (cutouts)"],
+      "donde_explorar": ["irsa-spherex", "mision-spherex", "nasa-exoplanet-archive-tap", "jpl-ssd-cneos-apis"],
+      "perfiles_utiles": ["Astronomía o física", "Desarrollo web", "Procesamiento de imágenes", "Divulgación"],
+      "trampas": ["Interpretar artefactos de imagen como objetos reales", "Interfaz pensada solo para astrónomos", "No explicar qué banda se está viendo"],
+      "autoevaluacion": ["¿Alguien sin formación ve un cambio y entiende qué es?", "¿Indicas fecha, banda y coordenadas de cada imagen?", "¿La herramienta carga rápido?"]
+    },
+    {
+      "id": "space-mission-design-game",
+      "titulo": "Space Mission Design Game",
+      "titulo_es": "Juego de diseño de misiones espaciales",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/space-mission-design-game/",
+      "dificultad": ["Intermedio", "Inicial/Juvenil"],
+      "temas": ["Juegos"],
+      "tipo": "Juego de simulación",
+      "resumen_es": "Diseñar una misión exige equilibrar objetivos, diseño de la nave, instrumentos, lanzador, presupuesto, energía, masa, comunicaciones y restricciones orbitales. El desafío es crear un juego interactivo para diseñar, gestionar y simular una misión completa tomando decisiones de ingeniería y viendo cómo cada elección afecta el resultado.",
+      "preguntas_guia": [
+        "¿Qué fase de la misión haces jugable: concepto, diseño, lanzamiento, operación?",
+        "¿Qué restricciones reales (masa, energía, órbita) quieres que el jugador sienta?",
+        "¿Cómo muestras la consecuencia de una decisión sin un texto largo?",
+        "¿Qué modelo físico simplificado es suficientemente honesto?"
+      ],
+      "conceptos_para_aprender": ["Ecuación del cohete", "Tipos de órbita (LEO, SSO, GEO)", "Leyes de Kepler", "Presupuesto de enlace", "Diseño de juegos y balance"],
+      "donde_explorar": ["celestrak", "skyfield", "nasa-eyes-on-the-solar-system", "three-js", "godot-engine"],
+      "perfiles_utiles": ["Diseño de juegos", "Ingeniería aeroespacial", "Programación", "Arte"],
+      "trampas": ["Física inventada que contradice lo básico", "Demasiadas opciones al inicio", "Sin rejugabilidad"],
+      "autoevaluacion": ["¿El jugador aprende un trade-off real?", "¿Tus fórmulas están citadas?", "¿Se entiende el objetivo sin instrucciones?"]
+    },
+    {
+      "id": "earth-information-jukebox",
+      "titulo": "The Earth Information Jukebox",
+      "titulo_es": "La rocola de información de la Tierra",
+      "url": "https://www.spaceappschallenge.org/2026/challenges/the-earth-information-jukebox/",
+      "dificultad": ["Intermedio", "Inicial/Juvenil"],
+      "temas": ["Artes y multimedia", "Ciencias de la Tierra", "Software"],
+      "tipo": "Sonificación de datos",
+      "resumen_es": "El Earth Information Center (EIC) de la NASA produce visualizaciones del planeta, pero la vista sola limita a quién llegan. El desafío es crear una 'rocola' de la Tierra: una interfaz, script o aplicación que acompañe fotogramas visuales del EIC con sonificaciones dinámicas generadas en tiempo real.",
+      "preguntas_guia": [
+        "¿Qué variable del fotograma se convierte en qué cualidad del sonido (tono, ritmo, volumen, timbre)?",
+        "¿Cómo logras que el sonido informe y no solo decore?",
+        "¿Qué necesita una persona con baja visión para entender el cambio?",
+        "¿Cómo evitas que el sonido resulte molesto después de un minuto?"
+      ],
+      "conceptos_para_aprender": ["Sonificación de datos", "Mapeo dato → parámetro sonoro", "Web Audio API", "Accesibilidad multisensorial"],
+      "donde_explorar": ["earth-information-center-svs", "earth-gov", "nasa-scientific-visualization-studio", "tone-js"],
+      "perfiles_utiles": ["Música o diseño sonoro", "Programación", "Accesibilidad", "Ciencias de la Tierra"],
+      "trampas": ["Mapeos arbitrarios imposibles de interpretar", "Sin leyenda auditiva", "Latencia alta entre imagen y sonido"],
+      "autoevaluacion": ["¿Alguien con los ojos cerrados percibe el cambio?", "¿Explicas tu mapeo?", "¿Citaste cada visualización del EIC?"]
+    }
+  ]
+}

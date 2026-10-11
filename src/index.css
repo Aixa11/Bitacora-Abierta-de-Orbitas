@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme='dark'] {
+  --orbit-bg: #05050a;
+  --orbit-surface: rgba(22, 16, 42, 0.72);
+  --orbit-surface-strong: #12101f;
+  --orbit-text: #eceaf6;
+  --orbit-muted: #a4a0bd;
+  --orbit-line: rgba(124, 58, 237, 0.28);
+  --orbit-chip: rgba(255, 255, 255, 0.06);
+  --orbit-grad:
+    radial-gradient(circle at 12% 8%, rgba(124, 58, 237, 0.22), transparent 28%),
+    radial-gradient(circle at 88% 0%, rgba(59, 130, 246, 0.18), transparent 26%),
+    radial-gradient(circle at 50% 70%, rgba(95, 224, 255, 0.06), transparent 32%),
+    linear-gradient(180deg, #05050a 0%, #0a0a16 50%, #05050a 100%);
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --orbit-bg: #f2f0f6;
+  --orbit-surface: rgba(255, 255, 255, 0.78);
+  --orbit-surface-strong: #ffffff;
+  --orbit-text: #181726;
+  --orbit-muted: #5f5b73;
+  --orbit-line: rgba(124, 58, 237, 0.18);
+  --orbit-chip: rgba(255, 255, 255, 0.7);
+  --orbit-grad:
+    radial-gradient(circle at 12% 8%, rgba(124, 58, 237, 0.16), transparent 28%),
+    radial-gradient(circle at 88% 0%, rgba(59, 130, 246, 0.14), transparent 26%),
+    radial-gradient(circle at 50% 70%, rgba(95, 224, 255, 0.1), transparent 32%),
+    linear-gradient(180deg, #f5f2f7 0%, #eeebf8 45%, #f4f1f6 100%);
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, system-ui, sans-serif;
+    color: var(--orbit-text);
+    background: var(--orbit-grad);
+    background-attachment: fixed;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply absolute left-[-999px] top-0 z-[100] rounded-br-lg bg-orbit-text px-4 py-2 text-orbit-bg;
+  }
+
+  .skip-link:focus {
+    @apply left-0;
+  }
+
+  .label-mono {
+    @apply font-mono text-[0.68rem] uppercase tracking-[0.22em] text-orbit-muted;
+  }
+
+  .card-orbit {
+    @apply rounded-card border border-[color:var(--orbit-line)] bg-[color:var(--orbit-surface)] shadow-[0_10px_30px_rgba(42,34,88,0.12)] backdrop-blur-xl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

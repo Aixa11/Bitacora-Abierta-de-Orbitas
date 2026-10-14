@@ -84,12 +84,8 @@ export function AyudaPage() {
             key={s.id}
             href={`#${s.id}`}
             onClick={() => setSection(s.id)}
-            className={[
-              'rounded-full border px-3 py-1.5 text-sm font-semibold',
-              section === s.id
-                ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                : 'border-[color:var(--orbit-line)] text-[color:var(--orbit-muted)]',
-            ].join(' ')}
+            className="btn-orbit-toggle"
+            data-active={section === s.id ? 'true' : 'false'}
           >
             {s.label}
           </a>
@@ -152,7 +148,7 @@ export function AyudaPage() {
                   <Link
                     key={e.to}
                     to={e.to}
-                    className="rounded-full border border-[color:var(--orbit-line)] px-3 py-1 text-sm font-semibold"
+                    className="btn-orbit-md btn-orbit-outline"
                   >
                     {e.label}
                   </Link>
@@ -194,12 +190,7 @@ export function AyudaPage() {
               type="button"
               aria-pressed={doc.id === estudio?.id}
               onClick={() => setEstudioId(doc.id)}
-              className={[
-                'rounded-full border px-3 py-1.5 text-sm font-semibold',
-                doc.id === estudio?.id
-                  ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                  : 'border-[color:var(--orbit-line)]',
-              ].join(' ')}
+              className="btn-orbit-toggle"
             >
               {doc.titulo}
             </button>
@@ -228,13 +219,13 @@ export function AyudaPage() {
                 href={estudioTool.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white"
+                className="btn-orbit-lg btn-orbit-primary"
               >
                 Abrir documento / portal NASA
               </a>
               <Link
                 to={`/bitacora?q=${encodeURIComponent(estudioTool.nombre)}`}
-                className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+                className="btn-orbit-lg btn-orbit-outline"
               >
                 Ver en la Bitácora
               </Link>
@@ -259,12 +250,7 @@ export function AyudaPage() {
               type="button"
               aria-pressed={m.id === mundo?.id}
               onClick={() => setMundoId(m.id)}
-              className={[
-                'rounded-full border px-3 py-1.5 text-sm font-semibold',
-                m.id === mundo?.id
-                  ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                  : 'border-[color:var(--orbit-line)]',
-              ].join(' ')}
+              className="btn-orbit-toggle"
             >
               {m.titulo}
             </button>
@@ -274,7 +260,7 @@ export function AyudaPage() {
           <article className="card-orbit space-y-4 p-6" aria-live="polite">
             <h3 className="font-display text-2xl font-bold">{mundo.titulo}</h3>
             <p className="text-[color:var(--orbit-muted)]">{mundo.fenomeno}</p>
-            <p className="rounded-2xl border border-[color:var(--orbit-line)] px-4 py-3 text-sm">
+            <p className="panel-inset px-4 py-3 text-sm">
               <strong>Pregunta para pensar: </strong>
               {mundo.pregunta}
             </p>
@@ -294,7 +280,7 @@ export function AyudaPage() {
               {gibs ? (
                 <Link
                   to="/laboratorio"
-                  className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white"
+                  className="btn-orbit-lg btn-orbit-primary"
                 >
                   Abrir laboratorio (mapas NASA)
                 </Link>
@@ -302,14 +288,14 @@ export function AyudaPage() {
               {topic ? (
                 <Link
                   to="/sensores"
-                  className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+                  className="btn-orbit-lg btn-orbit-outline"
                 >
                   Sensores · {topic.titulo}
                 </Link>
               ) : null}
               <Link
                 to="/"
-                className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+                className="btn-orbit-lg btn-orbit-outline"
               >
                 Hero 3D / texturas
               </Link>
@@ -345,7 +331,7 @@ export function AyudaPage() {
               <p className="mt-2 flex-1 text-sm text-[color:var(--orbit-muted)]">{p.descripcion}</p>
               <button
                 type="button"
-                className="mt-4 rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+                className="btn-orbit-lg btn-orbit-outline mt-4"
                 onClick={() => downloadMarkdown(p.filename, p.markdown)}
               >
                 Descargar .md

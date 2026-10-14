@@ -28,7 +28,7 @@ export function DesafioDetailPage() {
         </p>
         <Link
           to="/desafios"
-          className="mt-6 inline-flex rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-5 py-3 text-sm font-semibold text-white"
+          className="btn-orbit-xl btn-orbit-primary mt-6"
         >
           Ver desafíos
         </Link>
@@ -62,7 +62,7 @@ export function DesafioDetailPage() {
       <p className="mt-2 text-sm text-[color:var(--orbit-muted)]">{desafio.titulo}</p>
 
       <div
-        className="mt-4 rounded-2xl border border-orbit-coral/50 bg-orbit-coral/15 px-4 py-3 text-sm"
+        className="callout-coral mt-4"
         role="note"
       >
         <strong>Aviso:</strong> Esta guía no resuelve el desafío. El trabajo y las ideas son de tu
@@ -81,7 +81,7 @@ export function DesafioDetailPage() {
               <li key={m.id}>
                 <Link
                   to="/ayuda#mundo"
-                  className="rounded-full border border-[color:var(--orbit-line)] px-3 py-1 font-semibold"
+                  className="btn-orbit-sm btn-orbit-outline font-semibold"
                 >
                   {m.titulo}
                 </Link>
@@ -96,13 +96,13 @@ export function DesafioDetailPage() {
       ) : null}
 
       <div className="mt-4 flex flex-wrap gap-2 text-sm">
-        <span className="rounded-full border border-[color:var(--orbit-line)] px-3 py-1">
+        <span className="chip-orbit px-3 py-1">
           {desafio.tipo}
         </span>
         {desafio.dificultad.map((item) => (
           <span
             key={item}
-            className="rounded-full border border-[color:var(--orbit-line)] px-3 py-1 font-mono text-xs uppercase tracking-[0.14em]"
+            className="chip-orbit"
           >
             {item}
           </span>
@@ -122,27 +122,27 @@ export function DesafioDetailPage() {
           href={desafio.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white"
+          className="btn-orbit-lg btn-orbit-primary"
         >
           Enunciado oficial (inglés)
         </a>
         <button
           type="button"
           onClick={addGuideToolsToKit}
-          className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+          className="btn-orbit-lg btn-orbit-outline"
         >
           Agregar recursos de esta guía a Mi kit
         </button>
         <button
           type="button"
           onClick={exportNotes}
-          className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+          className="btn-orbit-lg btn-orbit-outline"
         >
           Exportar notas a Markdown
         </button>
         <Link
           to="/desafios"
-          className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+          className="btn-orbit-lg btn-orbit-outline"
         >
           Volver al listado
         </Link>
@@ -263,7 +263,7 @@ export function DesafioDetailPage() {
           {desafio.perfiles_utiles.map((perfil) => (
             <li
               key={perfil}
-              className="rounded-full border border-[color:var(--orbit-line)] px-3 py-1 text-sm"
+              className="btn-orbit-sm btn-orbit-outline"
             >
               {perfil}
             </li>
@@ -284,7 +284,7 @@ export function DesafioDetailPage() {
         <h2 className="font-display text-2xl font-bold">Autoevaluación antes de entregar</h2>
         <ul className="mt-3 space-y-2">
           {desafio.autoevaluacion.map((item) => (
-            <li key={item} className="rounded-2xl border border-[color:var(--orbit-line)] px-3 py-2 text-sm">
+            <li key={item} className="panel-inset px-3 py-2 text-sm">
               {item}
             </li>
           ))}

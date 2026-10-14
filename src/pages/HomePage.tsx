@@ -17,7 +17,7 @@ export function HomePage() {
           <p className="label-mono">{t('home.eyebrow')}</p>
           <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
             {t('home.titleBefore')}{' '}
-            <span className="bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orbit-violet to-orbit-blue bg-clip-text text-transparent">
               {t('home.titleHighlight')}
             </span>
           </h1>
@@ -25,31 +25,31 @@ export function HomePage() {
           <div className="flex flex-wrap gap-3">
             <Link
               to="/ruta"
-              className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-5 py-3 text-sm font-semibold text-white"
+              className="btn-orbit-xl btn-orbit-primary"
             >
               {t('home.ctaRuta')}
             </Link>
             <Link
               to="/ayuda"
-              className="rounded-full border border-[color:var(--orbit-line)] px-5 py-3 text-sm font-semibold"
+              className="btn-orbit-xl btn-orbit-outline"
             >
               {t('home.ctaAyuda')}
             </Link>
             <Link
               to="/desafios"
-              className="rounded-full border border-[color:var(--orbit-line)] px-5 py-3 text-sm font-semibold"
+              className="btn-orbit-xl btn-orbit-outline"
             >
               {t('home.ctaDesafios')}
             </Link>
             <Link
               to="/sensores"
-              className="rounded-full border border-[color:var(--orbit-line)] px-5 py-3 text-sm font-semibold"
+              className="btn-orbit-xl btn-orbit-outline"
             >
               {t('home.ctaSensores')}
             </Link>
             <Link
               to="/ia"
-              className="rounded-full border border-[color:var(--orbit-line)] px-5 py-3 text-sm font-semibold"
+              className="btn-orbit-xl btn-orbit-outline"
             >
               {t('nav.ia')}
             </Link>

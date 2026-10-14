@@ -28,13 +28,13 @@ export function CharlaPage() {
       <div className="mt-8 flex flex-wrap gap-3">
         <Link
           to="/ayuda"
-          className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-5 py-3 text-sm font-semibold text-white"
+          className="btn-orbit-xl btn-orbit-primary"
         >
           {t('nav.ayuda')}
         </Link>
         <Link
           to="/"
-          className="rounded-full border border-[color:var(--orbit-line)] px-5 py-3 text-sm font-semibold"
+          className="btn-orbit-xl btn-orbit-outline"
         >
           {t('nav.home')}
         </Link>

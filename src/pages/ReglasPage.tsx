@@ -18,7 +18,7 @@ export function ReglasPage() {
         </div>
         <ContentLocaleNotice />
       </header>
-      <p className="mt-3 rounded-2xl border border-orbit-coral/40 bg-orbit-coral/10 px-4 py-3 text-sm">
+      <p className="callout-coral mt-3">
         {REGLAS_INTRO.aviso}
       </p>
 
@@ -40,7 +40,7 @@ export function ReglasPage() {
       <div className="mt-8 grid gap-4">
         {REGLAS.map((regla) => (
           <article key={regla.letra} className="card-orbit p-5">
-            <span className="inline-grid h-8 w-8 place-items-center rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] font-mono text-sm font-bold text-white">
+            <span className="inline-grid h-8 w-8 place-items-center rounded-full bg-gradient-to-r from-orbit-violet to-orbit-blue font-mono text-sm font-bold text-white">
               {regla.letra}
             </span>
             <h2 className="mt-3 font-display text-2xl font-bold">{regla.titulo}</h2>

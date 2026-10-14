@@ -61,7 +61,7 @@ export function KitDrawer() {
             ref={closeRef}
             type="button"
             onClick={closeDrawer}
-            className="rounded-full border border-[color:var(--orbit-line)] px-3 py-2 text-sm"
+            className="btn-orbit-md btn-orbit-outline"
           >
             Cerrar
           </button>
@@ -76,7 +76,7 @@ export function KitDrawer() {
             items.map((tool) => (
               <li
                 key={tool.id}
-                className="flex items-center gap-3 rounded-2xl border border-[color:var(--orbit-line)] px-3 py-3"
+                className="panel-inset flex items-center gap-3 px-3 py-3"
               >
                 <LegalDot legal={tool.legal} />
                 <div className="min-w-0 flex-1">
@@ -89,7 +89,7 @@ export function KitDrawer() {
                   type="button"
                   aria-label={`Quitar ${tool.nombre}`}
                   onClick={() => remove(tool.id)}
-                  className="rounded-full border border-[color:var(--orbit-line)] px-2 py-1 text-sm"
+                  className="btn-orbit-sm btn-orbit-outline"
                 >
                   Quitar
                 </button>
@@ -113,7 +113,7 @@ export function KitDrawer() {
                   'text/markdown;charset=utf-8',
                 )
               }
-              className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-3 py-2 text-sm font-semibold text-white disabled:opacity-40"
+              className="rounded-full bg-gradient-to-r from-orbit-violet to-orbit-blue px-3 py-2 text-sm font-semibold text-white disabled:opacity-40"
             >
               Markdown
             </button>
@@ -127,7 +127,7 @@ export function KitDrawer() {
                   'application/json;charset=utf-8',
                 )
               }
-              className="rounded-full border border-[color:var(--orbit-line)] px-3 py-2 text-sm font-semibold disabled:opacity-40"
+              className="btn-orbit-md btn-orbit-outline disabled:opacity-40"
             >
               JSON
             </button>
@@ -141,7 +141,7 @@ export function KitDrawer() {
                   'application/x-bibtex;charset=utf-8',
                 )
               }
-              className="rounded-full border border-[color:var(--orbit-line)] px-3 py-2 text-sm font-semibold disabled:opacity-40"
+              className="btn-orbit-md btn-orbit-outline disabled:opacity-40"
             >
               BibTeX
             </button>
@@ -149,7 +149,7 @@ export function KitDrawer() {
               type="button"
               disabled={items.length === 0}
               onClick={clear}
-              className="rounded-full border border-[color:var(--orbit-line)] px-3 py-2 text-sm disabled:opacity-40"
+              className="btn-orbit-md btn-orbit-outline disabled:opacity-40"
             >
               Vaciar kit
             </button>

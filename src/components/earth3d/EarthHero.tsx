@@ -251,10 +251,8 @@ export function EarthHero() {
                   aria-pressed={speed === value}
                   onClick={() => setSpeedNow(value)}
                   className={[
-                    'rounded-full border px-2.5 py-1 text-[0.7rem] font-semibold sm:px-3 sm:text-xs',
-                    speed === value
-                      ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                      : 'border-[color:var(--orbit-line)]',
+                    'btn-orbit-sm',
+                    speed === value ? 'btn-orbit-primary' : 'btn-orbit-outline',
                   ].join(' ')}
                 >
                   {value === 0 ? 'Pausa' : `×${value}`}
@@ -262,7 +260,7 @@ export function EarthHero() {
               ))}
               <button
                 type="button"
-                className="rounded-full border border-[color:var(--orbit-line)] px-2.5 py-1 text-[0.7rem] sm:px-3 sm:text-xs"
+                className="btn-orbit-sm btn-orbit-outline"
                 onClick={jumpToNow}
                 title="Saltar al instante actual y volver a ×1"
               >
@@ -270,7 +268,7 @@ export function EarthHero() {
               </button>
               <button
                 type="button"
-                className="rounded-full border border-[color:var(--orbit-line)] px-2.5 py-1 text-[0.7rem] sm:px-3 sm:text-xs"
+                className={['btn-orbit-sm', bloom ? 'btn-orbit-primary' : 'btn-orbit-outline'].join(' ')}
                 aria-pressed={bloom}
                 onClick={() => setBloom((v) => !v)}
               >
@@ -278,7 +276,10 @@ export function EarthHero() {
               </button>
               <button
                 type="button"
-                className="rounded-full border border-[color:var(--orbit-line)] px-2.5 py-1 text-[0.7rem] sm:px-3 sm:text-xs"
+                className={[
+                  'btn-orbit-sm',
+                  quality === '4k' ? 'btn-orbit-primary' : 'btn-orbit-outline',
+                ].join(' ')}
                 aria-pressed={quality === '4k'}
                 onClick={toggleQuality}
                 title="Alterna resolución de textura (2k ↔ 4k)"
@@ -316,7 +317,7 @@ export function EarthHero() {
                   {selected.bitacoraToolId ? (
                     <Link
                       to={`/bitacora?q=${encodeURIComponent(selected.nombre)}`}
-                      className="rounded-full border border-[color:var(--orbit-line)] px-3 py-1.5 text-sm font-semibold"
+                      className="btn-orbit-md btn-orbit-outline"
                     >
                       Ver en la Bitácora
                     </Link>
@@ -324,7 +325,7 @@ export function EarthHero() {
                   {selected.gibsLayerId ? (
                     <Link
                       to="/laboratorio"
-                      className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-3 py-1.5 text-sm font-semibold text-white"
+                      className="rounded-full bg-gradient-to-r from-orbit-violet to-orbit-blue px-3 py-1.5 text-sm font-semibold text-white"
                     >
                       Ver qué observa hoy
                     </Link>

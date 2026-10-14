@@ -31,13 +31,7 @@ function navClassName({ isActive }: { isActive: boolean }) {
   ].join(' ');
 }
 
-/** Altura única de logo y botones en toda la barra (todas las rutas). */
 const BAR_CONTROL = 'h-11';
-
-const toolBtn = [
-  'inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 text-sm font-semibold text-[color:var(--orbit-text)] transition-colors hover:border-[color:color-mix(in_srgb,var(--orbit-line)_80%,#7C3AED)]',
-  BAR_CONTROL,
-].join(' ');
 
 export function Header() {
   const menuId = useId();
@@ -87,19 +81,29 @@ export function Header() {
 
         <div className="flex shrink-0 items-center gap-2" role="toolbar" aria-label={t('a11y.actions')}>
           <LanguageSwitcher />
-          <button type="button" onClick={openDrawer} className={toolBtn} aria-label={t('header.openKit')}>
+          <button
+            type="button"
+            onClick={openDrawer}
+            className="btn-orbit-bar btn-orbit-outline"
+            aria-label={t('header.openKit')}
+          >
             {t('header.myKit')}
-            <span className="inline-grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-1 text-xs font-bold text-white">
+            <span className="inline-grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-r from-orbit-violet to-orbit-blue px-1 text-xs font-bold text-white">
               {kitCount}
             </span>
           </button>
-          <button type="button" onClick={toggleTheme} className={toolBtn} aria-label={nextThemeLabel}>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="btn-orbit-bar btn-orbit-outline"
+            aria-label={nextThemeLabel}
+          >
             {theme === 'dark' ? t('header.light') : t('header.dark')}
           </button>
           <button
             type="button"
             data-menu-toggle
-            className={`${toolBtn} border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white hover:border-transparent`}
+            className="btn-orbit-bar btn-orbit-primary"
             aria-expanded={menuOpen}
             aria-controls={menuId}
             onClick={() => setMenuOpen((open) => !open)}

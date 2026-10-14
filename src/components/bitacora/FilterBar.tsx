@@ -73,14 +73,14 @@ export function FilterBar({
 
   return (
     <div className="card-orbit mb-6 grid gap-4 p-5">
-      <label className="flex items-center gap-3 rounded-2xl border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 py-3">
+      <label className="field-orbit">
         <span className="sr-only">{t('common.search')}</span>
         <input
           type="search"
           value={filters.q}
           onChange={(event) => onChange({ ...filters, q: event.target.value })}
           placeholder={`${t('common.search')}…`}
-          className="w-full bg-transparent text-sm outline-none placeholder:text-[color:var(--orbit-muted)]"
+          className="placeholder:text-[color:var(--orbit-muted)]"
           aria-label={t('common.search')}
         />
       </label>
@@ -102,12 +102,7 @@ export function FilterBar({
                   type="button"
                   aria-pressed={selected}
                   onClick={() => onChange(withToggledFacet(filters, row.key, option.value))}
-                  className={[
-                    'inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors duration-orbit',
-                    selected
-                      ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                      : 'border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)]',
-                  ].join(' ')}
+                  className="btn-orbit-toggle"
                 >
                   {option.label}
                   <span className="font-mono text-[0.65rem] opacity-80">{count}</span>
@@ -130,26 +125,19 @@ export function FilterBar({
               onChange={(event) =>
                 onChange({ ...filters, orden: event.target.value as SortMode })
               }
-              className="rounded-full border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-3 py-1.5"
+              className="select-orbit"
             >
               <option value="relevancia">{labels.sort.relevancia}</option>
               <option value="nombre">{labels.sort.nombre}</option>
               <option value="nivel">{labels.sort.nivel}</option>
             </select>
           </label>
-          <div
-            className="inline-flex rounded-full border border-[color:var(--orbit-line)] p-1"
-            role="group"
-            aria-label={t('common.viewLabel')}
-          >
+          <div className="segment-orbit" role="group" aria-label={t('common.viewLabel')}>
             <button
               type="button"
               aria-pressed={vista === 'tarjetas'}
               onClick={() => onVistaChange('tarjetas')}
-              className={[
-                'rounded-full px-3 py-1 text-sm',
-                vista === 'tarjetas' ? 'bg-[color:var(--orbit-chip)] font-semibold' : '',
-              ].join(' ')}
+              className="segment-orbit-btn"
             >
               {labels.view.tarjetas}
             </button>
@@ -157,19 +145,12 @@ export function FilterBar({
               type="button"
               aria-pressed={vista === 'tabla'}
               onClick={() => onVistaChange('tabla')}
-              className={[
-                'rounded-full px-3 py-1 text-sm',
-                vista === 'tabla' ? 'bg-[color:var(--orbit-chip)] font-semibold' : '',
-              ].join(' ')}
+              className="segment-orbit-btn"
             >
               {labels.view.tabla}
             </button>
           </div>
-          <button
-            type="button"
-            onClick={onClear}
-            className="text-sm font-semibold text-[color:var(--orbit-muted)] underline-offset-2 hover:underline"
-          >
+          <button type="button" onClick={onClear} className="link-orbit">
             {t('common.clearFilters')}
           </button>
         </div>

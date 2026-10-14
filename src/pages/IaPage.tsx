@@ -31,7 +31,7 @@ export function IaPage() {
           <p className="mt-3 text-lg text-[color:var(--orbit-muted)]">{t('pages.ia.lead')}</p>
         </div>
         <ContentLocaleNotice />
-        <p className="rounded-2xl border border-orbit-coral/40 bg-orbit-coral/10 px-4 py-3 text-sm">
+        <p className="callout-coral">
           Esta sección orienta: qué hace cada recurso y cómo empezar. No entrega arquitecturas ni
           soluciones de desafío. Cita siempre la licencia y la fuente.
         </p>
@@ -63,7 +63,7 @@ export function IaPage() {
             return (
               <article key={doc.id} className="card-orbit p-6">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.14em]">
+                  <span className="chip-orbit">
                     {FAMILIA_LABEL[doc.familia]}
                   </span>
                   {tool ? (

@@ -15,7 +15,7 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
         value={locale}
         onChange={(event) => setLocale(event.target.value as typeof locale)}
         aria-label={t('a11y.language')}
-        className="h-11 max-w-[9.5rem] cursor-pointer rounded-full border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-3 text-sm font-semibold text-[color:var(--orbit-text)]"
+        className="select-orbit h-11 max-w-[9.5rem] cursor-pointer px-3 font-semibold"
       >
         {LOCALES.map((code) => (
           <option key={code} value={code}>

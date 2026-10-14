@@ -30,7 +30,7 @@ export function ToolCard({ tool }: ToolCardProps) {
   return (
     <article className="card-orbit flex flex-col gap-3 p-5">
       <div className="flex items-start justify-between gap-3">
-        <span className="rounded-full border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.14em]">
+        <span className="chip-orbit">
           {labels.origen[tool.origen]}
         </span>
         <LegalDot legal={tool.legal} />
@@ -45,7 +45,7 @@ export function ToolCard({ tool }: ToolCardProps) {
           <button
             type="button"
             onClick={() => void copySnippet()}
-            className="absolute right-2 top-2 rounded-full border border-[color:var(--orbit-line)] px-2 py-1 text-xs"
+            className="btn-orbit-sm btn-orbit-outline absolute right-2 top-2"
           >
             {copied ? t('common.copied') : t('common.copy')}
           </button>
@@ -63,7 +63,7 @@ export function ToolCard({ tool }: ToolCardProps) {
         ].map((label) => (
           <span
             key={label}
-            className="rounded-full border border-[color:var(--orbit-line)] px-2 py-0.5 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-[color:var(--orbit-muted)]"
+            className="chip-orbit"
           >
             {label}
           </span>
@@ -74,7 +74,7 @@ export function ToolCard({ tool }: ToolCardProps) {
           href={tool.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-[color:var(--orbit-line)] px-3 py-2 text-sm font-semibold"
+          className="btn-orbit-md btn-orbit-outline"
         >
           {t('common.openOfficial')}
         </a>
@@ -82,12 +82,7 @@ export function ToolCard({ tool }: ToolCardProps) {
           type="button"
           aria-pressed={inKit}
           onClick={() => toggle(tool.id)}
-          className={[
-            'rounded-full px-3 py-2 text-sm font-semibold transition-colors duration-orbit',
-            inKit
-              ? 'bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-              : 'border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)]',
-          ].join(' ')}
+          className="btn-orbit-toggle"
         >
           {inKit ? t('common.removeFromKit') : t('common.addToKit')}
         </button>

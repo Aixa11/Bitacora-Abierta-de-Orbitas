@@ -386,7 +386,7 @@ export function LabMap({ onGibsExampleUrlChange }: LabMapProps) {
           />
         </label>
 
-        <div className="rounded-2xl border border-[color:var(--orbit-line)] p-3 text-sm">
+        <div className="panel-inset p-3 text-sm">
           <p className="label-mono">Leyenda</p>
           <p className="mt-1">{layer.legend}</p>
           <p className="mt-2 text-[color:var(--orbit-muted)]">{layer.geoint}</p>
@@ -418,7 +418,7 @@ export function LabMap({ onGibsExampleUrlChange }: LabMapProps) {
         </label>
 
         {eonetError ? (
-          <div className="rounded-2xl border border-orbit-coral/40 bg-orbit-coral/10 p-3 text-sm">
+          <div className="callout-coral p-3">
             <p>{eonetError}</p>
             <button
               type="button"
@@ -452,7 +452,7 @@ export function LabMap({ onGibsExampleUrlChange }: LabMapProps) {
 
         {satStatus ? <p className="text-xs text-[color:var(--orbit-muted)]">{satStatus}</p> : null}
         {satPos && satName ? (
-          <div className="rounded-2xl border border-[color:var(--orbit-line)] p-3 text-sm">
+          <div className="panel-inset p-3 text-sm">
             <p className="font-semibold">{satName}</p>
             <p className="text-[color:var(--orbit-muted)]">
               Lat {satPos.lat.toFixed(2)}° · Lon {satPos.lon.toFixed(2)}°
@@ -468,7 +468,7 @@ export function LabMap({ onGibsExampleUrlChange }: LabMapProps) {
           <button
             type="button"
             onClick={requestGeo}
-            className="rounded-full border border-[color:var(--orbit-line)] px-3 py-2 text-sm font-semibold"
+            className="btn-orbit-md btn-orbit-outline"
           >
             Usar mi ubicación (pasadas)
           </button>
@@ -476,7 +476,7 @@ export function LabMap({ onGibsExampleUrlChange }: LabMapProps) {
         </div>
 
         {passes.length > 0 ? (
-          <div className="max-h-40 overflow-auto rounded-2xl border border-[color:var(--orbit-line)] p-3 text-xs">
+          <div className="panel-inset max-h-40 overflow-auto p-3 text-xs">
             <p className="label-mono mb-2">Próximas pasadas (elev. ≥ 10°)</p>
             <table className="w-full text-left">
               <thead>

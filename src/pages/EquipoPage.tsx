@@ -165,7 +165,7 @@ export function EquipoPage() {
           <button
             type="button"
             onClick={downloadBoard}
-            className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+            className="btn-orbit-lg btn-orbit-outline"
           >
             Exportar tablero
           </button>
@@ -176,13 +176,13 @@ export function EquipoPage() {
             value={nueva}
             onChange={(event) => setNueva(event.target.value)}
             placeholder="Nueva tarea"
-            className="min-w-[220px] flex-1 rounded-full border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 py-2 text-sm"
+            className="select-orbit min-w-[220px] flex-1 px-4 py-2"
             aria-label="Nueva tarea"
           />
           <select
             value={rolId}
             onChange={(event) => setRolId(event.target.value)}
-            className="rounded-full border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-3 py-2 text-sm"
+            className="select-orbit px-3 py-2"
             aria-label="Rol sugerido"
           >
             <option value="">Sin rol</option>
@@ -194,7 +194,7 @@ export function EquipoPage() {
           </select>
           <button
             type="submit"
-            className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white"
+            className="btn-orbit-lg btn-orbit-primary"
           >
             Agregar
           </button>
@@ -210,7 +210,7 @@ export function EquipoPage() {
                   .map((tarea) => (
                     <li
                       key={tarea.id}
-                      className="rounded-2xl border border-[color:var(--orbit-line)] p-3 text-sm"
+                      className="panel-inset p-3 text-sm"
                     >
                       <p className="font-semibold">{tarea.titulo}</p>
                       <div className="mt-2 flex flex-wrap gap-2">

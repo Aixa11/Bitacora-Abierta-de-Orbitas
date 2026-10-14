@@ -41,10 +41,10 @@ export function SensoresPage() {
               aria-pressed={t.id === topicId}
               onClick={() => setTopicId(t.id)}
               className={[
-                'rounded-full border px-4 py-2 text-sm font-semibold transition-colors',
+                'btn-orbit-lg',
                 t.id === topicId
-                  ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                  : 'border-[color:var(--orbit-line)] text-[color:var(--orbit-muted)] hover:text-[color:var(--orbit-text)]',
+                  ? 'btn-orbit-primary'
+                  : 'btn-orbit-outline text-[color:var(--orbit-muted)] hover:text-[color:var(--orbit-text)]',
               ].join(' ')}
             >
               {t.titulo}
@@ -74,7 +74,7 @@ export function SensoresPage() {
             {topic.gibsLayerId ? (
               <Link
                 to="/laboratorio"
-                className="mt-4 inline-flex rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+                className="btn-orbit-lg btn-orbit-outline mt-4"
               >
                 Ver capa relacionada en el laboratorio
               </Link>

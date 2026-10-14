@@ -53,13 +53,13 @@ export function RutaPage() {
         </h1>
         <p className="mt-2 text-sm text-[color:var(--orbit-muted)]">{t('pages.ruta.lead')}</p>
         <ContentLocaleNotice />
-        <div className="mt-4 rounded-2xl border border-[color:var(--orbit-line)] p-3">
+        <div className="panel-inset mt-4 p-3">
           <p className="text-sm text-[color:var(--orbit-muted)]" aria-live="polite">
             Checklist: {progreso.hechos}/{progreso.total} ({progreso.pct}%)
           </p>
           <div className="mt-2 h-2 overflow-hidden rounded-full bg-[color:var(--orbit-chip)]">
             <div
-              className="h-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6]"
+              className="h-full bg-gradient-to-r from-orbit-violet to-orbit-blue"
               style={{ width: `${progreso.pct}%` }}
             />
           </div>
@@ -75,12 +75,8 @@ export function RutaPage() {
                   role="tab"
                   aria-selected={index === pasoActivo}
                   onClick={() => setPasoActivo(index)}
-                  className={[
-                    'flex w-full items-start gap-3 rounded-2xl border px-3 py-2 text-left text-sm transition-colors duration-orbit',
-                    index === pasoActivo
-                      ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                      : 'border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)]',
-                  ].join(' ')}
+                  className="row-orbit flex w-full items-start gap-3 text-left"
+                  data-active={index === pasoActivo ? 'true' : 'false'}
                 >
                   <span className="font-mono text-xs opacity-80">
                     {String(index + 1).padStart(2, '0')}
@@ -122,7 +118,7 @@ export function RutaPage() {
             <button
               type="button"
               onClick={() => void copyCode()}
-              className="absolute right-3 top-3 rounded-full border border-[color:var(--orbit-line)] px-2 py-1 text-xs"
+              className="btn-orbit-sm btn-orbit-outline absolute right-3 top-3"
             >
               {copied ? 'Copiado' : 'Copiar'}
             </button>
@@ -139,7 +135,7 @@ export function RutaPage() {
               const tool = byId.get(id);
               if (!tool) return null;
               return (
-                <div key={id} className="flex items-center gap-2 rounded-full border border-[color:var(--orbit-line)] px-3 py-1.5 text-sm">
+                <div key={id} className="panel-inset flex items-center gap-2 rounded-full px-3 py-1.5 text-sm">
                   <Link to={`/bitacora?q=${encodeURIComponent(tool.nombre)}`} className="font-semibold">
                     {tool.nombre}
                   </Link>
@@ -156,7 +152,7 @@ export function RutaPage() {
           </div>
         </div>
 
-        <p className="mt-5 rounded-2xl border border-orbit-coral/40 bg-orbit-coral/10 px-4 py-3 text-sm">
+        <p className="callout-coral mt-5">
           <strong>Error común:</strong> {paso.errorComun}
         </p>
 
@@ -167,7 +163,7 @@ export function RutaPage() {
               const checked = (checks[paso.id] ?? []).includes(item);
               return (
                 <li key={item}>
-                  <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-[color:var(--orbit-line)] px-3 py-2 text-sm">
+                  <label className="panel-inset flex cursor-pointer items-start gap-3 px-3 py-2 text-sm">
                     <input
                       type="checkbox"
                       checked={checked}
@@ -187,7 +183,7 @@ export function RutaPage() {
             type="button"
             disabled={pasoActivo === 0}
             onClick={() => setPasoActivo(pasoActivo - 1)}
-            className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold disabled:opacity-40"
+            className="btn-orbit-lg btn-orbit-outline disabled:opacity-40"
           >
             Anterior
           </button>
@@ -195,14 +191,14 @@ export function RutaPage() {
             type="button"
             disabled={pasoActivo === RUTA_PASOS.length - 1}
             onClick={() => setPasoActivo(pasoActivo + 1)}
-            className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white disabled:opacity-40"
+            className="btn-orbit-lg btn-orbit-primary disabled:opacity-40"
           >
             Siguiente
           </button>
           {paso.enlaceInterno ? (
             <Link
               to={paso.enlaceInterno.to}
-              className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+              className="btn-orbit-lg btn-orbit-outline"
             >
               {paso.enlaceInterno.label}
             </Link>

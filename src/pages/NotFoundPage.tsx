@@ -23,7 +23,7 @@ export function NotFoundPage() {
       <p className="mt-4 text-[color:var(--orbit-muted)]">{t('pages.notFound.lead')}</p>
       <Link
         to="/"
-        className="mt-6 inline-flex rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-5 py-3 text-sm font-semibold text-white"
+        className="btn-orbit-xl btn-orbit-primary mt-6"
       >
         {t('pages.notFound.cta')}
       </Link>
@@ -34,7 +34,7 @@ export function NotFoundPage() {
             <li key={item.to}>
               <Link
                 to={item.to}
-                className="inline-flex rounded-full border border-[color:var(--orbit-line)] px-3 py-1.5 text-sm font-semibold"
+                className="btn-orbit-md btn-orbit-outline"
               >
                 {t(item.key)}
               </Link>

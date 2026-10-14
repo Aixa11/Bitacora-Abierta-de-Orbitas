@@ -105,12 +105,7 @@ export function SensorSimulator({ preferredKind = 'optico' }: SensorSimulatorPro
               type="button"
               aria-pressed={clouds}
               onClick={() => setClouds((v) => !v)}
-              className={[
-                'rounded-full border px-3 py-1.5 text-sm font-semibold',
-                clouds
-                  ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                  : 'border-[color:var(--orbit-line)]',
-              ].join(' ')}
+              className="btn-orbit-toggle"
             >
               Nubes {clouds ? 'on' : 'off'}
             </button>
@@ -118,12 +113,7 @@ export function SensorSimulator({ preferredKind = 'optico' }: SensorSimulatorPro
               type="button"
               aria-pressed={night}
               onClick={() => setNight((v) => !v)}
-              className={[
-                'rounded-full border px-3 py-1.5 text-sm font-semibold',
-                night
-                  ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                  : 'border-[color:var(--orbit-line)]',
-              ].join(' ')}
+              className="btn-orbit-toggle"
             >
               Noche {night ? 'on' : 'off'}
             </button>
@@ -170,7 +160,7 @@ export function SensorSimulator({ preferredKind = 'optico' }: SensorSimulatorPro
           {sensor.gibsLayerId ? (
             <Link
               to="/laboratorio"
-              className="mt-4 inline-flex rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white"
+              className="mt-4 inline-flex rounded-full bg-gradient-to-r from-orbit-violet to-orbit-blue px-4 py-2 text-sm font-semibold text-white"
             >
               Ver en el laboratorio
             </Link>

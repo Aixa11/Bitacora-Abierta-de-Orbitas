@@ -11,7 +11,7 @@ export function RecursosOficialesBanner() {
 
   return (
     <aside
-      className="rounded-3xl border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 py-3 text-sm"
+      className="banner-soft"
       role="status"
     >
       {completo ? (

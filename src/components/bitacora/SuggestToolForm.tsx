@@ -63,7 +63,7 @@ export function SuggestToolForm() {
         </label>
         <button
           type="submit"
-          className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-5 py-2.5 text-sm font-semibold text-white md:col-span-2 md:justify-self-start"
+          className="rounded-full bg-gradient-to-r from-orbit-violet to-orbit-blue px-5 py-2.5 text-sm font-semibold text-white md:col-span-2 md:justify-self-start"
         >
           Abrir issue en GitHub
         </button>

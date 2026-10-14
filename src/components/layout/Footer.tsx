@@ -24,7 +24,7 @@ export function Footer() {
           <button
             type="button"
             onClick={handleClear}
-            className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm text-[color:var(--orbit-text)]"
+            className="btn-orbit-lg btn-orbit-outline"
           >
             {t('footer.clearData')}
           </button>

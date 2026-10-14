@@ -91,7 +91,7 @@ export function BitacoraPage() {
           <button
             type="button"
             onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
-            className="rounded-full border border-[color:var(--orbit-line)] px-5 py-2.5 text-sm font-semibold"
+            className="btn-orbit-xl btn-orbit-outline"
           >
             Ver más ({remaining} restantes)
           </button>

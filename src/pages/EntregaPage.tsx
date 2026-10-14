@@ -119,7 +119,7 @@ export function EntregaPage() {
                 'text/markdown;charset=utf-8',
               )
             }
-            className="mt-4 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white"
+            className="btn-orbit-lg btn-orbit-primary mt-4"
           >
             Descargar Markdown
           </button>
@@ -137,12 +137,8 @@ export function EntregaPage() {
           {PITCH_SECTIONS.map((item, index) => (
             <li
               key={item.id}
-              className={[
-                'rounded-2xl border px-3 py-2 text-sm',
-                index === pitchIndex
-                  ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                  : 'border-[color:var(--orbit-line)]',
-              ].join(' ')}
+              className="row-orbit"
+              data-active={index === pitchIndex ? 'true' : 'false'}
             >
               <strong>{item.titulo}</strong>
               <span className="ml-2 opacity-80">{item.seconds}s</span>
@@ -162,14 +158,14 @@ export function EntregaPage() {
           <button
             type="button"
             onClick={() => setRunning((value) => !value)}
-            className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white"
+            className="btn-orbit-lg btn-orbit-primary"
           >
             {running ? 'Pausar' : 'Iniciar'}
           </button>
           <button
             type="button"
             onClick={restartPitch}
-            className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+            className="btn-orbit-lg btn-orbit-outline"
           >
             Reiniciar
           </button>

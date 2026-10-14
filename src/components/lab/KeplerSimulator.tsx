@@ -39,7 +39,7 @@ export function KeplerSimulator() {
             key={preset.id}
             type="button"
             onClick={() => applyPreset(preset.id)}
-            className="rounded-full border border-[color:var(--orbit-line)] px-3 py-1.5 text-sm"
+            className="btn-orbit-md btn-orbit-outline"
           >
             {preset.label}
           </button>
@@ -83,19 +83,19 @@ export function KeplerSimulator() {
       </div>
 
       <dl className="mt-5 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
-        <div className="rounded-2xl border border-[color:var(--orbit-line)] p-3">
+        <div className="panel-inset p-3">
           <dt className="label-mono">a</dt>
           <dd className="mt-1 font-display text-xl">{out.semiMajorAxisKm.toFixed(0)} km</dd>
         </div>
-        <div className="rounded-2xl border border-[color:var(--orbit-line)] p-3">
+        <div className="panel-inset p-3">
           <dt className="label-mono">Periodo</dt>
           <dd className="mt-1 font-display text-xl">{out.periodMin.toFixed(1)} min</dd>
         </div>
-        <div className="rounded-2xl border border-[color:var(--orbit-line)] p-3">
+        <div className="panel-inset p-3">
           <dt className="label-mono">Velocidad</dt>
           <dd className="mt-1 font-display text-xl">{out.velocityKmS.toFixed(2)} km/s</dd>
         </div>
-        <div className="rounded-2xl border border-[color:var(--orbit-line)] p-3">
+        <div className="panel-inset p-3">
           <dt className="label-mono">Vueltas/día</dt>
           <dd className="mt-1 font-display text-xl">{out.orbitsPerDay.toFixed(2)}</dd>
         </div>

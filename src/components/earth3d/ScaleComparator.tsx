@@ -105,12 +105,10 @@ export function ScaleComparator({ embedded = false }: ScaleComparatorProps) {
               aria-checked={selected}
               onClick={() => setActive(t.id)}
               className={[
-                'rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors',
-                selected
-                  ? 'border-transparent text-[#05050A]'
-                  : 'border-[color:var(--orbit-line)] text-[color:var(--orbit-text)]',
+                'btn-orbit-sm font-semibold transition-colors',
+                selected ? 'text-[#05050A]' : 'btn-orbit-outline',
               ].join(' ')}
-              style={selected ? { background: t.color } : undefined}
+              style={selected ? { background: t.color, boxShadow: 'none' } : undefined}
             >
               {t.label}
             </button>

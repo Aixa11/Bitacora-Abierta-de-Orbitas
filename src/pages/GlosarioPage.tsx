@@ -34,7 +34,7 @@ export function GlosarioPage() {
           <p className="mt-3 text-[color:var(--orbit-muted)]">{t('pages.glosario.lead')}</p>
         </div>
         <ContentLocaleNotice />
-        <label className="flex items-center gap-3 rounded-2xl border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 py-3">
+        <label className="field-orbit">
           <span className="sr-only">Buscar en el glosario</span>
           <input
             type="search"

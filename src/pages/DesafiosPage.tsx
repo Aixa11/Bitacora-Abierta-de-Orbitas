@@ -48,7 +48,7 @@ export function DesafiosPage() {
             </a>
             .
           </p>
-          <p className="mt-3 rounded-2xl border border-orbit-coral/40 bg-orbit-coral/10 px-4 py-3 text-sm">
+          <p className="callout-coral mt-3">
             Esta guía no resuelve el desafío. El trabajo y las ideas son de tu equipo.
           </p>
         </div>
@@ -56,7 +56,7 @@ export function DesafiosPage() {
       </header>
 
       <div className="card-orbit mb-6 grid gap-4 p-5">
-        <label className="flex items-center gap-3 rounded-2xl border border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)] px-4 py-3">
+        <label className="field-orbit">
           <span className="sr-only">Buscar desafíos</span>
           <input
             type="search"
@@ -86,12 +86,7 @@ export function DesafiosPage() {
                         [facet.key]: toggleValue(filters[facet.key], value),
                       })
                     }
-                    className={[
-                      'inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm',
-                      selected
-                        ? 'border-transparent bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] text-white'
-                        : 'border-[color:var(--orbit-line)] bg-[color:var(--orbit-chip)]',
-                    ].join(' ')}
+                    className="btn-orbit-toggle"
                   >
                     {value}
                     <span className="font-mono text-[0.65rem] opacity-80">{count}</span>
@@ -137,7 +132,7 @@ export function DesafiosPage() {
                 {desafio.dificultad.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-[color:var(--orbit-line)] px-2 py-0.5 font-mono text-[0.62rem] uppercase tracking-[0.12em]"
+                    className="chip-orbit"
                   >
                     {item}
                   </span>
@@ -145,7 +140,7 @@ export function DesafiosPage() {
                 {desafio.temas.slice(0, 3).map((tema) => (
                   <span
                     key={tema}
-                    className="rounded-full border border-[color:var(--orbit-line)] px-2 py-0.5 text-xs text-[color:var(--orbit-muted)]"
+                    className="chip-orbit"
                   >
                     {tema}
                   </span>
@@ -154,7 +149,7 @@ export function DesafiosPage() {
               <div className="mt-auto flex flex-wrap gap-2 pt-2">
                 <Link
                   to={`/desafios/${desafio.id}`}
-                  className="rounded-full bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] px-4 py-2 text-sm font-semibold text-white"
+                  className="btn-orbit-lg btn-orbit-primary"
                 >
                   Abrir guía
                 </Link>
@@ -162,7 +157,7 @@ export function DesafiosPage() {
                   href={desafio.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-[color:var(--orbit-line)] px-4 py-2 text-sm font-semibold"
+                  className="btn-orbit-lg btn-orbit-outline"
                 >
                   Enunciado oficial
                 </a>

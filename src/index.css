@@ -16,6 +16,8 @@
     radial-gradient(circle at 88% 0%, rgba(59, 130, 246, 0.18), transparent 26%),
     radial-gradient(circle at 50% 70%, rgba(95, 224, 255, 0.06), transparent 32%),
     linear-gradient(180deg, #05050a 0%, #0a0a16 50%, #05050a 100%);
+  --orbit-shadow: 0 10px 30px rgba(42, 34, 88, 0.12);
+  --orbit-focus: #3b82f6;
   color-scheme: dark;
 }
 
@@ -32,6 +34,8 @@
     radial-gradient(circle at 88% 0%, rgba(59, 130, 246, 0.14), transparent 26%),
     radial-gradient(circle at 50% 70%, rgba(95, 224, 255, 0.1), transparent 32%),
     linear-gradient(180deg, #f5f2f7 0%, #eeebf8 45%, #f4f1f6 100%);
+  --orbit-shadow: 0 10px 28px rgba(42, 34, 88, 0.08);
+  --orbit-focus: #3b82f6;
   color-scheme: light;
 }
 
@@ -51,8 +55,14 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  :focus-visible {
-    outline: 2px solid #3b82f6;
+  /* Un solo anillo de foco; los botones Orbitas lo sustituyen. */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--orbit-focus);
     outline-offset: 2px;
   }
 }
@@ -71,7 +81,264 @@
   }
 
   .card-orbit {
-    @apply rounded-card border border-[color:var(--orbit-line)] bg-[color:var(--orbit-surface)] shadow-[0_10px_30px_rgba(42,34,88,0.12)] backdrop-blur-xl;
+    border-radius: theme('borderRadius.card');
+    border: 1px solid var(--orbit-line);
+    background: var(--orbit-surface);
+    box-shadow: var(--orbit-shadow);
+    @apply backdrop-blur-xl;
+  }
+
+  /** Panel interno: sin sombra (evita doble marco dentro de card-orbit). */
+  .panel-inset {
+    @apply rounded-2xl;
+    border: 1px solid var(--orbit-line);
+    background: var(--orbit-chip);
+  }
+
+  .banner-soft {
+    @apply rounded-3xl px-4 py-3 text-sm;
+    border: 1px solid var(--orbit-line);
+    background: var(--orbit-chip);
+  }
+
+  .callout-coral {
+    @apply rounded-2xl px-4 py-3 text-sm;
+    border: 1px solid color-mix(in srgb, #ff8f6b 40%, transparent);
+    background: color-mix(in srgb, #ff8f6b 10%, transparent);
+  }
+
+  /**
+   * Botones: sin border CSS (evita halo doble con gradient).
+   * Outline = box-shadow inset; primary = solo relleno.
+   */
+  .btn-orbit {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-orbit;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .btn-orbit:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
+  }
+
+  .btn-orbit-sm {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors duration-orbit;
+    border: 0;
+  }
+
+  .btn-orbit-md {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold transition-colors duration-orbit;
+    border: 0;
+  }
+
+  .btn-orbit-lg {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-orbit;
+    border: 0;
+  }
+
+  .btn-orbit-xl {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-colors duration-orbit;
+    border: 0;
+  }
+
+  .btn-orbit-bar {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition-colors duration-orbit;
+    border: 0;
+  }
+
+  .btn-orbit-sm:focus-visible,
+  .btn-orbit-md:focus-visible,
+  .btn-orbit-lg:focus-visible,
+  .btn-orbit-xl:focus-visible,
+  .btn-orbit-bar:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
+  }
+
+  .btn-orbit-outline {
+    color: var(--orbit-text);
+    background: var(--orbit-chip);
+    box-shadow: inset 0 0 0 1px var(--orbit-line);
+  }
+
+  .btn-orbit-outline:hover {
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--orbit-line) 70%, #7c3aed);
+  }
+
+  .btn-orbit-outline:focus-visible {
+    outline: none;
+    box-shadow:
+      inset 0 0 0 1px var(--orbit-line),
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
+  }
+
+  .btn-orbit-primary {
+    @apply text-white;
+    background-image: linear-gradient(90deg, #7c3aed, #3b82f6);
+    box-shadow: none;
+  }
+
+  .btn-orbit-primary:hover {
+    filter: brightness(1.06);
+  }
+
+  .btn-orbit-primary:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
+  }
+
+  /** Toggle / chip de filtro: aria-pressed controla el look. */
+  .btn-orbit-toggle {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold transition-colors duration-orbit;
+    border: 0;
+    color: var(--orbit-text);
+    background: var(--orbit-chip);
+    box-shadow: inset 0 0 0 1px var(--orbit-line);
+  }
+
+  .btn-orbit-toggle:hover {
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--orbit-line) 70%, #7c3aed);
+  }
+
+  .btn-orbit-toggle[aria-pressed='true'],
+  .btn-orbit-toggle[data-active='true'] {
+    @apply text-white;
+    background: linear-gradient(90deg, #7c3aed, #3b82f6);
+    box-shadow: none;
+    filter: none;
+  }
+
+  .btn-orbit-toggle:focus-visible {
+    outline: none;
+    box-shadow:
+      inset 0 0 0 1px var(--orbit-line),
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
+  }
+
+  .btn-orbit-toggle[aria-pressed='true']:focus-visible,
+  .btn-orbit-toggle[data-active='true']:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
+  }
+
+  .chip-orbit {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 font-mono text-[0.62rem] uppercase tracking-[0.12em];
+    color: var(--orbit-muted);
+    background: var(--orbit-chip);
+    box-shadow: inset 0 0 0 1px var(--orbit-line);
+  }
+
+  .field-orbit {
+    @apply flex items-center gap-3 rounded-2xl px-4 py-3;
+    background: var(--orbit-chip);
+    box-shadow: inset 0 0 0 1px var(--orbit-line);
+  }
+
+  .field-orbit:focus-within {
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--orbit-line) 50%, #3b82f6),
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px color-mix(in srgb, var(--orbit-focus) 55%, transparent);
+  }
+
+  .field-orbit input,
+  .field-orbit textarea,
+  .field-orbit select {
+    @apply w-full bg-transparent text-sm outline-none;
+    color: var(--orbit-text);
+  }
+
+  .field-orbit input:focus-visible,
+  .field-orbit textarea:focus-visible,
+  .field-orbit select:focus-visible {
+    outline: none;
+  }
+
+  .select-orbit {
+    @apply rounded-full px-3 py-1.5 text-sm;
+    color: var(--orbit-text);
+    background: var(--orbit-chip);
+    box-shadow: inset 0 0 0 1px var(--orbit-line);
+    border: 0;
+  }
+
+  .select-orbit:focus-visible {
+    outline: none;
+    box-shadow:
+      inset 0 0 0 1px var(--orbit-line),
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
+  }
+
+  .segment-orbit {
+    @apply inline-flex rounded-full p-1;
+    box-shadow: inset 0 0 0 1px var(--orbit-line);
+  }
+
+  .segment-orbit-btn {
+    @apply rounded-full px-3 py-1 text-sm transition-colors duration-orbit;
+    border: 0;
+    background: transparent;
+    color: var(--orbit-muted);
+  }
+
+  .segment-orbit-btn[aria-pressed='true'] {
+    @apply font-semibold;
+    color: var(--orbit-text);
+    background: var(--orbit-chip);
+  }
+
+  .segment-orbit-btn:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
+  }
+
+  .link-orbit {
+    @apply text-sm font-semibold underline-offset-2 hover:underline;
+    color: var(--orbit-muted);
+  }
+
+  /** Filas / pestañas seleccionables (ruta, pitch): sin doble borde. */
+  .row-orbit {
+    @apply rounded-2xl px-3 py-2 text-sm transition-colors duration-orbit;
+    border: 0;
+    background: var(--orbit-chip);
+    box-shadow: inset 0 0 0 1px var(--orbit-line);
+    color: var(--orbit-text);
+  }
+
+  .row-orbit[aria-selected='true'],
+  .row-orbit[data-active='true'] {
+    @apply text-white;
+    background: linear-gradient(90deg, #7c3aed, #3b82f6);
+    box-shadow: none;
+  }
+
+  .row-orbit:focus-visible {
+    outline: none;
+    box-shadow:
+      inset 0 0 0 1px var(--orbit-line),
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
+  }
+
+  .row-orbit[aria-selected='true']:focus-visible,
+  .row-orbit[data-active='true']:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--orbit-bg),
+      0 0 0 4px var(--orbit-focus);
   }
 }
 

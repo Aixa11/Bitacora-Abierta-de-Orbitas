@@ -51,7 +51,7 @@ npm run dev        # http://127.0.0.1:5173
 | `/equipo` | Roles, cronograma 48 h, tablero |
 | `/entrega` | Checklist, referencias, pitch |
 | `/reglas` | Uso legal orientativo |
-| `/charla` | Próximamente (contenido el 16 oct 2026) |
+| `/charla` | Webinar grabado (subtítulos ES/EN), pitch PDF bilingüe, modo presentación |
 | `/glosario` | Términos GEOINT |
 | `/ayuda` | Arranque 30 min, reloj 48 h, estudio NASA en español, explorador mundo↔desafíos, plantillas |
 
@@ -73,9 +73,19 @@ Cuando se publiquen los enunciados completos, edita `src/content/challenges.json
 
 También puedes usar el formulario «Sugerir una herramienta» en `/bitacora` (issue de GitHub prellenado; ajusta `GITHUB_NEW_ISSUE_URL` en `src/content/site.ts`).
 
-## Fecha del webinar
+## Charla (/charla)
 
-Edita `fechaLabel` (y si hace falta el resto) en `src/content/talk.ts`.
+Contenido en `src/content/talk.ts`. Materiales en `public/media/charla/`:
+
+| Archivo | En git | Notas |
+| --- | --- | --- |
+| `pitch-explora-la-tierra.pdf` | sí | Pitch usada en el webinar |
+| `captions-es.vtt` / `captions-en.vtt` | sí | Subtítulos (ES completo; EN traducción) |
+| `webinar-2026-10-16.mp4` | no (gitignore) | Grabación local ~150 MB tras comprimir |
+
+Para desarrollo local, copia el MP4 a `public/media/charla/webinar-2026-10-16.mp4`. Para producción, súbelo a YouTube/Vimeo y pega la URL en `TALK.videoEmbedUrl`, o súbelo como asset externo al hosting.
+
+Para regenerar subtítulos desde las speaker notes: coloca `_speaker-notes.txt` en esa carpeta y corre `python scripts/generate-charla-captions.py`.
 
 ## PWA
 

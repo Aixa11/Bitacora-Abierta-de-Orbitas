@@ -31,8 +31,8 @@ test('recorrido principal de la guía', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 
   await page.goto('/charla');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText(/Charla/i);
-  await expect(page.getByText(/Próximamente/i)).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(/Explora la Tierra/i);
+  await expect(page.getByRole('button', { name: 'Modo presentación' })).toBeVisible();
 
   await page.goto('/glosario');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();

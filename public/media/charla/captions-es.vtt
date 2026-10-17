@@ -1,0 +1,2240 @@
+WEBVTT
+Kind: captions
+Language: es
+
+1
+00:00:00.000 --> 00:00:08.824
+Antes de leer el título, miremos la imagen,
+como la miraría cualquiera. Es una esfera. Se
+
+2
+00:00:08.824 --> 00:00:17.647
+reconoce América: arriba América del Norte y Central,
+en el centro América del Sur, con el
+
+3
+00:00:17.647 --> 00:00:26.471
+Amazonas más verde y los Andes y la
+Patagonia hacia el sur. El azul es océano.
+
+4
+00:00:26.471 --> 00:00:35.294
+Lo blanco no es nieve en todos los
+casos: casi todo ese blanco son nubes, vistas
+
+5
+00:00:35.294 --> 00:00:44.118
+desde afuera. El borde del planeta se recorta
+contra el negro del espacio. No hay países
+
+6
+00:00:44.118 --> 00:00:52.941
+dibujados, ni nombres, ni flechas. Es una foto.
+¿Cómo se llega a esa foto? La tomó
+
+7
+00:00:52.941 --> 00:01:01.765
+la cámara EPIC, que viaja en el satélite
+DSCOVR, el 7 de octubre de 2026. DSCOVR
+
+8
+00:01:01.765 --> 00:01:10.588
+está a un millón y medio de kilómetros,
+en un punto desde el cual siempre ve
+
+9
+00:01:10.588 --> 00:01:19.412
+el lado de la Tierra iluminado por el
+Sol. Por eso el disco se ve entero
+
+10
+00:01:19.412 --> 00:01:28.235
+y de día. No es el mismo tipo
+de imagen que vamos a usar en el
+
+11
+00:01:28.235 --> 00:01:37.059
+hackatón: esta es la postal del planeta. Las
+que vienen después se acercan hasta un río,
+
+12
+00:01:37.059 --> 00:01:45.882
+un cultivo o un barrio. El punto de
+la lámina es la frase del medio. Esos
+
+13
+00:01:45.882 --> 00:01:54.706
+acercamientos, y esta postal, los publican la NASA
+y la Agencia Espacial Europea. Gratis. Sin pedir
+
+14
+00:01:54.706 --> 00:02:03.529
+experiencia previa. Durante esta hora vamos a aprender
+a leerlos: primero qué está viendo el ojo,
+
+15
+00:02:03.529 --> 00:02:12.353
+después cómo se fabricó la imagen, y al
+final qué decisión permite. Si nunca abrieron una
+
+16
+00:02:12.353 --> 00:02:21.176
+imagen satelital, esta sala es para ustedes. Si
+ya lo hicieron, van a salir con el
+
+17
+00:02:21.176 --> 00:02:30.000
+atajo: qué dato, qué página y qué error no cometer.
+
+18
+00:02:30.000 --> 00:02:36.667
+Estos tres círculos son el mapa de la
+hora, y ya son imágenes de verdad, no
+
+19
+00:02:36.667 --> 00:02:43.333
+iconos decorativos. ---PAGE 2--- El primero es la
+misma Tierra de recién: el planeta entero, para
+
+20
+00:02:43.333 --> 00:02:50.000
+orientarnos. El segundo y el tercero se van
+a abrir en grande más adelante. Uno muestra
+
+21
+00:02:50.000 --> 00:02:56.667
+el Delta del Nilo con una luz que
+el ojo no ve, el infrarrojo. El otro
+
+22
+00:02:56.667 --> 00:03:03.333
+ya no es una foto: es una medida
+de qué tan vigorosas están las plantas. No
+
+23
+00:03:03.333 --> 00:03:10.000
+hace falta entenderlos ahora. Hace falta saber que
+vamos a llegar ahí paso a paso. Las
+
+24
+00:03:10.000 --> 00:03:16.667
+tres paradas son estas. Primera: de la imagen
+a la decisión. Qué es la inteligencia geoespacial
+
+25
+00:03:16.667 --> 00:03:23.333
+y cómo mira un satélite. Segunda: el planeta
+en casos reales, incendios, agua, bosque, hielo, océano
+
+26
+00:03:23.333 --> 00:03:30.000
+y un huracán, siempre leyendo la imagen antes
+de concluir. Tercera, la del título: datos abiertos
+
+27
+00:03:30.000 --> 00:03:36.667
+de la NASA y la ESA, las páginas,
+la diferencia entre Landsat y Sentinel, y un
+
+28
+00:03:36.667 --> 00:03:43.333
+mapa que hacemos juntos en el navegador. Si
+se quedan con una sola promesa: van a
+
+29
+00:03:43.333 --> 00:03:50.000
+saber qué están viendo, y van a saber en qué página volver a verlo.
+
+30
+00:03:50.000 --> 00:03:56.667
+Primera parada: entender. El público de esta sala
+es mixto, y está bien que lo sea.
+
+31
+00:03:56.667 --> 00:04:03.333
+No vamos a suponer que alguien ya sabe
+qué es una banda, un píxel o un
+
+32
+00:04:03.333 --> 00:04:10.000
+índice. Cada vez que aparezca una imagen vamos
+a hacer el mismo recorrido. Primero, qué ve
+
+33
+00:04:10.000 --> 00:04:16.667
+un ojo que llega sin contexto. Después, cómo
+el satélite construyó esa vista. Al final, el
+
+34
+00:04:16.667 --> 00:04:23.333
+punto exacto de la lámina: la decisión que
+esa vista permite. Ese recorrido tiene nombre. Se
+
+35
+00:04:23.333 --> 00:04:30.000
+llama inteligencia geoespacial. Y corre sobre datos que ya están publicados.
+
+36
+00:04:30.000 --> 00:04:39.375
+GEOINT significa inteligencia geoespacial. Traducido a esta sala:
+usar una imagen que tiene lugar para entender
+
+37
+00:04:39.375 --> 00:04:48.750
+qué pasa y decidir mejor. Miren la suma,
+que es toda la definición, y léanla como
+
+38
+00:04:48.750 --> 00:04:58.125
+una receta, no como una sigla. Imagen: lo
+que se ve. Puede ser una foto en
+
+39
+00:04:58.125 --> 00:05:07.500
+colores reales, un mapa de calor o el
+rebote de un radar. Todavía no es una
+
+40
+00:05:07.500 --> 00:05:16.875
+conclusión. Es la materia prima. Ubicación: dónde ocurre.
+Sin coordenadas, la foto del Nilo podría ser
+
+41
+00:05:16.875 --> 00:05:26.250
+cualquier delta. Con coordenadas, se puede cruzar con
+un río, una ciudad, un lote o una
+
+42
+00:05:26.250 --> 00:05:35.625
+ruta de evacuación. El satélite no saca una
+foto suelta: cada píxel cae en un lugar
+
+43
+00:05:35.625 --> 00:05:45.000
+de la Tierra. ---PAGE 3--- Análisis: qué significa.
+Ver verde no alcanza. Hay que saber si
+
+44
+00:05:45.000 --> 00:05:54.375
+ese verde es bosque, cultivo sano, pasto seco
+o, como vamos a ver, una forma de
+
+45
+00:05:54.375 --> 00:06:03.750
+pintar el infrarrojo. El análisis es la traducción.
+Decisión: qué hacemos. Dónde mirar primero, a quién
+
+46
+00:06:03.750 --> 00:06:13.125
+avisar, qué lote revisar. El ejemplo de abajo
+ya trae las cuatro piezas: ¿dónde hay cultivos
+
+47
+00:06:13.125 --> 00:06:22.500
+que necesitan agua esta semana? La imagen será
+un índice de plantas. El lugar, una zona
+
+48
+00:06:22.500 --> 00:06:31.875
+agrícola. El análisis, comparar con la semana anterior.
+La decisión, ir a regar o a revisar.
+
+49
+00:06:31.875 --> 00:06:41.250
+La pregunta elige el dato. El dato no
+elige la pregunta. Guarden una pregunta así, aunque
+
+50
+00:06:41.250 --> 00:06:50.625
+esté borrosa, para su equipo. Al final la
+vamos a apoyar en un archivo abierto de
+
+51
+00:06:50.625 --> 00:07:00.000
+la NASA o de la ESA.
+
+52
+00:07:00.000 --> 00:07:08.947
+Un satélite no tiene un solo ojo. Para
+esta sala alcanzan dos, y los dos se
+
+53
+00:07:08.947 --> 00:07:17.895
+entienden con una analogía. A la izquierda, el
+óptico. Funciona como la cámara del teléfono. No
+
+54
+00:07:17.895 --> 00:07:26.842
+inventa luz: recoge la luz del Sol que
+rebotó en el suelo, en el agua o
+
+55
+00:07:26.842 --> 00:07:35.789
+en las nubes. Por eso la imagen se
+parece a lo que ustedes verían desde un
+
+56
+00:07:35.789 --> 00:07:44.737
+avión: ríos, ciudades, cultivos, humo. Y por eso
+tiene los mismos límites que una cámara. De
+
+57
+00:07:44.737 --> 00:07:53.684
+noche no hay Sol que rebote, y una
+nube es una pared blanca. Si el día
+
+58
+00:07:53.684 --> 00:08:02.632
+del paso está nublado, esa foto no muestra
+el suelo. No es un error del equipo.
+
+59
+00:08:02.632 --> 00:08:11.579
+Es física. A la derecha, el radar. Funciona
+como un eco, parecido a un murciélago. El
+
+60
+00:08:11.579 --> 00:08:20.526
+satélite emite su propia señal de microondas y
+mide cuánto tarda en volver y con qué
+
+61
+00:08:20.526 --> 00:08:29.474
+fuerza. No le pide permiso al Sol. Por
+eso trabaja de noche y con el cielo
+
+62
+00:08:29.474 --> 00:08:38.421
+cerrado. No es una foto: no van a
+ver colores de árboles. Van a ver una
+
+63
+00:08:38.421 --> 00:08:47.368
+medida de la superficie. El agua quieta, por
+ejemplo, devuelve poco eco y se ve oscura.
+
+64
+00:08:47.368 --> 00:08:56.316
+Eso, comparado con un día anterior, dice dónde
+se expandió una inundación. Cómo se elige, cuando
+
+65
+00:08:56.316 --> 00:09:05.263
+ya tengan su pregunta. Si preguntan “¿cómo se
+ve?” o “¿cómo están las plantas?”, cámara: Landsat
+
+66
+00:09:05.263 --> 00:09:14.211
+y Sentinel-2. Si preguntan “¿dónde está el agua
+aunque haya nubes?”, eco: Sentinel-1, de la ESA.
+
+67
+00:09:14.211 --> 00:09:23.158
+NISAR, de la NASA y la ISRO, es
+un radar más nuevo y más fino; lo
+
+68
+00:09:23.158 --> 00:09:32.105
+van a oír de nuevo, y no es
+el primer botón del fin de semana. Las
+
+69
+00:09:32.105 --> 00:09:41.053
+dos familias están en datos abiertos. La primera
+decisión del proyecto es esta bifurcación, no la
+
+70
+00:09:41.053 --> 00:09:50.000
+marca del satélite.
+
+71
+00:09:50.000 --> 00:09:59.118
+---PAGE 4--- Los mismos dos ojos, ahora en
+cuatro instrumentos. Cada uno responde una sola pregunta.
+
+72
+00:09:59.118 --> 00:10:08.235
+Si mezclan las preguntas, la imagen se vuelve
+ininterpretable. Óptico, la cámara. Pregunta: ¿qué hay y
+
+73
+00:10:08.235 --> 00:10:17.353
+de qué color? En la práctica van a
+usar Landsat, de la NASA y el USGS,
+
+74
+00:10:17.353 --> 00:10:26.471
+y Sentinel-2, de la ESA. Más adelante vamos
+a ver que un color puede ser real,
+
+75
+00:10:26.471 --> 00:10:35.588
+como lo vería el ojo, o falso, armado
+a propósito con luz invisible. Las dos cosas
+
+76
+00:10:35.588 --> 00:10:44.706
+salen de este tipo de sensor. Térmico, el
+termómetro. Pregunta: ¿dónde hay calor de más? Un
+
+77
+00:10:44.706 --> 00:10:53.824
+frente de incendio, una ciudad más caliente que
+el campo. No mide “fuego” como una etiqueta:
+
+78
+00:10:53.824 --> 00:11:02.941
+mide energía que la superficie está emitiendo. VIIRS,
+en satélites de la NASA y la NOAA,
+
+79
+00:11:02.941 --> 00:11:12.059
+es el que pone los puntos rojos de
+calor que vamos a ver sobre el humo.
+
+80
+00:11:12.059 --> 00:11:21.176
+Landsat también trae bandas térmicas, más detalladas y
+menos frecuentes. Radar, el eco. Pregunta: ¿cambió la
+
+81
+00:11:21.176 --> 00:11:30.294
+superficie aunque el cielo esté cerrado? Sentinel-1 es
+el camino simple, dentro de Copernicus. NISAR, lanzado
+
+82
+00:11:30.294 --> 00:11:39.412
+en 2025, ya publica radar de banda L
+en Earthdata: sirve mucho para bosques, hielo y
+
+83
+00:11:39.412 --> 00:11:48.529
+deformación del suelo. Si esta es su primera
+imagen, Sentinel-1. NISAR queda como segundo proyecto, no
+
+84
+00:11:48.529 --> 00:11:57.647
+como primer clic. Lidar, la regla láser. Pregunta:
+¿qué altura tiene esto? Manda pulsos de luz
+
+85
+00:11:57.647 --> 00:12:06.765
+y cronometra la vuelta. GEDI mide la estructura
+del bosque. ICESat-2 mide hielo y elevación. No
+
+86
+00:12:06.765 --> 00:12:15.882
+es una foto de árboles: es una medida
+de metros de altura. Cámara, termómetro, eco, regla.
+
+87
+00:12:15.882 --> 00:12:25.000
+En el Space Apps elijan una pregunta. El archivo abierto correspondiente ya existe.
+
+88
+00:12:25.000 --> 00:12:33.636
+Quiero que miren antes de que yo nombre
+nada. A la izquierda hay un abanico verde
+
+89
+00:12:33.636 --> 00:12:42.273
+metido en un desierto beige, con mar azul
+arriba. Es el Delta del Nilo, en Egipto.
+
+90
+00:12:42.273 --> 00:12:50.909
+Se entiende sin leyenda: el cultivo está donde
+llega el agua, y alrededor es arena. Si
+
+91
+00:12:50.909 --> 00:12:59.545
+se fijan, dentro del verde hay una cuadrícula
+y muchos puntitos claros. Esos puntitos son pueblos
+
+92
+00:12:59.545 --> 00:13:08.182
+y lotes con suelo desnudo. El verde de
+esta foto es oliva, apagado, porque es una
+
+93
+00:13:08.182 --> 00:13:16.818
+vista cercana a lo que vería el ojo:
+se usaron bandas de luz visible, rojo, verde
+
+94
+00:13:16.818 --> 00:13:25.455
+y azul. A la derecha es el mismo
+encuadre, el mismo día, el 12 de julio
+
+95
+00:13:25.455 --> 00:13:34.091
+de 2024, el mismo sensor: MODIS, en el
+satélite Terra de la NASA. El desierto sigue
+
+96
+00:13:34.091 --> 00:13:42.727
+beige. El mar se va a negro. Y
+el abanico pasa de oliva a un verde
+
+97
+00:13:42.727 --> 00:13:51.364
+eléctrico, casi fluorescente. Los puntitos claros siguen ahí,
+ahora más contrastados, como islas apagadas dentro del
+
+98
+00:13:51.364 --> 00:14:00.000
+brillo. ¿Cómo se llega a ese verde? El
+sensor no solo mide los colores del ojo.
+
+99
+00:14:00.000 --> 00:14:08.636
+También mide infrarrojo cercano, una luz que las
+hojas reflejan mucho y que nosotros no vemos.
+
+100
+00:14:08.636 --> 00:14:17.273
+Una hoja sana absorbe el rojo, porque lo
+usa para hacer fotosíntesis, y rebota el infrarrojo,
+
+101
+00:14:17.273 --> 00:14:25.909
+porque le sobra. En esta combinación se ---PAGE
+5--- toma ese infrarrojo y se lo muestra
+
+102
+00:14:25.909 --> 00:14:34.545
+como verde en la pantalla. Por eso el
+cultivo vigoroso brilla, el suelo desnudo no, y
+
+103
+00:14:34.545 --> 00:14:43.182
+el agua, que se traga esa luz, se
+oscurece. No es un filtro de Instagram. Es
+
+104
+00:14:43.182 --> 00:14:51.818
+una decisión: pintar con un color visible una
+medida invisible, para que el ojo separe planta
+
+105
+00:14:51.818 --> 00:15:00.455
+de suelo. El punto de la lámina cabe
+en una frase. Desde el espacio se puede
+
+106
+00:15:00.455 --> 00:15:09.091
+medir la salud de un cultivo porque la
+planta sana delata en infrarrojo lo que el
+
+107
+00:15:09.091 --> 00:15:17.727
+verde del ojo esconde. Esta pareja de imágenes
+está en NASA Worldview, servicio GIBS. No es
+
+108
+00:15:17.727 --> 00:15:26.364
+una figura prestada: es una capa que pueden
+volver a prender, buscando el Delta del Nilo
+
+109
+00:15:26.364 --> 00:15:35.000
+y esta fecha.
+
+110
+00:15:35.000 --> 00:15:42.600
+Estos tres círculos son el mismo delta, y
+son el camino completo. Hay que leerlos de
+
+111
+00:15:42.600 --> 00:15:50.200
+izquierda a derecha, porque cada uno sale del
+anterior. Primer círculo, captar. Es otra vez la
+
+112
+00:15:50.200 --> 00:15:57.800
+foto cercana al ojo: mar arriba, abanico de
+cultivos, desierto abajo, el Nilo entrando por la
+
+113
+00:15:57.800 --> 00:16:05.400
+punta sur. El satélite ya hizo su trabajo:
+midió, en cada píxel, cuánta luz volvía en
+
+114
+00:16:05.400 --> 00:16:13.000
+varias bandas. Una banda es una rebanada del
+espectro. Azul, verde, rojo, infrarrojo. En este círculo
+
+115
+00:16:13.000 --> 00:16:20.600
+solo se muestran las visibles. Por eso se
+ve “normal”. Segundo círculo, procesar. Misma geometría, otra
+
+116
+00:16:20.600 --> 00:16:28.200
+receta. Se apaga el parecido con el ojo
+y se enciende el infrarrojo. El cultivo se
+
+117
+00:16:28.200 --> 00:16:35.800
+vuelve verde eléctrico, el agua se pone negra,
+los pueblos quedan como puntos pálidos. Aquí todavía
+
+118
+00:16:35.800 --> 00:16:43.400
+es una imagen: combinamos bandas para que una
+diferencia física se vea. Todavía no es un
+
+119
+00:16:43.400 --> 00:16:51.000
+número. Tercer círculo, analizar. Esto ya es el
+índice de vegetación, el NDVI. La cuenta, una
+
+120
+00:16:51.000 --> 00:16:58.600
+sola vez, y el porqué junto con la
+cuenta. Infrarrojo menos rojo, dividido por infrarrojo más
+
+121
+00:16:58.600 --> 00:17:06.200
+rojo. Se resta el rojo porque la hoja
+sana se lo queda, y se suma el
+
+122
+00:17:06.200 --> 00:17:13.800
+infrarrojo porque la hoja sana lo rebota. El
+resultado va, más o menos, de menos uno
+
+123
+00:17:13.800 --> 00:17:21.400
+a uno. En la pantalla, el verde intenso
+es un valor alto: planta vigorosa. El beige
+
+124
+00:17:21.400 --> 00:17:29.000
+y el gris son valores bajos: suelo, ciudad,
+poca hoja. El mar deja de ser una
+
+125
+00:17:29.000 --> 00:17:36.600
+foto de agua y pasa a ser “aquí
+el índice no aplica”, por eso se ve
+
+126
+00:17:36.600 --> 00:17:44.200
+tan distinto. Recién ahí, el paso cuatro, que
+no es una imagen: decidir. ¿Dónde regar, o
+
+127
+00:17:44.200 --> 00:17:51.800
+qué lote revisar porque dejó de brillar? El
+índice no riega. Una persona, con el mapa,
+
+128
+00:17:51.800 --> 00:17:59.400
+sí puede ir a mirar. Un cuidado de
+honestidad, porque es exactamente lo que el jurado
+
+129
+00:17:59.400 --> 00:18:07.000
+va a pedirles. La foto y el falso
+color de esta lámina son de julio de
+
+130
+00:18:07.000 --> 00:18:14.600
+2024. El NDVI que se muestra es un
+compuesto de ocho días de julio de 2025.
+
+131
+00:18:14.600 --> 00:18:22.200
+Mismo lugar, misma familia de sensor, otra fecha.
+Cuando armen su figura, las dos fechas van
+
+132
+00:18:22.200 --> 00:18:29.800
+en el pie. Decirlas en voz alta es
+parte del oficio, no una disculpa. Con esto
+
+133
+00:18:29.800 --> 00:18:37.400
+cierra la primera parada. Ya vieron cómo se
+pasa de una foto a un número, y
+
+134
+00:18:37.400 --> 00:18:45.000
+de un número a una decisión. Ahora ese mismo recorrido, sobre problemas concretos.
+
+135
+00:18:45.000 --> 00:18:51.667
+Segunda parada. El planeta, con casos reales. Cada
+lámina que viene tiene una escena o una
+
+136
+00:18:51.667 --> 00:18:58.333
+pareja de escenas. Voy a nombrar primero lo
+que se ve, colores, formas, izquierda y derecha,
+
+137
+00:18:58.333 --> 00:19:05.000
+y solo después el evento. Así nadie tiene
+que creerme una etiqueta: la pueden comprobar en
+
+138
+00:19:05.000 --> 00:19:11.667
+la imagen. Y cada caso va a terminar
+en el archivo abierto donde esa escena se
+
+139
+00:19:11.667 --> 00:19:18.333
+puede volver a abrir. La foto impresiona. El
+dato abierto es lo que se llevan al
+
+140
+00:19:18.333 --> 00:19:25.000
+proyecto.
+
+141
+00:19:25.000 --> 00:19:33.500
+Primero, lo que se ve, sin el título.
+Hay mucho blanco y gris: es humo y
+
+142
+00:19:33.500 --> 00:19:42.000
+nube, espesos, tapando partes del suelo. Donde el
+humo abre, abajo a la derecha, el terreno
+
+143
+00:19:42.000 --> 00:19:50.500
+se ve marrón y parcelado, y en otros
+claros se ve verde oscuro, bosque. Encima de
+
+144
+00:19:50.500 --> 00:19:59.000
+todo eso hay puntos rojos, chicos, repartidos, algunos
+justo donde el blanco no deja ver nada.
+
+145
+00:19:59.000 --> 00:20:07.500
+Esos puntos no están pintados a mano sobre
+una foto de incendios. Son una segunda capa.
+
+146
+00:20:07.500 --> 00:20:16.000
+La imagen de fondo la toma MODIS: es
+la cámara, y por eso vemos el humo,
+
+147
+00:20:16.000 --> 00:20:24.500
+que es luz del Sol rebotando en las
+partículas. Los puntos los calcula VIIRS, el termómetro:
+
+148
+00:20:24.500 --> 00:20:33.000
+busca píxeles mucho más calientes que su alrededor,
+de día o de noche. Cada punto es
+
+149
+00:20:33.000 --> 00:20:41.500
+el centro de un píxel de unos 375
+metros, colocado en el mapa con sus coordenadas,
+
+150
+00:20:41.500 --> 00:20:50.000
+encima de la foto. Por eso un punto
+puede caer sobre el humo: la cámara ya
+
+151
+00:20:50.000 --> 00:20:58.500
+no ve el suelo, y el sensor de
+calor igual registró la anomalía. Lugar y fecha,
+
+152
+00:20:58.500 --> 00:21:07.000
+para que la lectura quede cerrada: Rondônia, en
+la Amazonía de Brasil, 20 de agosto de
+
+153
+00:21:07.000 --> 00:21:15.500
+2019. El punto de la lámina: esta combinación
+sirve para una alerta temprana y para seguir
+
+154
+00:21:15.500 --> 00:21:24.000
+el humo que viaja. No sirve para dibujar
+el borde exacto del área quemada. Si su
+
+155
+00:21:24.000 --> 00:21:32.500
+proyecto es una alerta, la palabra correcta es
+detección. El archivo abierto se llama FIRMS, de
+
+156
+00:21:32.500 --> 00:21:41.000
+la NASA. Las detecciones globales suelen publicarse en
+menos de tres horas desde el paso del
+
+157
+00:21:41.000 --> 00:21:49.500
+satélite. Se miran en el mapa de FIRMS
+o como capa dentro de Worldview. Lo vamos
+
+158
+00:21:49.500 --> 00:21:58.000
+a encender en la demo. Una primera versión
+honesta del fin de semana es: su región,
+
+159
+00:21:58.000 --> 00:22:06.500
+las últimas 24 o 48 horas, la fecha
+y la fuente. ---PAGE 7--- Explora la Tierra
+
+160
+00:22:06.500 --> 00:22:15.000
+desde el espacio · Speaker notes 7
+
+161
+00:22:15.000 --> 00:22:22.500
+Estas dos imágenes no son fotos “como las
+vería el ojo”, y por eso hay que
+
+162
+00:22:22.500 --> 00:22:30.000
+aprender el código antes de emocionarse con el
+evento. Es un falso color del sensor MODIS,
+
+163
+00:22:30.000 --> 00:22:37.500
+la receta que la NASA numera 7-2-1. En
+criollo: se muestra una banda de infrarrojo de
+
+164
+00:22:37.500 --> 00:22:45.000
+onda corta, el infrarrojo cercano y el rojo
+visible. La vegetación refleja muchísimo infrarrojo cercano, y
+
+165
+00:22:45.000 --> 00:22:52.500
+en esta receta ese infrarrojo se pinta de
+verde. Por eso el valle se ve de
+
+166
+00:22:52.500 --> 00:23:00.000
+un verde eléctrico, aunque ustedes en el lugar
+verían cultivos verdes más apagados, suelo y pueblos.
+
+167
+00:23:00.000 --> 00:23:07.500
+El agua se traga esas luces, así que
+el río se pinta de azul muy oscuro,
+
+168
+00:23:07.500 --> 00:23:15.000
+casi negro. Las nubes, que son otra cosa,
+quedan en celeste pálido, brilloso. Celeste no es
+
+169
+00:23:15.000 --> 00:23:22.500
+agua. Ahora sí, la comparación. A la izquierda,
+30 de agosto de 2021, río Indo, Pakistán.
+
+170
+00:23:22.500 --> 00:23:30.000
+El agua es un hilo oscuro, serpenteando dentro
+del verde. Hay un parche grande beige en
+
+171
+00:23:30.000 --> 00:23:37.500
+el centro, suelo con poca vegetación, y nubes
+celestes hacia la derecha. A la derecha, 30
+
+172
+00:23:37.500 --> 00:23:45.000
+de agosto de 2022, mismo sensor, misma receta,
+mismo día del calendario. El hilo se abrió.
+
+173
+00:23:45.000 --> 00:23:52.500
+Del lado izquierdo de la escena aparecen cuerpos
+anchos, azul marino y negro, ramificados, ocupando lo
+
+174
+00:23:52.500 --> 00:24:00.000
+que el año anterior era valle. Ese es
+el agua fuera de cauce. El beige del
+
+175
+00:24:00.000 --> 00:24:07.500
+centro sigue ahí: no toda la imagen se
+inundó, y decir eso también es leer bien.
+
+176
+00:24:07.500 --> 00:24:15.000
+Se llega a esta conclusión solo porque las
+dos fechas comparten sensor y receta. Si una
+
+177
+00:24:15.000 --> 00:24:22.500
+estuviera en color real y la otra en
+falso color, el azul no significaría lo mismo
+
+178
+00:24:22.500 --> 00:24:30.000
+y la comparación sería injusta. El punto: comparar
+dos fechas con la misma regla de color
+
+179
+00:24:30.000 --> 00:24:37.500
+muestra qué terreno estaba seco y quedó cubierto,
+y eso ordena por dónde entra la ayuda.
+
+180
+00:24:37.500 --> 00:24:45.000
+En 2022 esas inundaciones afectaron a más de
+30 millones de personas. El satélite no las
+
+181
+00:24:45.000 --> 00:24:52.500
+cuenta. Mide la extensión del agua. Un límite,
+para el proyecto. En plena crecida el cielo
+
+182
+00:24:52.500 --> 00:25:00.000
+suele cerrarse, y esta cámara se queda en
+las nubes celestes. Ahí el radar Sentinel-1, de
+
+183
+00:25:00.000 --> 00:25:07.500
+la ESA, sigue viendo la superficie. Esta pareja
+de la NASA cuenta la historia. El radar
+
+184
+00:25:07.500 --> 00:25:15.000
+salva el mapa cuando la foto se vuelve blanca.
+
+185
+00:25:15.000 --> 00:25:22.895
+Otra vez color cercano al ojo, así que
+el código es simple. Verde muy oscuro: bosque
+
+186
+00:25:22.895 --> 00:25:30.789
+cerrado, porque las copas absorben luz y se
+ven profundas. Marrón y tostado: suelo abierto, caminos,
+
+187
+00:25:30.789 --> 00:25:38.684
+parcelas. Blanco ---PAGE 8--- brillante: nube. La nube
+no es tierra talada. A la izquierda, Rondônia,
+
+188
+00:25:38.684 --> 00:25:46.579
+27 de julio de 2000. Ya se ve
+el dibujo en el centro: líneas que salen
+
+189
+00:25:46.579 --> 00:25:54.474
+de una espina, como una raspa de pescado.
+Son caminos, y a cada lado se fueron
+
+190
+00:25:54.474 --> 00:26:02.368
+abriendo lotes. Pero fíjense en los bloques que
+todavía son verde oscuro, sobre todo a la
+
+191
+00:26:02.368 --> 00:26:10.263
+derecha y en las esquinas. Y fíjense en
+la mancha blanca de arriba a la derecha:
+
+192
+00:26:10.263 --> 00:26:18.158
+es una nube. Si alguien midiera “blanco igual
+a desmonte”, se equivocaría. A la derecha, 18
+
+193
+00:26:18.158 --> 00:26:26.053
+de julio de 2024. Mismo lugar, mismo tipo
+de sensor, MODIS Terra, mismo mes. La raspa
+
+194
+00:26:26.053 --> 00:26:33.947
+se puso más densa y el marrón se
+comió parte de aquellos bloques oscuros. El bosque
+
+195
+00:26:33.947 --> 00:26:41.842
+no desapareció del encuadre: a la derecha sigue
+habiendo masas verdes. Lo que cambió es cuánto
+
+196
+00:26:41.842 --> 00:26:49.737
+del oscuro pasó a suelo abierto, y el
+patrón sigue naciendo de los caminos. ¿Por qué
+
+197
+00:26:49.737 --> 00:26:57.632
+el mismo mes importa? Porque el bosque y
+el pasto cambian de aspecto entre la estación
+
+198
+00:26:57.632 --> 00:27:05.526
+seca y la húmeda. Julio contra julio sostiene
+que la diferencia es de cobertura, no de
+
+199
+00:27:05.526 --> 00:27:13.421
+calendario. Julio contra enero no serviría para esta
+frase. El punto de la lámina: el patrón
+
+200
+00:27:13.421 --> 00:27:21.316
+es la evidencia. No hace falta un discurso
+para ver que la apertura sigue a las
+
+201
+00:27:21.316 --> 00:27:29.211
+vías. MODIS muestra la región. Si el proyecto
+quiere el detalle de un sector y una
+
+202
+00:27:29.211 --> 00:27:37.105
+memoria más larga, el archivo es Landsat, abierto
+desde 1972, con píxeles de 30 metros en
+
+203
+00:27:37.105 --> 00:27:45.000
+vez de esta vista regional. Esa idea vuelve al final.
+
+204
+00:27:45.000 --> 00:27:51.750
+Acá hay una sola imagen, y conviene decirlo
+para no leer un cambio que la lámina
+
+205
+00:27:51.750 --> 00:27:58.500
+no muestra. Es la Cordillera Blanca, en Perú,
+el 2 de julio de 2023, en color
+
+206
+00:27:58.500 --> 00:28:05.250
+natural. El marrón y el verde apagado son
+laderas y valles. Las manchas blancas, alineadas en
+
+207
+00:28:05.250 --> 00:28:12.000
+las crestas, son nieve y hielo: reflejan casi
+toda la luz del Sol, por eso queman
+
+208
+00:28:12.000 --> 00:28:18.750
+en la foto. Junto a varias de esas
+manchas hay puntos turquesa. Son lagunas de montaña.
+
+209
+00:28:18.750 --> 00:28:25.500
+El color sale del agua poco profunda, el
+sedimento y el hielo molido; no hace falta
+
+210
+00:28:25.500 --> 00:28:32.250
+tratarlas como un falso color. Alrededor, el terreno
+se ve seco. Esta foto la arma HLS,
+
+211
+00:28:32.250 --> 00:28:39.000
+un producto de la NASA que combina Landsat
+y Sentinel-2 para que se puedan comparar con
+
+212
+00:28:39.000 --> 00:28:45.750
+menos fricción. Lo que esta escena sí permite,
+hoy, es reconocer el borde: dónde termina el
+
+213
+00:28:45.750 --> 00:28:52.500
+blanco y empieza la roca. Medir un retroceso
+exige otra imagen, del mismo lugar y de
+
+214
+00:28:52.500 --> 00:28:59.250
+una fecha anterior, y superponer esos bordes. Esa
+segunda imagen no está en la lámina. Existe
+
+215
+00:28:59.250 --> 00:29:06.000
+en el archivo. Ahí entra 1972. Landsat observa
+la Tierra desde ese año. La decisión no
+
+216
+00:29:06.000 --> 00:29:12.750
+se toma con este retrato solo. Se toma
+comparando este borde con el borde de hace
+
+217
+00:29:12.750 --> 00:29:19.500
+diez, veinte o cincuenta años, en el mismo
+mes, para no confundir nieve de invierno con
+
+218
+00:29:19.500 --> 00:29:26.250
+glaciar. Tres usos, los de la lámina. Agua,
+porque ríos y ciudades dependen del deshielo. Medida,
+
+219
+00:29:26.250 --> 00:29:33.000
+porque el borde se puede seguir. Riesgo, porque
+una laguna nueva, pegada al hielo, puede vaciarse
+
+220
+00:29:33.000 --> 00:29:39.750
+de golpe. Si la pregunta del equipo es
+“¿cómo cambió esto en décadas?”, el dato abierto
+
+221
+00:29:39.750 --> 00:29:46.500
+es Landsat. Sentinel-2 les da más detalle del
+presente. La memoria larga es este archivo de
+
+222
+00:29:46.500 --> 00:29:53.250
+la NASA y el USGS. ---PAGE 9--- Explora
+la Tierra desde el espacio · Speaker notes
+
+223
+00:29:53.250 --> 00:30:00.000
+9
+
+224
+00:30:00.000 --> 00:30:07.105
+Otra vez color natural, así que el agua
+se reconoce por lo que es, no por
+
+225
+00:30:07.105 --> 00:30:14.211
+una receta rara. Y aún así hay un
+detalle: el agua no siempre es azul. A
+
+226
+00:30:14.211 --> 00:30:21.316
+la izquierda, Mar de Aral, 25 de agosto
+de 2000, entre Kazajistán y Uzbekistán. Se ve
+
+227
+00:30:21.316 --> 00:30:28.421
+un cuerpo enorme. La parte oeste es azul
+muy oscuro, agua más profunda. El lóbulo del
+
+228
+00:30:28.421 --> 00:30:35.526
+sur es verde intenso: agua poco profunda, con
+sedimentos o con algas, que cambian el color.
+
+229
+00:30:35.526 --> 00:30:42.632
+Hay islas y costas blancas, sal. Alrededor, desierto
+beige. Arriba a la izquierda, una mancha blanca
+
+230
+00:30:42.632 --> 00:30:49.737
+con sombra: nubes, no nieve. A la derecha,
+25 de agosto de 2024. Mismo encuadre, mismo
+
+231
+00:30:49.737 --> 00:30:56.842
+sensor, MODIS Terra, el mismo día del calendario,
+24 años después. El lóbulo verde ya no
+
+232
+00:30:56.842 --> 00:31:03.947
+está. En su lugar hay una llanura pálida,
+blanca y gris: sal y lecho seco. No
+
+233
+00:31:03.947 --> 00:31:11.053
+es una nube, porque no tiene la forma
+algodonosa ni tapa el terreno de alrededor; es
+
+234
+00:31:11.053 --> 00:31:18.158
+el fondo del lago. Sí queda agua: una
+franja oscura y alargada del lado oeste, y
+
+235
+00:31:18.158 --> 00:31:25.263
+los lagos chicos del norte, que siguen verde
+oscuro. Se llega a la conclusión porque el
+
+236
+00:31:25.263 --> 00:31:32.368
+marco no cambió. No movimos la cámara ni
+la receta. Lo que cambió es la superficie.
+
+237
+00:31:32.368 --> 00:31:39.474
+El agua de los ríos que alimentaban el
+mar se desvió para riego, durante décadas. El
+
+238
+00:31:39.474 --> 00:31:46.579
+matiz que evita una frase demasiado redonda: el
+norte, del lado de Kazajistán, recuperó parte del
+
+239
+00:31:46.579 --> 00:31:53.684
+agua después de la presa de Kokaral, en
+2005. El sur, no. El satélite sostiene las
+
+240
+00:31:53.684 --> 00:32:00.789
+dos cosas en la misma pareja. Mismo mar,
+dos decisiones, dos resultados. Este es el gesto
+
+241
+00:32:00.789 --> 00:32:07.895
+que van a repetir en Worldview. Un lugar,
+la misma capa, dos fechas. El Aral es
+
+242
+00:32:07.895 --> 00:32:15.000
+la versión dramática. Su ciudad puede ser la versión útil.
+
+243
+00:32:15.000 --> 00:32:22.391
+Estas dos no son fotos del Pacífico. Si
+las leen como fotos, el negro parece un
+
+244
+00:32:22.391 --> 00:32:29.783
+mar de noche y se pierde el dato.
+El negro es el continente, tapado a propósito.
+
+245
+00:32:29.783 --> 00:32:37.174
+La silueta es la costa de Perú y,
+hacia arriba, Ecuador. Al tapar la tierra, el
+
+246
+00:32:37.174 --> 00:32:44.565
+ojo solo lee el agua. Lo que queda
+de color es una anomalía de temperatura: cuánto
+
+247
+00:32:44.565 --> 00:32:51.957
+más fría o más cálida está la superficie
+del mar respecto de lo normal para esa
+
+248
+00:32:51.957 --> 00:32:59.348
+época. No es “el mar está a 25
+grados”. Es “el mar está por encima o
+
+249
+00:32:59.348 --> 00:33:06.739
+por debajo de su costumbre”. El producto se
+llama GHRSST MUR y lo sirve la NASA
+
+250
+00:33:06.739 --> 00:33:14.130
+en GIBS. La leyenda de la lámina alcanza:
+un extremo es más frío, el otro es
+
+251
+00:33:14.130 --> 00:33:21.522
+más cálido. No hace falta ---PAGE 10--- memorizar
+cada tono. Agosto de 2022, a la izquierda.
+
+252
+00:33:21.522 --> 00:33:28.913
+El agua se ve en verdes, cianes y
+amarillos, o sea del lado fresco a moderado
+
+253
+00:33:28.913 --> 00:33:36.304
+de la escala, con un foco rojo y
+naranja pegado al norte de la costa. No
+
+254
+00:33:36.304 --> 00:33:43.696
+es un mar uniformemente frío. Es un mar
+mayormente por debajo o cerca de lo normal,
+
+255
+00:33:43.696 --> 00:33:51.087
+con un parche cálido. Mayo de 2023, a
+la derecha. La misma costa, el mismo negro
+
+256
+00:33:51.087 --> 00:33:58.478
+de la tierra. El agua pegada al litoral
+pasó a rojo oscuro y magenta, y más
+
+257
+00:33:58.478 --> 00:34:05.870
+afuera a naranja y amarillo. Ese desplazamiento entero
+hacia el extremo cálido es El Niño costero.
+
+258
+00:34:05.870 --> 00:34:13.261
+El punto no es un píxel rojo suelto,
+como el parche de 2022. Es que casi
+
+259
+00:34:13.261 --> 00:34:20.652
+toda la franja costera cambió de signo. ¿Por
+qué le importa a quien no mira mapas?
+
+260
+00:34:20.652 --> 00:34:28.043
+Porque la temperatura del mar mueve la anchoveta,
+cambia las lluvias de la costa y sube
+
+261
+00:34:28.043 --> 00:34:35.435
+el riesgo de inundaciones. El satélite no pronostica
+solo. Entrega la pieza “el mar no está
+
+262
+00:34:35.435 --> 00:34:42.826
+como suele” antes de que el efecto llegue
+al puerto. Para un proyecto, la pregunta puede
+
+263
+00:34:42.826 --> 00:34:50.217
+ser chica y buena: ¿cómo se veía mi
+costa cuando el mar estuvo más cálido de
+
+264
+00:34:50.217 --> 00:34:57.609
+lo normal? La capa ya está en Worldview.
+Se prende, se comparan dos fechas, se cita
+
+265
+00:34:57.609 --> 00:35:05.000
+el producto y el día.
+
+266
+00:35:05.000 --> 00:35:13.438
+Esto sí vuelve a ser una fotografía, color
+natural, MODIS en el satélite Terra, 8 de
+
+267
+00:35:13.438 --> 00:35:21.875
+octubre de 2024. Lo que se ve: un
+océano azul oscuro y, a la derecha, una
+
+268
+00:35:21.875 --> 00:35:30.312
+espiral blanca enorme. El blanco es nube, luz
+del Sol rebotando en el tope de las
+
+269
+00:35:30.312 --> 00:35:38.750
+tormentas. La espiral se aprieta hacia un centro
+más liso y redondeado: ese es el ojo
+
+270
+00:35:38.750 --> 00:35:47.188
+del huracán Milton. No siempre se ve un
+agujero perfecto; a veces, como aquí, se ve
+
+271
+00:35:47.188 --> 00:35:55.625
+el remolino cerrándose. Arriba hay una franja de
+tierra verde y marrón: la costa del golfo,
+
+272
+00:35:55.625 --> 00:36:04.062
+del lado de Estados Unidos. Abajo a la
+izquierda, otra costa verde. El huracán todavía está
+
+273
+00:36:04.062 --> 00:36:12.500
+sobre el agua. Al día siguiente tocó tierra
+en Florida. Se llega a las tres decisiones
+
+274
+00:36:12.500 --> 00:36:20.938
+sin agregar datos que la foto no tiene.
+Antes: el tamaño y la posición alimentan el
+
+275
+00:36:20.938 --> 00:36:29.375
+pronóstico de por dónde puede entrar. Esta imagen
+no es el pronóstico; es una observación. Durante:
+
+276
+00:36:29.375 --> 00:36:37.812
+ver la escala ayuda a tomar en serio
+la evacuación. Después, y esto la foto de
+
+277
+00:36:37.812 --> 00:36:46.250
+hoy no lo muestra: cuando el cielo abre,
+se compara la costa de antes con la
+
+278
+00:36:46.250 --> 00:36:54.688
+de después, y si sigue nublado se usa
+radar. El después es otro día y, a
+
+279
+00:36:54.688 --> 00:37:03.125
+menudo, otro sensor. El punto para el Space
+Apps: son tres proyectos distintos. Si intentan “la
+
+280
+00:37:03.125 --> 00:37:11.562
+app de todos los desastres”, se quedan sin
+sábado. Elijan un momento. El método viaja a
+
+281
+00:37:11.562 --> 00:37:20.000
+cualquier evento que sí les importe: observación abierta, una decisión, una fuente citada.
+
+282
+00:37:20.000 --> 00:37:27.250
+Última imagen de esta parada, y cierra el
+círculo con la primera escena que aprendimos a
+
+283
+00:37:27.250 --> 00:37:34.500
+leer. De día, el Delta del Nilo era
+un abanico verde en un desierto beige. De
+
+284
+00:37:34.500 --> 00:37:41.750
+noche es el mismo abanico, dibujado con luces.
+Lo negro de arriba es el mar. Lo
+
+285
+00:37:41.750 --> 00:37:49.000
+negro de los costados es desierto: no falló
+el satélite, simplemente no hay lámparas. La mancha
+
+286
+00:37:49.000 --> 00:37:56.250
+más blanca, abajo, donde el abanico se junta
+en un nudo, es El Cairo y su
+
+287
+00:37:56.250 --> 00:38:03.500
+entorno. Los hilos más finos son rutas y
+pueblos siguiendo los brazos del río. Por eso
+
+288
+00:38:03.500 --> 00:38:10.750
+la forma coincide con el cultivo: la gente
+vive donde está el agua. ¿Cómo se llega
+
+289
+00:38:10.750 --> 00:38:18.000
+a esta foto? De noche la cámara común
+no tiene Sol. Este producto, Black Marble, de
+
+290
+00:38:18.000 --> 00:38:25.250
+la NASA, usa VIIRS, que sí puede registrar
+luces artificiales, y arma una vista estable de
+
+291
+00:38:25.250 --> 00:38:32.500
+la noche, limpiando en lo posible el resplandor
+de la Luna y las nubes. Sigue siendo
+
+292
+00:38:32.500 --> 00:38:39.750
+un dato con coordenadas. Un píxel brillante es
+un lugar con luz, no una medida de
+
+293
+00:38:39.750 --> 00:38:47.000
+cuánta gente vive ahí. Sirve como pista de
+presencia humana, con ese cuidado. Esa pista está
+
+294
+00:38:47.000 --> 00:38:54.250
+detrás de cosas que ya usaron hoy. El
+pronóstico del tiempo. La estimación de cosechas, que
+
+295
+00:38:54.250 --> 00:39:01.500
+vimos como NDVI. El agua de las ciudades,
+que en la montaña depende del hielo. La
+
+296
+00:39:01.500 --> 00:39:08.750
+alerta de un desastre. El crecimiento de una
+ciudad, que de noche se ve como una
+
+297
+00:39:08.750 --> 00:39:16.000
+mancha que se ensancha año a año. (pregunta)
+¿Cuál de estos cinco usaron hoy? Levanten la
+
+298
+00:39:16.000 --> 00:39:23.250
+mano en el primero que les salga. (10
+segundos) Casi siempre gana el pronóstico. Parte de
+
+299
+00:39:23.250 --> 00:39:30.500
+esa información empezó como una observación de satélite
+y les llegó traducida a un ícono en
+
+300
+00:39:30.500 --> 00:39:37.750
+el teléfono. El trabajo del fin de semana
+es el mismo oficio: tomar un dato abierto
+
+301
+00:39:37.750 --> 00:39:45.000
+y volverlo una respuesta que otra persona
+pueda usar. Ahora sí, la parada del título.
+
+302
+00:39:45.000 --> 00:39:52.500
+Tercera parada. La del título. Hasta aquí hicieron
+el recorrido difícil: mirar, entender la receta de
+
+303
+00:39:52.500 --> 00:40:00.000
+color y recién después concluir. Lo que falta
+es práctico. Todo eso se puede volver a
+
+304
+00:40:00.000 --> 00:40:07.500
+abrir. Gratis, en línea, sin haber sido especialistas.
+La NASA y la ESA ya pagaron el
+
+305
+00:40:07.500 --> 00:40:15.000
+satélite, la bajada y la publicación. A ustedes
+les toca la pregunta, la fuente correcta y
+
+306
+00:40:15.000 --> 00:40:22.500
+una figura que se pueda defender. Vamos de
+la página más general a la herramienta más
+
+307
+00:40:22.500 --> 00:40:30.000
+simple, y en unos minutos repetimos el gesto en vivo.
+
+308
+00:40:30.000 --> 00:40:37.500
+Tres puertas. Las voy a atar a escenas
+que ya saben leer, para que no queden
+
+309
+00:40:37.500 --> 00:40:45.000
+como marcas sueltas. Earthdata, earthdata.nasa.gov, es la puerta
+general de la NASA. Por ahí se llega
+
+310
+00:40:45.000 --> 00:40:52.500
+a la postal del planeta, al MODIS del
+Nilo, a los focos de FIRMS, al mapa
+
+311
+00:40:52.500 --> 00:41:00.000
+de anomalía del mar, a Black Marble y,
+desde 2026, al radar de NISAR en banda
+
+312
+00:41:00.000 --> 00:41:07.500
+L. La cuenta se llama Earthdata Login y
+es gratis. Una sola cuenta abre el buscador
+
+313
+00:41:07.500 --> 00:41:15.000
+de archivos y, más adelante, la clave de
+la API de FIRMS. Landsat es la memoria.
+
+314
+00:41:15.000 --> 00:41:22.500
+NASA y USGS, imágenes desde 1972. Es el
+archivo con el que se puede poner al
+
+315
+00:41:22.500 --> 00:41:30.000
+lado de la Cordillera Blanca de 2023 una
+escena del mismo mes de hace décadas, y
+
+316
+00:41:30.000 --> 00:41:37.500
+con el que el bosque de Rondônia se
+puede ver a 30 metros, no solo en
+
+317
+00:41:37.500 --> 00:41:45.000
+la vista regional de MODIS. La descarga clásica
+está en EarthExplorer, earthexplorer.usgs.gov, también con cuenta gratis.
+
+318
+00:41:45.000 --> 00:41:52.500
+Se mira en el navegador. Se descarga solo
+cuando el proyecto necesita el archivo. Sentinel es
+
+319
+00:41:52.500 --> 00:42:00.000
+la ESA, programa Copernicus, en dataspace.copernicus.eu. Sentinel-2 es
+la cámara de detalle, la que van a
+
+320
+00:42:00.000 --> 00:42:07.500
+querer para un lote o un barrio de
+ahora. Sentinel-1 es el radar que habría seguido
+
+321
+00:42:07.500 --> 00:42:15.000
+el Indo aunque las nubes celestes taparan el
+falso color. Otra cuenta gratis. Cómo elegir sin
+
+322
+00:42:15.000 --> 00:42:22.500
+angustia. Vista global, fuegos, océanos, archivo largo: NASA.
+Su barrio, un cultivo de este mes, una
+
+323
+00:42:22.500 --> 00:42:30.000
+inundación con cielo cerrado: ESA. Un buen proyecto
+usa una. Uno muy bueno, a veces, las
+
+324
+00:42:30.000 --> 00:42:37.500
+dos: Landsat para la historia y Sentinel para
+el detalle de hoy. Creen la cuenta hoy,
+
+325
+00:42:37.500 --> 00:42:45.000
+con calma. El registro son cinco minutos. Buscar
+la contraseña el sábado, con el reloj encima,
+
+326
+00:42:45.000 --> 00:42:52.500
+sale más caro. Si una página les pide
+una tarjeta para “desbloquear la imagen”, no es
+
+327
+00:42:52.500 --> 00:43:00.000
+ninguna de estas tres.
+
+328
+00:43:00.000 --> 00:43:07.000
+Estas dos colecciones son las que más equipos
+van a tocar. Para elegir bien hay que
+
+329
+00:43:07.000 --> 00:43:14.000
+entender qué es un píxel, porque el número
+de la lámina no es una calidad de
+
+330
+00:43:14.000 --> 00:43:21.000
+“más megapíxeles”. Un píxel es el cuadradito mínimo
+de la imagen. Todo lo que hay dentro
+
+331
+00:43:21.000 --> 00:43:28.000
+se promedia en un solo valor. En Landsat,
+las bandas que más se usan miden 30
+
+332
+00:43:28.000 --> 00:43:35.000
+metros de lado: un cuadrado de 30 por
+30. Cabe un lote chico. No cabe una
+
+333
+00:43:35.000 --> 00:43:42.000
+persona, ni un auto, ni el techo de
+una casa separado del jardín. Por eso Landsat
+
+334
+00:43:42.000 --> 00:43:49.000
+es perfecto para el borde de un glaciar
+o para la mancha de un bosque a
+
+335
+00:43:49.000 --> 00:43:56.000
+lo largo de décadas, y corto para contar
+árboles uno por uno. Observa desde 1972. Landsat
+
+336
+00:43:56.000 --> 00:44:03.000
+8 y 9, juntos, pasan más o menos
+cada 8 días. Cada uno solo, cada 16.
+
+337
+00:44:03.000 --> 00:44:10.000
+Sentinel-2 observa desde 2015. No les da 1972.
+Les da el detalle de ahora. Las bandas
+
+338
+00:44:10.000 --> 00:44:17.000
+con las que se arma el color y
+el NDVI, azul, verde, rojo e infrarrojo cercano,
+
+339
+00:44:17.000 --> 00:44:24.000
+vienen a 10 metros. Un cuadrado de 10
+por 10 ya separa mejor un lote, una
+
+340
+00:44:24.000 --> 00:44:31.000
+manzana, una orilla. Otras bandas, útiles para humedad
+o para detectar nubes altas, vienen a 20
+
+341
+00:44:31.000 --> 00:44:38.000
+o a 60 metros. Por eso la lámina
+dice 10: habla de las bandas del índice,
+
+342
+00:44:38.000 --> 00:44:45.000
+no de todas. Con la pareja de satélites,
+la revisita ronda los 5 días en el
+
+343
+00:44:45.000 --> 00:44:52.000
+ecuador, y en nuestras latitudes a veces es
+un poco más frecuente. ---PAGE 13--- Las nubes
+
+344
+00:44:52.000 --> 00:44:59.000
+siguen mandando en las dos, porque las dos
+son cámaras. Si el día está blanco, esa
+
+345
+00:44:59.000 --> 00:45:06.000
+fecha no entra en el antes y el
+después. Se espera el siguiente paso. La decisión,
+
+346
+00:45:06.000 --> 00:45:13.000
+leída despacio: ¿cómo cambió un bosque, un glaciar
+o una ciudad en décadas? Landsat. ¿Cómo está
+
+347
+00:45:13.000 --> 00:45:20.000
+su barrio, su lote o su costa este mes? Sentinel-2.
+
+348
+00:45:20.000 --> 00:45:28.235
+Las herramientas, de la más fácil a la
+más profunda. Suban un escalón solo cuando el
+
+349
+00:45:28.235 --> 00:45:36.471
+de abajo no alcanza para la pregunta. Uno,
+mirar. NASA Worldview, en el navegador, sin cuenta.
+
+350
+00:45:36.471 --> 00:45:44.706
+Es el lugar donde viven varias escenas de
+hoy: el Nilo, los fuegos, el mar, la
+
+351
+00:45:44.706 --> 00:45:52.941
+noche. Eligen lugar, prenden una capa, mueven la
+fecha. La capa es la receta: color real,
+
+352
+00:45:52.941 --> 00:46:01.176
+falso color, focos, anomalía. Si cambian de capa,
+cambian el significado de los colores, como ya
+
+353
+00:46:01.176 --> 00:46:09.412
+les pasó entre el Nilo oliva y el
+Nilo eléctrico. Dos, explorar. Copernicus Browser, de la
+
+354
+00:46:09.412 --> 00:46:17.647
+ESA. Ahí están Sentinel-1 y Sentinel-2. Buscan su
+zona, filtran por pocas nubes y pueden calcular
+
+355
+00:46:17.647 --> 00:46:25.882
+el NDVI con un clic. El filtro de
+nubes es el que les evita medir una
+
+356
+00:46:25.882 --> 00:46:34.118
+nube como si fuera un cultivo enfermo. Tres,
+descargar. Earthdata Search y EarthExplorer. Aquí se llevan
+
+357
+00:46:34.118 --> 00:46:42.353
+el archivo, cuando necesitan medirlo o combinarlo. No
+descarguen el país entero por las dudas. Descarguen
+
+358
+00:46:42.353 --> 00:46:50.588
+la fecha que responde la pregunta. Cuatro, analizar.
+QGIS, programa gratuito. Sirve para medir un área,
+
+359
+00:46:50.588 --> 00:46:58.824
+recortar y armar un mapa con norte, escala
+y leyenda. Tiene curva. No es el requisito
+
+360
+00:46:58.824 --> 00:47:07.059
+para participar. La frase de la lámina es
+literal: no hace falta llegar arriba para tener
+
+361
+00:47:07.059 --> 00:47:15.294
+un buen proyecto. Una pregunta nítida, dos fechas
+y una imagen con la receta de color
+
+362
+00:47:15.294 --> 00:47:23.529
+explicada puede ganar a un mapa confuso hecho
+en una herramienta que el equipo no domina.
+
+363
+00:47:23.529 --> 00:47:31.765
+Si alguien ya programa, las APIs de Earthdata
+y de Copernicus, y entornos como Google Earth
+
+364
+00:47:31.765 --> 00:47:40.000
+Engine, están en la bitácora. No empiecen
+por ahí si esta es su primera imagen.
+
+365
+00:47:40.000 --> 00:47:54.211
+Vamos a repetir el gesto con las manos.
+Saquen el teléfono si quieren. No hace falta
+
+366
+00:47:54.211 --> 00:48:08.421
+cuenta. (abre worldview.earthdata.nasa.gov) ---PAGE 14--- Paso uno. Esta
+es Worldview. Si tarda, esperamos. Es la misma
+
+367
+00:48:08.421 --> 00:48:22.632
+puerta por la que salieron varias imágenes de
+hoy. Paso dos. Un lugar que esta sala
+
+368
+00:48:22.632 --> 00:48:36.842
+reconozca. (15 segundos) Si nadie alcanza a proponerlo,
+uso uno que ya sabemos leer, para no
+
+369
+00:48:36.842 --> 00:48:51.053
+gastar la demo en orientarnos: el Delta del
+Nilo, o Rondônia. Paso tres. Prendo una capa,
+
+370
+00:48:51.053 --> 00:49:05.263
+y digo qué significa antes de interpretarla. Si
+prendo color real, el verde es vegetación como
+
+371
+00:49:05.263 --> 00:49:19.474
+la vería el ojo y el blanco puede
+ser nube. Si prendo focos de calor, los
+
+372
+00:49:19.474 --> 00:49:33.684
+puntos rojos son detecciones, no llamas, igual que
+en la lámina de la Amazonía. El círculo
+
+373
+00:49:33.684 --> 00:49:47.895
+de esta lámina es exactamente eso, por si
+la red nos deja: humo blanco, suelo marrón
+
+374
+00:49:47.895 --> 00:50:02.105
+parcelado, puntos rojos encima, algunos donde la nube
+tapa el suelo. Esa imagen es el plan
+
+375
+00:50:02.105 --> 00:50:16.316
+B, y se lee con el mismo código.
+Paso cuatro. Muevo la fecha. Busco dos días
+
+376
+00:50:16.316 --> 00:50:30.526
+que se puedan comparar con justicia: misma capa,
+y si es vegetación, meses parecidos. Si uno
+
+377
+00:50:30.526 --> 00:50:44.737
+está blanco de nubes, lo digo y lo
+descarto. Descartar una fecha es el oficio, no
+
+378
+00:50:44.737 --> 00:50:58.947
+un tropiezo. Paso cinco. Guardo la vista, o
+una foto de la pantalla, siempre que se
+
+379
+00:50:58.947 --> 00:51:13.158
+lea la fecha y el nombre de la
+capa. Sin eso es un fondo de pantalla.
+
+380
+00:51:13.158 --> 00:51:27.368
+Con eso es una figura. Un pie mínimo
+suena así: lugar, fecha, nombre de la capa,
+
+381
+00:51:27.368 --> 00:51:41.579
+NASA Worldview. Lo que acabamos de hacer cabe
+en cualquier idea que viene ahora. Lugar, receta
+
+382
+00:51:41.579 --> 00:51:55.789
+de color, dos fechas, fuente. Para Sentinel, el
+molde es el mismo en Copernicus Browser: cambia
+
+383
+00:51:55.789 --> 00:52:10.000
+la página, no el razonamiento.
+
+384
+00:52:10.000 --> 00:52:16.250
+Esta lámina no se demuestra. Se fotografía. Arriba
+está la bitácora, la puerta de la charla:
+
+385
+00:52:16.250 --> 00:52:22.500
+bitácora abierta de órbitas, punto vercel punto app.
+Debajo, el paso a paso que ya publicaron
+
+386
+00:52:22.500 --> 00:52:28.750
+la NASA, el USGS y la ESA. A
+la izquierda, crear la cuenta. A la derecha,
+
+387
+00:52:28.750 --> 00:52:35.000
+descargar la imagen o el dato. Earthdata explica
+el registro en su propia página, y la
+
+388
+00:52:35.000 --> 00:52:41.250
+activación llega por correo. Para bajar archivos, Earthdata
+Search tiene una guía oficial en PDF. Landsat
+
+389
+00:52:41.250 --> 00:52:47.500
+usa la cuenta del USGS: los tutoriales están
+en EarthExplorer, y la descarga es un video
+
+390
+00:52:47.500 --> 00:52:53.750
+oficial. Copernicus, de la ESA, escribe el registro
+y también cómo bajar desde el Browser, con
+
+391
+00:52:53.750 --> 00:53:00.000
+el ícono de descarga. Worldview, el que acabamos
+de abrir, sigue sin cuenta. Estas tres sí.
+
+392
+00:53:00.000 --> 00:53:06.818
+Cuatro proyectos. No son temas nuevos: son las
+escenas de hoy, convertidas en una pregunta de
+
+393
+00:53:06.818 --> 00:53:13.636
+equipo. Alerta de incendios. La imagen que ya
+vimos: humo, y puntos rojos que son otra
+
+394
+00:53:13.636 --> 00:53:20.455
+capa. Pregunta: ¿dónde hubo calor en el último
+día, en mi región? Dato: FIRMS, VIIRS, NASA.
+
+395
+00:53:20.455 --> 00:53:27.273
+Primer clic: Worldview o el mapa de FIRMS.
+Trampa: el punto es un píxel de unos
+
+396
+00:53:27.273 --> 00:53:34.091
+375 metros. Digan detección. No inventen hectáreas ni
+dibujen la llama. Salud de cultivos. La imagen
+
+397
+00:53:34.091 --> 00:53:40.909
+que ya vimos: el Nilo que pasa de
+oliva a verde eléctrico, y después a un
+
+398
+00:53:40.909 --> 00:53:47.727
+NDVI. Pregunta: ¿qué lotes están vigorosos este mes?
+Dato: Sentinel-2, ESA, índice NDVI. Primer clic: Copernicus
+
+399
+00:53:47.727 --> 00:53:54.545
+Browser, filtren nubes, activen el índice. Trampa: una
+nube o un cambio de estación imitan un
+
+400
+00:53:54.545 --> 00:54:01.364
+cultivo enfermo. Mismo mes, cielo despejado, y en
+el pie aclaren que el verde del índice
+
+401
+00:54:01.364 --> 00:54:08.182
+no es el verde de la foto. Mapa
+de inundaciones. La imagen que ya vimos: el
+
+402
+00:54:08.182 --> 00:54:15.000
+Indo, donde el hilo oscuro se volvió un
+cuerpo ancho, y el celeste era nube. Pregunta:
+
+403
+00:54:15.000 --> 00:54:21.818
+¿qué superficie estaba seca antes y cubierta después?
+Si el evento tiene cielo cerrado, el dato
+
+404
+00:54:21.818 --> 00:54:28.636
+es Sentinel-1, el radar, no la cámara. Primer
+clic: Copernicus Browser, una fecha anterior y una
+
+405
+00:54:28.636 --> 00:54:35.455
+posterior. Trampa: el radar no se lee como
+el falso color 7-2-1. Hay que aprender su
+
+406
+00:54:35.455 --> 00:54:42.273
+propia receta, siempre comparando contra un antes. NISAR
+es un gran radar de la NASA; no
+
+407
+00:54:42.273 --> 00:54:49.091
+es el primer clic si nunca vieron un
+radar. Bosque antes y después. La imagen que
+
+408
+00:54:49.091 --> 00:54:55.909
+ya vimos: la raspa de Rondônia, verde oscuro
+contra marrón, y la nube que no cuenta.
+
+409
+00:54:55.909 --> 00:55:02.727
+Pregunta: ¿qué era bosque y dejó de serlo?
+Dato: Landsat, para tener décadas y 30 metros.
+
+410
+00:55:02.727 --> 00:55:09.545
+Primer clic: dos fechas del mismo mes. Trampa:
+julio contra enero, o tomar una nube por
+
+411
+00:55:09.545 --> 00:55:16.364
+un claro. Elijan una ahora, en silencio. Pueden
+cambiarla. Cualquiera se abre hoy con datos abiertos.
+
+412
+00:55:16.364 --> 00:55:23.182
+La Tierra ya está fotografiada. Estas cuatro son
+cuatro maneras de poner una pregunta propia sobre
+
+413
+00:55:23.182 --> 00:55:30.000
+una imagen que ya saben leer.
+
+414
+00:55:30.000 --> 00:55:37.333
+Cuatro consejos, cada uno atado a un error
+que ya vimos casi cometer. Primero: partan de
+
+415
+00:55:37.333 --> 00:55:44.667
+una pregunta, no del satélite. “Vamos a usar
+Sentinel porque es famoso” no es un proyecto.
+
+416
+00:55:44.667 --> 00:55:52.000
+“Queremos saber dónde se salió el río” sí
+lo es, y esa frase elige sola entre
+
+417
+00:55:52.000 --> 00:55:59.333
+cámara y radar. Segundo: revisen las nubes, y
+no las midan como si fueran suelo. En
+
+418
+00:55:59.333 --> 00:56:06.667
+Rondônia, la mancha blanca de 2000 era nube.
+En el Indo, el celeste pálido también. En
+
+419
+00:56:06.667 --> 00:56:14.000
+un NDVI, la nube no es un cultivo
+enfermo. Si no ven el suelo, esa fecha
+
+420
+00:56:14.000 --> 00:56:21.333
+no entra. Tercero: comparen la misma época, y
+además la misma receta. Julio con julio, como
+
+421
+00:56:21.333 --> 00:56:28.667
+en el bosque y en el Aral. Y
+falso color con falso color. Si una fecha
+
+422
+00:56:28.667 --> 00:56:36.000
+está en color real y la otra en
+infrarrojo, el verde no ---PAGE 16--- significa lo
+
+423
+00:56:36.000 --> 00:56:43.333
+mismo y la conclusión se cae. Cuarto: citen
+fuente, fecha y receta. Un pie que el
+
+424
+00:56:43.333 --> 00:56:50.667
+jurado puede verificar suena así: “Río Indo, 30
+de agosto de 2022. MODIS Terra, falso color
+
+425
+00:56:50.667 --> 00:56:58.000
+7-2-1, agua en azul oscuro y vegetación en
+verde. NASA GIBS.” Sensor, fecha, cómo se pintó,
+
+426
+00:56:58.000 --> 00:57:05.333
+institución. Sin la receta, quien mire el verde
+puede creer que es una foto común. Con
+
+427
+00:57:05.333 --> 00:57:12.667
+la receta, la figura se puede defender. Si
+solo recuerdan dos cosas: la pregunta primero, y
+
+428
+00:57:12.667 --> 00:57:20.000
+en el pie, la fecha y el modo en que se armó el color.
+
+429
+00:57:20.000 --> 00:57:30.000
+Para que el recorrido no se quede en
+esta sala, armamos la Bitácora Space Apps de
+
+430
+00:57:30.000 --> 00:57:40.000
+Órbitas. Va de la pregunta a la entrega,
+en el mismo orden que usamos hoy: primero
+
+431
+00:57:40.000 --> 00:57:50.000
+qué quieres saber, después qué imagen lo muestra,
+después la fuente. La dirección, despacio: bitácora abierta
+
+432
+00:57:50.000 --> 00:58:00.000
+de órbitas, punto vercel punto app. Está escrita
+en la lámina. Saquen la foto con el
+
+433
+00:58:00.000 --> 00:58:10.000
+enlace legible. Cada nombre abre su página. La
+ruta del desafío: ocho pasos, para no empezar
+
+434
+00:58:10.000 --> 00:58:20.000
+por la herramienta. El laboratorio NASA: mapas en
+vivo y antes y después, o sea la
+
+435
+00:58:20.000 --> 00:58:30.000
+demo de hoy para repetirla sin mí. La
+biblioteca: 134 herramientas y APIs, con una nota
+
+436
+00:58:30.000 --> 00:58:40.000
+de uso legal, para cuando duden si un
+dato se puede usar. Y la guía de
+
+437
+00:58:40.000 --> 00:58:50.000
+entrega y citas: el checklist del pie de
+figura, con fecha, sensor y receta. Lo que
+
+438
+00:58:50.000 --> 00:59:00.000
+no alcancemos a resolver en las preguntas, esta página lo sigue explicando después.
+
+439
+00:59:00.000 --> 00:59:06.923
+Miren la Tierra otra vez. Es la misma
+cámara, EPIC, y no es el mismo encuadre
+
+440
+00:59:06.923 --> 00:59:13.846
+de la apertura: ahora el disco trae África
+hacia el centro. El planeta giró, las nubes
+
+441
+00:59:13.846 --> 00:59:20.769
+son otras, y el dato sigue siendo una
+foto abierta, no un dibujo. Eso es lo
+
+442
+00:59:20.769 --> 00:59:27.692
+que hacen la NASA y la ESA todos
+los días. Vuelven a mirar, y lo publican.
+
+443
+00:59:27.692 --> 00:59:34.615
+La frase de la lámina es el resumen
+de la hora. La Tierra ya está fotografiada.
+
+444
+00:59:34.615 --> 00:59:41.538
+La pregunta la pones tú. Ustedes ya tienen
+el método. Primero lo que se ve. Después
+
+445
+00:59:41.538 --> 00:59:48.462
+cómo se fabricó el color. Al final, la
+decisión, con fecha y fuente. Incendios, agua, bosque,
+
+446
+00:59:48.462 --> 00:59:55.385
+hielo, el mar o la noche de una
+ciudad: elijan una pregunta y un archivo. ---PAGE
+
+447
+00:59:55.385 --> 01:00:02.308
+17--- Tres direcciones, por si no alcanzaron a
+anotar. Worldview, para mirar sin cuenta. Earthdata, la
+
+448
+01:00:02.308 --> 01:00:09.231
+puerta de la NASA. El navegador de Copernicus,
+la puerta de la ESA. Y la bitácora,
+
+449
+01:00:09.231 --> 01:00:16.154
+que acaban de fotografiar. Gracias. Los escucho. (si
+hay silencio) ¿Cuál de las cuatro ideas se
+
+450
+01:00:16.154 --> 01:00:23.077
+parece más a lo que quiere hacer su
+equipo? Dos respuestas, y a construirlas. (corte) Si
+
+451
+01:00:23.077 --> 01:00:30.000
+una respuesta pide un tutorial, ciérrala con
+la bitácora. El minuto 60 es el final.
+
+452
+01:00:00.000 --> 01:30:58.000
+Espacio de preguntas y conversación con el
+público. Subtítulos de la charla principal terminan aquí.

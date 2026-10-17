@@ -43,3 +43,7 @@ public/brand/c__*
 public/brand/*-source.*
 public/brand/*-source.jpg
 public/brand/*-source.png
+
+# Video de la charla (demasiado grande para git; ver README § Charla)
+public/media/charla/*.mp4
+public/media/charla/_*.txt

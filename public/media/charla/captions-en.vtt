@@ -1,0 +1,224 @@
+WEBVTT
+Kind: captions
+Language: en
+
+1
+00:00:00.000 --> 00:00:50.000
+Before the title, look at the image. It is
+a real photograph of Earth by the EPIC camera
+
+2
+00:00:50.000 --> 00:01:40.000
+on DSCOVR (7 Oct 2026), about 1.5 million km
+away. NASA and ESA publish these views for free.
+
+3
+00:01:40.000 --> 00:02:30.000
+This hour: learn to read them — what you
+see, how it was made, what decision it allows.
+
+4
+00:02:30.000 --> 00:02:56.667
+Three stops map the hour: (1) from image to
+decision — GEOINT and how satellites look; (2) real
+
+5
+00:02:56.667 --> 00:03:23.333
+cases — fire, water, forest, ice, ocean, hurricane; (3)
+open NASA and ESA data, Landsat vs Sentinel, and
+
+6
+00:03:23.333 --> 00:03:50.000
+a live map in the browser.
+
+7
+00:03:50.000 --> 00:04:10.000
+First stop: understand. Mixed audience is fine. Same path
+every image: what an untrained eye sees, how the
+
+8
+00:04:10.000 --> 00:04:30.000
+satellite built the view, then the decision it enables.
+That path is geospatial intelligence on already published data.
+
+9
+00:04:30.000 --> 00:05:45.000
+GEOINT: image + location + analysis = decision. Image
+is raw material; location ties every pixel to Earth;
+
+10
+00:05:45.000 --> 00:07:00.000
+analysis translates what green means; decision is what we
+do. Example: where do crops need water this week?
+
+11
+00:07:00.000 --> 00:07:56.667
+Optical is like a phone camera — needs sunlight;
+clouds and night block the ground. Radar is like
+
+12
+00:07:56.667 --> 00:08:53.333
+an echo — own microwave signal works at night
+and through clouds. Landsat/Sentinel-2 for how it looks; Sentinel-1/NISAR
+
+13
+00:08:53.333 --> 00:09:50.000
+for water through clouds.
+
+14
+00:09:50.000 --> 00:11:07.500
+Four instruments, four questions: optical (what color?), thermal (where
+is extra heat?), radar (did the surface change?), lidar
+
+15
+00:11:07.500 --> 00:12:25.000
+(how tall?). Camera, thermometer, echo, ruler. Pick one question for Space Apps.
+
+16
+00:12:25.000 --> 00:14:00.000
+Same Nile Delta, same day (12 Jul 2024), MODIS
+Terra: true color vs near-infrared false color. Healthy leaves
+
+17
+00:14:00.000 --> 00:15:35.000
+bounce NIR; painting it green separates plants
+from soil. Available in NASA Worldview / GIBS.
+
+18
+00:15:35.000 --> 00:17:10.000
+Three circles = the full path on the same
+delta: photo → false color → NDVI (a painted
+
+19
+00:17:10.000 --> 00:18:45.000
+number). Cite dates: July 2024 for photo/false color; 8-day NDVI composite July 2025.
+
+20
+00:18:45.000 --> 00:19:25.000
+Everything that follows is real data. The
+method does not change: image first, conclusion second.
+
+21
+00:19:25.000 --> 00:20:50.000
+Two layers in one view: smoke is the photograph;
+red points are heat detections placed with coordinates (FIRMS
+
+22
+00:20:50.000 --> 00:22:15.000
+/ VIIRS).
+
+23
+00:22:15.000 --> 00:23:45.000
+Read the color code first, then before/after. Electric green
+is vegetation; dark blue is water; pale cyan is
+
+24
+00:23:45.000 --> 00:25:15.000
+cloud.
+
+25
+00:25:15.000 --> 00:26:30.000
+Dark green is forest; light brown is open soil.
+A white cloud in year 2000 is not a
+
+26
+00:26:30.000 --> 00:27:45.000
+clearing.
+
+27
+00:27:45.000 --> 00:28:52.500
+One portrait, not a before/after. White is ice; turquoise
+is lakes. The memory since 1972 is the method
+
+28
+00:28:52.500 --> 00:30:00.000
+— and it lives in Landsat.
+
+29
+00:30:00.000 --> 00:31:07.500
+In 2000 the south is a green water body.
+In 2024 that same body is a pale desert.
+
+30
+00:31:07.500 --> 00:32:15.000
+The smaller north still holds water.
+
+31
+00:32:15.000 --> 00:33:40.000
+Black is land, not sea. Colors are only the
+ocean — and they are the difference from normal,
+
+32
+00:33:40.000 --> 00:35:05.000
+not the water’s true color.
+
+33
+00:35:05.000 --> 00:37:20.000
+True-color photo. White is cloud. The tighter center
+of the spiral is the eye. Land appears above.
+
+34
+00:37:20.000 --> 00:38:32.500
+Same delta as before, at night. The brightest light
+below is Cairo. Surrounding black is desert without lights
+
+35
+00:38:32.500 --> 00:39:45.000
+— not a hole in the data.
+
+36
+00:39:45.000 --> 00:40:30.000
+You already know how to read. Now learn where to reopen each scene.
+
+37
+00:40:30.000 --> 00:43:00.000
+Three doors, all free, each owning a file type.
+Create your account today: Earthdata, Landsat/EarthExplorer, Copernicus Data Space.
+
+38
+00:43:00.000 --> 00:45:20.000
+Say it slowly: decades of change? Landsat. This neighborhood this month? Sentinel-2.
+
+39
+00:45:20.000 --> 00:47:40.000
+You do not need the last step. The first already yields a citable figure.
+
+40
+00:47:40.000 --> 00:49:55.000
+The demo teaches the gesture, not a perfect place:
+location, layer, two dates, and say aloud what the
+
+41
+00:49:55.000 --> 00:52:10.000
+color means.
+
+42
+00:52:10.000 --> 00:52:35.000
+Do not open registrations live. This slide is for
+the photo. The title is the logbook; below is
+
+43
+00:52:35.000 --> 00:53:00.000
+the official step-by-step.
+
+44
+00:53:00.000 --> 00:55:30.000
+Each idea rests on an image you already read. Choose one in silence.
+
+45
+00:55:30.000 --> 00:57:20.000
+Start with the question. The figure caption
+must carry sensor, date, color recipe, and source.
+
+46
+00:57:20.000 --> 00:59:00.000
+Leave the link on screen about eight seconds for photos and notes.
+
+47
+00:59:00.000 --> 01:00:30.000
+Read the final line slowly. If time
+remains, one question. Hard stop at minute 60.
+
+48
+01:00:00.000 --> 01:30:58.000
+Q&A and audience conversation. Captions for the main talk end here.

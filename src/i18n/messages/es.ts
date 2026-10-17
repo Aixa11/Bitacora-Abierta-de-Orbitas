@@ -132,8 +132,7 @@ export const es = {
       videoExternal: 'Abrir video externo',
       pitchLabel: 'Pitch',
       pitchTitle: 'Láminas de la presentación',
-      pitchLead:
-        'Texto bilingüe de las láminas clave (ES/EN) y el PDF original. Usa el selector de idioma como subtítulos en pantalla.',
+      pitchLead: 'Pitch del webinar en PDF (español). Ábrelo aquí o en una pestaña nueva.',
       pitchLangLabel: 'Idioma del texto',
       pitchLangEs: 'Español',
       pitchLangEn: 'English',
@@ -141,8 +140,9 @@ export const es = {
       pitchDownload: 'Descargar PDF',
       pdfEmbedLabel: 'PDF',
       pdfEmbedTitle: 'Presentación Explora la Tierra desde el espacio (PDF)',
+      pdfLoading: 'Cargando el PDF…',
       pdfMissing:
-        'No se pudo cargar el PDF en este despliegue. Usa «Abrir PDF» o vuelve a intentar en unos minutos.',
+        'No se pudo cargar el PDF. Usa «Abrir PDF» o descarga el archivo.',
       pdfFallback: 'Tu navegador no puede mostrar el PDF aquí.',
     },
     ia: {

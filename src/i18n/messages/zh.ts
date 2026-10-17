@@ -133,8 +133,7 @@ export const zh: MessageTree = {
       videoExternal: 'Open external video',
       pitchLabel: 'Pitch',
       pitchTitle: 'Presentation slides',
-      pitchLead:
-        'Bilingual key slides (ES/EN) plus the original PDF. Use the language toggle as on-screen subtitles.',
+      pitchLead: 'Webinar pitch as PDF (Spanish). View it here or open in a new tab.',
       pitchLangLabel: 'Text language',
       pitchLangEs: 'Español',
       pitchLangEn: 'English',
@@ -142,6 +141,7 @@ export const zh: MessageTree = {
       pitchDownload: 'Download PDF',
       pdfEmbedLabel: 'PDF',
       pdfEmbedTitle: 'Explore Earth from space presentation (PDF)',
+      pdfLoading: 'Loading the PDF…',
       pdfMissing:
         'Could not load the PDF in this deploy. Use "Open PDF" or try again in a few minutes.',
       pdfFallback: 'Your browser cannot display the PDF here.',

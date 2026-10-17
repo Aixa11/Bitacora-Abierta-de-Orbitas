@@ -1,4 +1,4 @@
-import { useId, useMemo, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import { TALK, type TalkSlide } from '../../content/talk';
 import { useI18n } from '../../i18n/useI18n';
 
@@ -11,19 +11,35 @@ function slideText(slide: TalkSlide, lang: PitchLang): { title: string; body: st
 }
 
 /**
- * Pitch bilingüe (láminas clave) + PDF original descargable / embebido.
+ * Pitch bilingüe (láminas clave) + PDF original.
+ * El embed usa <object>; si el navegador no lo muestra, queda el enlace directo.
  */
 export function PitchViewer() {
   const { t, locale } = useI18n();
   const titleId = useId();
   const [lang, setLang] = useState<PitchLang>(locale === 'es' ? 'es' : 'en');
   const [index, setIndex] = useState(0);
+  const [pdfOk, setPdfOk] = useState<boolean | null>(null);
   const slides = TALK.slides;
   const current = slides[index] ?? slides[0];
-  const text = useMemo(
-    () => (current ? slideText(current, lang) : { title: '', body: '' }),
-    [current, lang],
-  );
+  const text = current ? slideText(current, lang) : { title: '', body: '' };
+  const pdfUrl = TALK.pitchPdf;
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(pdfUrl, { method: 'HEAD' })
+      .then(async (res) => {
+        if (cancelled) return;
+        const type = res.headers.get('content-type') ?? '';
+        setPdfOk(res.ok && type.includes('pdf'));
+      })
+      .catch(() => {
+        if (!cancelled) setPdfOk(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [pdfUrl]);
 
   if (!current) return null;
 
@@ -55,12 +71,14 @@ export function PitchViewer() {
           </button>
         </div>
         <a
-          className="btn-orbit-sm btn-orbit-outline"
-          href={TALK.pitchPdf}
-          download
+          className="btn-orbit-sm btn-orbit-primary"
+          href={pdfUrl}
           target="_blank"
           rel="noreferrer"
         >
+          {t('pages.charla.pitchOpen')}
+        </a>
+        <a className="btn-orbit-sm btn-orbit-outline" href={pdfUrl} download>
           {t('pages.charla.pitchDownload')}
         </a>
       </div>
@@ -102,11 +120,30 @@ export function PitchViewer() {
 
       <div className="mt-6">
         <p className="label-mono mb-2">/ {t('pages.charla.pdfEmbedLabel')} /</p>
-        <iframe
-          title={t('pages.charla.pdfEmbedTitle')}
-          src={`${TALK.pitchPdf}#view=FitH`}
-          className="h-[min(70vh,640px)] w-full rounded-2xl bg-[color:var(--orbit-chip)]"
-        />
+        {pdfOk === false ? (
+          <p className="rounded-2xl bg-[color:var(--orbit-chip)] px-4 py-3 text-sm" role="status">
+            {t('pages.charla.pdfMissing')}
+          </p>
+        ) : (
+          <object
+            data={`${pdfUrl}#view=FitH`}
+            type="application/pdf"
+            className="h-[min(70vh,640px)] w-full overflow-hidden rounded-2xl bg-[color:var(--orbit-chip)]"
+            aria-label={t('pages.charla.pdfEmbedTitle')}
+          >
+            <p className="p-4 text-sm text-[color:var(--orbit-muted)]">
+              {t('pages.charla.pdfFallback')}{' '}
+              <a
+                className="text-[color:var(--orbit-aqua)] underline-offset-2 hover:underline"
+                href={pdfUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t('pages.charla.pitchOpen')}
+              </a>
+            </p>
+          </object>
+        )}
       </div>
     </section>
   );

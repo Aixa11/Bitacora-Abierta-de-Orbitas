@@ -137,9 +137,13 @@ export const es = {
       pitchLangLabel: 'Idioma del texto',
       pitchLangEs: 'Español',
       pitchLangEn: 'English',
+      pitchOpen: 'Abrir PDF',
       pitchDownload: 'Descargar PDF',
       pdfEmbedLabel: 'PDF',
       pdfEmbedTitle: 'Presentación Explora la Tierra desde el espacio (PDF)',
+      pdfMissing:
+        'No se pudo cargar el PDF en este despliegue. Usa «Abrir PDF» o vuelve a intentar en unos minutos.',
+      pdfFallback: 'Tu navegador no puede mostrar el PDF aquí.',
     },
     ia: {
       title: 'IA y agentes NASA',

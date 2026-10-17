@@ -63,6 +63,8 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,ico,svg,woff2,json,png}', '**/textures/*-2k.webp'],
         globIgnores: ['**/textures/*-4k.webp'],
         navigateFallback: 'index.html',
+        /** Evita que el SW sirva index.html dentro del iframe del PDF/video. */
+        navigateFallbackDenylist: [/^\/media\//, /\.(?:pdf|mp4|webm|vtt)$/i],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         runtimeCaching: [
           {

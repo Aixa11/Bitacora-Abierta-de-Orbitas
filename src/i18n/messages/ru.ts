@@ -139,9 +139,13 @@ export const ru: MessageTree = {
       pitchLangLabel: 'Text language',
       pitchLangEs: 'Español',
       pitchLangEn: 'English',
+      pitchOpen: 'Open PDF',
       pitchDownload: 'Download PDF',
       pdfEmbedLabel: 'PDF',
       pdfEmbedTitle: 'Explore Earth from space presentation (PDF)',
+      pdfMissing:
+        'Could not load the PDF in this deploy. Use "Open PDF" or try again in a few minutes.',
+      pdfFallback: 'Your browser cannot display the PDF here.',
 
     },
     ia: {

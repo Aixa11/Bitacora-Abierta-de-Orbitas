@@ -9,7 +9,7 @@
       "destination": "https://live.ariss.org/:path*"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!media/).*)",
       "destination": "/index.html"
     }
   ]

@@ -81,9 +81,9 @@ Contenido en `src/content/talk.ts`. Materiales en `public/media/charla/`:
 | --- | --- | --- |
 | `pitch-explora-la-tierra.pdf` | sí | Pitch usada en el webinar |
 | `captions-es.vtt` / `captions-en.vtt` | sí | Subtítulos (ES completo; EN traducción) |
-| `webinar-2026-10-16.mp4` | no (gitignore) | Grabación local ~150 MB tras comprimir |
+| `webinar-2026-10-16.mp4` | sí (~90 MB, 540p) | Grabación con subtítulos ES/EN en VTT |
 
-Para desarrollo local, copia el MP4 a `public/media/charla/webinar-2026-10-16.mp4`. Para producción, súbelo a YouTube/Vimeo y pega la URL en `TALK.videoEmbedUrl`, o súbelo como asset externo al hosting.
+Si regenerás el encode: `ffmpeg -i origen.mp4 -vf scale=-2:540 -c:v libx264 -crf 30 -c:a aac -b:a 64k -ac 1 -movflags +faststart public/media/charla/webinar-2026-10-16.mp4` (mantener &lt; 100 MB por límite de GitHub).
 
 Para regenerar subtítulos desde las speaker notes: coloca `_speaker-notes.txt` en esa carpeta y corre `python scripts/generate-charla-captions.py`.
 

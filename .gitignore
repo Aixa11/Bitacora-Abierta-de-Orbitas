@@ -44,6 +44,8 @@ public/brand/*-source.*
 public/brand/*-source.jpg
 public/brand/*-source.png
 
-# Video de la charla (demasiado grande para git; ver README § Charla)
-public/media/charla/*.mp4
+# Originales locales enormes; el encode web tracked es webinar-2026-10-16.mp4
+public/media/charla/*-source.mp4
+public/media/charla/*-raw.mp4
+public/media/charla/*-slim.mp4
 public/media/charla/_*.txt

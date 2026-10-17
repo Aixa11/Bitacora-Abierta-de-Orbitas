@@ -5,8 +5,8 @@ import { useI18n } from '../../i18n/useI18n';
 type CaptionLang = 'es' | 'en' | 'off';
 
 /**
- * Reproductor del webinar con pistas WebVTT ES/EN.
- * El MP4 vive en public/media/charla (gitignore; ver README).
+ * Reproductor del webinar con subtítulos ES (audio) y EN (traducción).
+ * Las pistas VTT se cargan como blob para evitar fallos del service worker.
  */
 export function TalkVideo() {
   const { t, locale } = useI18n();
@@ -14,18 +14,60 @@ export function TalkVideo() {
   const titleId = useId();
   const [captionLang, setCaptionLang] = useState<CaptionLang>(locale === 'es' ? 'es' : 'en');
   const [available, setAvailable] = useState<boolean | null>(null);
+  const [captionBlobs, setCaptionBlobs] = useState<{ es: string; en: string } | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    fetch(TALK.videoSrc, { method: 'HEAD' })
-      .then((res) => {
+    const controller = new AbortController();
+
+    void (async () => {
+      try {
+        const res = await fetch(TALK.videoSrc, {
+          method: 'HEAD',
+          signal: controller.signal,
+          cache: 'no-cache',
+        });
         if (!cancelled) setAvailable(res.ok);
-      })
-      .catch(() => {
-        if (!cancelled) setAvailable(false);
-      });
+      } catch {
+        // Algunos hosts no responden HEAD; el <video> decide al cargar.
+        if (!cancelled) setAvailable(null);
+      }
+    })();
+
     return () => {
       cancelled = true;
+      controller.abort();
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    const urls: string[] = [];
+
+    void (async () => {
+      try {
+        const [esRes, enRes] = await Promise.all([
+          fetch(TALK.captions.es, { cache: 'force-cache' }),
+          fetch(TALK.captions.en, { cache: 'force-cache' }),
+        ]);
+        if (!esRes.ok || !enRes.ok) throw new Error('captions missing');
+        const [esText, enText] = await Promise.all([esRes.text(), enRes.text()]);
+        if (cancelled) return;
+        if (!esText.startsWith('WEBVTT') || !enText.startsWith('WEBVTT')) {
+          throw new Error('invalid vtt');
+        }
+        const esUrl = URL.createObjectURL(new Blob([esText], { type: 'text/vtt' }));
+        const enUrl = URL.createObjectURL(new Blob([enText], { type: 'text/vtt' }));
+        urls.push(esUrl, enUrl);
+        setCaptionBlobs({ es: esUrl, en: enUrl });
+      } catch {
+        if (!cancelled) setCaptionBlobs(null);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      for (const url of urls) URL.revokeObjectURL(url);
     };
   }, []);
 
@@ -36,16 +78,18 @@ export function TalkVideo() {
     for (let i = 0; i < tracks.length; i += 1) {
       const track = tracks[i];
       if (!track) continue;
-      const lang = track.language;
       if (captionLang === 'off') {
-        track.mode = 'disabled';
-      } else if (lang === captionLang) {
+        track.mode = 'hidden';
+      } else if (track.language === captionLang) {
         track.mode = 'showing';
       } else {
-        track.mode = 'disabled';
+        track.mode = 'hidden';
       }
     }
-  }, [captionLang, available]);
+  }, [captionLang, captionBlobs, available]);
+
+  const trackEs = captionBlobs?.es ?? TALK.captions.es;
+  const trackEn = captionBlobs?.en ?? TALK.captions.en;
 
   return (
     <section className="card-orbit p-5 sm:p-6" aria-labelledby={titleId}>
@@ -56,68 +100,76 @@ export function TalkVideo() {
       <p className="mt-2 text-sm text-[color:var(--orbit-muted)]">{t('pages.charla.videoLead')}</p>
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        <label className="label-mono text-[color:var(--orbit-muted)]" htmlFor="charla-captions">
+        <span className="label-mono text-[color:var(--orbit-muted)]" id="charla-captions-label">
           {t('pages.charla.subtitlesLabel')}
-        </label>
-        <select
-          id="charla-captions"
-          className="select-orbit"
-          value={captionLang}
-          onChange={(e) => setCaptionLang(e.target.value as CaptionLang)}
+        </span>
+        <div
+          className="flex flex-wrap gap-2"
+          role="group"
+          aria-labelledby="charla-captions-label"
         >
-          <option value="es">{t('pages.charla.subtitlesEs')}</option>
-          <option value="en">{t('pages.charla.subtitlesEn')}</option>
-          <option value="off">{t('pages.charla.subtitlesOff')}</option>
-        </select>
+          <button
+            type="button"
+            className={`btn-orbit-sm ${captionLang === 'es' ? 'btn-orbit-primary' : 'btn-orbit-outline'}`}
+            aria-pressed={captionLang === 'es'}
+            onClick={() => setCaptionLang('es')}
+          >
+            {t('pages.charla.subtitlesEs')}
+          </button>
+          <button
+            type="button"
+            className={`btn-orbit-sm ${captionLang === 'en' ? 'btn-orbit-primary' : 'btn-orbit-outline'}`}
+            aria-pressed={captionLang === 'en'}
+            onClick={() => setCaptionLang('en')}
+          >
+            {t('pages.charla.subtitlesEn')}
+          </button>
+          <button
+            type="button"
+            className={`btn-orbit-sm ${captionLang === 'off' ? 'btn-orbit-primary' : 'btn-orbit-outline'}`}
+            aria-pressed={captionLang === 'off'}
+            onClick={() => setCaptionLang('off')}
+          >
+            {t('pages.charla.subtitlesOff')}
+          </button>
+        </div>
       </div>
 
       {available === false ? (
         <p className="mt-4 rounded-2xl bg-[color:var(--orbit-chip)] px-4 py-3 text-sm" role="status">
           {t('pages.charla.videoMissing')}
         </p>
-      ) : null}
-
-      {available !== false ? (
+      ) : (
         <div className="mt-4 overflow-hidden rounded-2xl bg-black">
           <video
+            key={`${trackEs}|${trackEn}`}
             ref={videoRef}
             className="aspect-video w-full"
             controls
             playsInline
             preload="metadata"
-            crossOrigin="anonymous"
+            controlsList="nodownload"
+            onError={() => setAvailable(false)}
+            onLoadedMetadata={() => setAvailable(true)}
           >
             <source src={TALK.videoSrc} type="video/mp4" />
             <track
               kind="captions"
-              src={TALK.captions.es}
+              src={trackEs}
               srcLang="es"
               label={t('pages.charla.subtitlesEs')}
               default={captionLang === 'es'}
             />
             <track
               kind="captions"
-              src={TALK.captions.en}
+              src={trackEn}
               srcLang="en"
               label={t('pages.charla.subtitlesEn')}
               default={captionLang === 'en'}
             />
           </video>
         </div>
-      ) : null}
-
-      {TALK.videoEmbedUrl ? (
-        <p className="mt-3 text-sm">
-          <a
-            className="text-[color:var(--orbit-aqua)] underline-offset-2 hover:underline"
-            href={TALK.videoEmbedUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {t('pages.charla.videoExternal')}
-          </a>
-        </p>
-      ) : null}
+      )}
     </section>
   );
 }

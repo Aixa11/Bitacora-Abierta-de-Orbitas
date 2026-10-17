@@ -128,7 +128,7 @@ export const es = {
       subtitlesEn: 'English',
       subtitlesOff: 'Sin subtítulos',
       videoMissing:
-        'El archivo de video no está en este despliegue (es grande y no va al git). Colócalo en public/media/charla/webinar-2026-10-16.mp4 o configura TALK.videoEmbedUrl cuando lo subas a YouTube/Vimeo. En local, si ya lo copiaste, recarga la página.',
+        'No se pudo cargar la grabación. Recarga la página o prueba en otra red. El archivo debería estar en /media/charla/webinar-2026-10-16.mp4.',
       videoExternal: 'Abrir video externo',
       pitchLabel: 'Pitch',
       pitchTitle: 'Láminas de la presentación',

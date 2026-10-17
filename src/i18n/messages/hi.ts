@@ -130,7 +130,7 @@ export const hi: MessageTree = {
       subtitlesEn: 'English',
       subtitlesOff: 'Off',
       videoMissing:
-        'The video file is not in this deploy (it is large and not in git). Place it at public/media/charla/webinar-2026-10-16.mp4 or set TALK.videoEmbedUrl when you upload to YouTube/Vimeo. Locally, reload if you already copied it.',
+        'Could not load the recording. Reload the page or try another network. The file should be at /media/charla/webinar-2026-10-16.mp4.',
       videoExternal: 'Open external video',
       pitchLabel: 'Pitch',
       pitchTitle: 'Presentation slides',

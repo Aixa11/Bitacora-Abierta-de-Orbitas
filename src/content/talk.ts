@@ -35,9 +35,9 @@ export const TALK = {
     linkedin: 'https://www.linkedin.com/in/aixabenitez98/',
     instagram: 'https://www.instagram.com/benitezaixa/',
   },
-  /** Ruta same-origin; el MP4 grande no va al git (ver .gitignore). */
+  /** Encode web (~90 MB, 540p) en public/media/charla. */
   videoSrc: '/media/charla/webinar-2026-10-16.mp4',
-  /** TODO: cuando subas a YouTube/Vimeo, pega aquí la URL de embed y se usará de respaldo. */
+  /** Opcional: URL de YouTube/Vimeo como respaldo externo. */
   videoEmbedUrl: null as string | null,
   captions: {
     es: '/media/charla/captions-es.vtt',

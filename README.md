@@ -61,9 +61,9 @@ npm run dev        # http://127.0.0.1:5173
 
 Colecciones: [Blue Marble](https://visibleearth.nasa.gov/collection/1484/blue-marble) · [CGI Moon Kit](https://svs.gsfc.nasa.gov/4720) · [Deep Star Maps](https://svs.gsfc.nasa.gov/4851).
 
-## Actualizar desafíos (28 de octubre de 2026)
+## Desafíos 2026
 
-Cuando se publiquen los enunciados completos, edita `src/content/challenges.json` (y opcionalmente `seed/challenges.json`) y completa `recursos_oficiales` de cada desafío. No inventes enlaces: usa solo URLs oficiales.
+Los enunciados completos se publicaron el 28 de octubre de 2026. `src/content/challenges.json` y `seed/challenges.json` apuntan a la URL oficial vigente de cada uno. La pestaña Resources de la NASA, con los datos recomendados, se publica el viernes 13 de noviembre de 2026: ese día hay que volver a leer cada enunciado y completar `recursos_oficiales` solo con URLs oficiales. No inventes enlaces.
 
 ## Agregar una herramienta
 

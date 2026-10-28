@@ -14,7 +14,7 @@ test('lista desafíos, abre una guía y guarda una nota del método', async ({ p
   await expect(
     page.getByText('Esta guía no resuelve el desafío. El trabajo y las ideas son de tu equipo.'),
   ).toBeVisible();
-  await expect(page.getByText('Se publican el 28 de octubre de 2026')).toBeVisible();
+  await expect(page.getByText('13 de noviembre de 2026')).toBeVisible();
 
   await page.getByLabel('Nota del paso Entender').fill('Leímos el enunciado juntos.');
   await expect(page.getByLabel('Nota del paso Entender')).toHaveValue(

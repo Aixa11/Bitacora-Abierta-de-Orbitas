@@ -293,11 +293,14 @@ export function DesafioDetailPage() {
 
       <section className="card-orbit mt-6 p-6">
         <h2 className="font-display text-2xl font-bold">Recursos oficiales</h2>
+        <p className="mt-3 text-sm text-[color:var(--orbit-muted)]">
+          El enunciado completo está publicado desde el 28 de octubre de 2026. La pestaña Resources
+          de la NASA, con los datos recomendados, se publica el viernes 13 de noviembre de 2026.
+        </p>
         {recursosOficiales.length === 0 ? (
           <p className="mt-3 rounded-2xl border border-dashed border-[color:var(--orbit-line)] px-4 py-3 text-sm text-[color:var(--orbit-muted)]">
-            Se publican el 28 de octubre de 2026. Completa el campo{' '}
-            <code className="font-mono text-xs">recursos_oficiales</code> en{' '}
-            <code className="font-mono text-xs">src/content/challenges.json</code> ese día.
+            Todavía no hay enlaces en{' '}
+            <code className="font-mono text-xs">recursos_oficiales</code>.
           </p>
         ) : (
           <ul className="mt-3 list-disc space-y-2 pl-5">

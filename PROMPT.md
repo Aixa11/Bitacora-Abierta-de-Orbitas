@@ -242,6 +242,6 @@ Fase 7: implementa /charla con el modo presentación, la PWA offline y la págin
 ## Tareas manuales (las haces tú)
 
 1. Descargar las texturas de NASA de los enlaces del README, ponerlas en `assets-raw/` y correr `npm run textures`.
-2. El **28 de octubre de 2026**, cuando se publiquen los enunciados completos, completar `recursos_oficiales` de cada desafío en `src/content/challenges.json`.
+2. Los enunciados completos se publicaron el **28 de octubre de 2026** y cada desafío ya apunta a su URL oficial. El **13 de noviembre de 2026**, cuando la NASA publique la pestaña Resources, completar `recursos_oficiales` solo con esas URLs.
 3. Confirmar la fecha del webinar en `src/content/talk.ts`.
 4. Desplegar en Vercel o Netlify y compartir el enlace al cierre de la charla.

@@ -17,11 +17,11 @@ export const RUTA_PASOS: RutaPaso[] = [
     titulo: 'Elige el desafío y lee sus recursos',
     subtitulo: 'Antes de abrir un mapa',
     cuerpoHtml:
-      'Lee el enunciado completo (se publica el 28 de octubre) y abre la pestaña <strong>Resources</strong>: ahí están los datos de la NASA y de las agencias socias que el equipo pensó para ese problema. Anota qué se pide entregar y quién sería el usuario de tu solución.',
+      'Lee el enunciado completo, publicado el 28 de octubre de 2026. La pestaña <strong>Resources</strong> de la NASA, con los datos recomendados, se publica el viernes 13 de noviembre. Anota qué se pide entregar y quién sería el usuario de tu solución.',
     herramientasIds: ['nasa-earthdata', 'nasa-open-data-portal', 'nasa-earth-observatory'],
     errorComun: 'Elegir primero un dataset “lindo” y después buscarle un problema.',
     checklist: [
-      'Leí el enunciado oficial (o el resumen si aún no está completo)',
+      'Leí el enunciado oficial publicado el 28 de octubre de 2026',
       'Anoté el tipo de entrega esperada',
       'Identifiqué un usuario potencial',
       'Revisé la pestaña Resources (cuando esté publicada)',

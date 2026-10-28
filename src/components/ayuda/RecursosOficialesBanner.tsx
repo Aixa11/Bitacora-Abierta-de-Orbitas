@@ -14,23 +14,15 @@ export function RecursosOficialesBanner() {
       className="banner-soft"
       role="status"
     >
-      {completo ? (
-        <p>
-          Recursos oficiales cargados en {conRecursos}/{total} desafíos.{' '}
-          <Link to="/desafios" className="font-semibold underline underline-offset-2">
-            Revisar desafíos
-          </Link>
-        </p>
-      ) : (
-        <p>
-          <span className="font-semibold">28 de octubre de 2026:</span> los enunciados completos y la
-          pestaña Resources se publican ese día. Hoy hay resúmenes y guías para pensar (
-          {conRecursos}/{total} con recursos oficiales ya cargados).{' '}
-          <Link to="/desafios" className="font-semibold underline underline-offset-2">
-            Ver desafíos
-          </Link>
-        </p>
-      )}
+      <p>
+        <span className="font-semibold">28 de octubre de 2026:</span> los enunciados completos ya
+        están en la página oficial de cada desafío ({conRecursos}/{total} con enlace oficial). La
+        pestaña Resources de la NASA, con los datos recomendados, se publica el viernes 13 de
+        noviembre de 2026.{' '}
+        <Link to="/desafios" className="font-semibold underline underline-offset-2">
+          {completo ? 'Revisar desafíos' : 'Ver desafíos'}
+        </Link>
+      </p>
     </aside>
   );
 }
